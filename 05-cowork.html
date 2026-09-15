@@ -138,10 +138,13 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 <p>모듈 01에서 한 방법과 같습니다. <span class="menu-path">Customize → Skills → + → Create skill → Upload a skill</span></p>
 <div class="check-line"><b>정상 확인:</b> 목록에 <code>file-sort-plan</code>이 보이고 켜져 있습니다. 설명에 "실제 이동·삭제 없이"라는 말이 들어 있습니다.</div>
 </div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>작업 사본 폴더 하나만 연결합니다</h3>
-<p>Claude 데스크톱에서 작업 폴더를 고를 때 <code>정리전_작업사본</code>을 선택합니다.</p>
-<div class="expect"><b>예상 상태:</b> 연결된 폴더 이름이 화면에 표시됩니다. 상위 폴더나 바탕화면이 아니라 이 폴더 이름이어야 합니다.</div>
-<div class="fail-line"><b>상위 폴더를 골랐다면:</b> 연결을 해제하고 다시 고릅니다. 범위가 넓은 상태로는 진행하지 않습니다.</div>
-<p class="small">연결 방법과 화면은 앱 버전에 따라 다릅니다. 이 부분은 수업 환경에서 강사가 실제 화면으로 안내합니다. 이 교재에는 실제 앱 화면 캡처를 넣지 않았습니다.</p>
+<p>Claude 데스크톱 앱에서 <b>새로 생성</b>(Ctrl+N)을 누르면 입력창 아래에 <b>채팅 / Cowork</b> 전환과 <b>연결 폴더 칩</b>이 보입니다. <b>Cowork</b>를 고른 뒤 폴더 칩을 누르면 목록이 열리고, 맨 아래 <b>폴더 추가</b>로 <code>정리전_작업사본</code>을 고릅니다.</p>
+<figure class="shot"><img src="assets/shots/05-cowork-folder-picker.png" alt="Cowork 새 세션 화면에서 폴더 칩을 눌러 연 목록. 연결된 폴더 경로 두 줄, 새 프로젝트, 폴더 추가 항목이 보이고 칩에 +1 표시" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>폴더 칩을 누른 화면. 위쪽 칩이 <b>지금 연결된 폴더</b>이고, 목록에는 전에 연결했던 폴더가 남아 있습니다. 새 폴더는 맨 아래 <b>폴더 추가</b>로 고릅니다. 칩에 <b>+1</b>이 붙어 있으면 <b>폴더가 두 개 이상</b> 연결된 것입니다 — 목록에서 넓은 폴더를 눌러 체크를 풀어 하나만 남깁니다.</figcaption></figure>
+<div class="expect"><b>예상 상태:</b> 칩에 <code>정리전_작업사본</code>으로 끝나는 경로 <b>하나만</b> 보입니다. <b>+1</b>이 없어야 하고, 상위 폴더나 바탕화면이 아니어야 합니다. 경로가 길면 칩 안에서 잘려 보일 수 있으니, 칩을 다시 눌러 목록에서 전체 경로를 확인하세요.</div>
+<div class="fail-line"><b>상위 폴더가 같이 들어갔다면:</b> 칩을 눌러 그 폴더를 다시 클릭하면 체크가 풀립니다. 범위가 넓은 상태로는 진행하지 않습니다.</div>
+<p>첫 요청을 보내는 순간 아래와 같은 <b>폴더 접근 허용 창</b>이 뜹니다. 여기가 "연결"의 실제 의미가 적힌 곳입니다.</p>
+<figure class="shot narrow"><img src="assets/shots/05-cowork-folder-access.png" alt="폴더 접근 요청 대화상자. 허용 대상 폴더 경로, 읽기·수정·명령 실행 권한 설명, Allow 링크, 다시 묻지 않기 체크박스, 취소 버튼" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>첫 요청 직후 뜨는 <b>Folder access request</b>. 이 세션이 <b>이 폴더를 읽고 수정하고 명령을 실행</b>할 수 있으며, 파일이 <b>Anthropic 서버로 보내져 처리</b>된다고 적혀 있습니다. 경로가 <code>정리전_작업사본</code>으로 끝나는지 읽고 <b>Allow</b>를 누릅니다. 수업에서는 <b>"Don&#39;t ask again"에 체크하지 않습니다</b> — 매번 경로를 읽는 것이 안전 절차입니다.</figcaption></figure>
+<p class="small">화면은 2026-09-15 데스크톱 앱(한국어 설정) 기준입니다. 버전에 따라 버튼 이름이 다를 수 있으며, 다르면 강사가 실제 화면으로 안내합니다.</p>
 </div></div>
 
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="cowork-copy"><span>원본과 작업 사본 두 폴더를 만들었다.</span></label><label class="check"><input type="checkbox" data-check="cowork-count"><span>파일이 12개인 것을 직접 세었다.</span></label><label class="check"><input type="checkbox" data-check="cowork-scope"><span>작업 사본 폴더 하나만 연결했다.</span></label></div>
@@ -154,7 +157,8 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 <p>바로 정리를 시키지 않습니다. <b>연결 범위 안에 무엇이 있는지</b> 먼저 확인합니다.</p>
 <div class="prompt"><div class="prompt-head"><span><b>먼저 목록만 확인하기</b></span><button type="button" data-copy="p-cw-1">복사</button></div><pre id="p-cw-1">연결한 폴더 안의 파일 목록만 알려 주세요. 파일 이름과 개수만 적어 주세요.
 아직 아무것도 바꾸거나 옮기지 마세요.</pre></div>
-<div class="check-line"><b>정상 확인:</b> 파일 12개가 나오고, 내가 센 목록과 같습니다.</div>
+<figure class="shot"><img src="assets/shots/05-cowork-list-result.png" alt="Cowork 세션의 응답. 정리전_작업사본 폴더 파일 12개 목록과 아무것도 건드리지 않았다는 문장" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>위 문장을 보낸 결과. "<b>정리전_작업사본 폴더 — 파일 12개, 하위 폴더 없음</b>" 다음에 이름 12개가 번호로 나오고, 마지막에 "아무것도 건드리지 않았습니다"라고 적혀 있습니다. 이 12개가 03단계에서 직접 센 목록과 같으면 통과입니다.</figcaption></figure><figure class="shot narrow"><img src="assets/shots/05-cowork-context-panel.png" alt="오른쪽 컨텍스트 패널에 정리전_작업사본 폴더 하나만 표시된 모습" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>같은 화면의 오른쪽 <b>컨텍스트</b> 패널. 연결된 폴더가 <b>이름만</b> 표시됩니다. 여기에 폴더가 둘 이상 보이면 범위가 넓은 것입니다.</figcaption></figure>
+<div class="check-line"><b>정상 확인:</b> 파일 12개가 나오고, 내가 센 목록과 같습니다. 오른쪽 컨텍스트 패널에도 폴더가 하나뿐입니다.</div>
 <div class="fail-line"><b>12개보다 많이 나오면:</b> 상위 폴더가 연결된 것입니다. 연결을 다시 고르세요. 이 확인을 건너뛰면 엉뚱한 폴더를 정리하게 됩니다.</div>
 </div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>계획표를 요청합니다</h3>
 <div class="prompt"><div class="prompt-head"><span><b>계획표 만들기</b></span><button type="button" data-copy="p-cw-2">복사</button></div><pre id="p-cw-2">file-sort-plan 스킬을 사용해 연결한 폴더의 파일 12개에 대한 정리 계획표를 만들어 주세요.
@@ -165,6 +169,8 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 - 제안 이름이 겹치면 번호를 붙여 구분하고, 어느 쪽도 삭제 대상으로 제안하지 마세요.
 - 아직 파일을 옮기거나 이름을 바꾸지 마세요. 계획만 보여 주세요.</pre></div>
 <div class="expect"><b>예상 상태:</b> 12행짜리 표가 채팅에 나옵니다. 파일은 아직 그대로입니다.</div>
+<figure class="shot"><img src="assets/shots/05-cowork-plan-top.png" alt="계획표 응답 윗부분. 스킬을 이 세션에서 불러올 수 없었다는 안내 문장과, 현재 파일명·종류·날짜 근거·제안 파일명·제안 폴더·확인 사항 열을 가진 표의 첫 네 행" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>리허설에서 받은 계획표의 윗부분. <b>정리 계획표 (12건)</b> 아래 요청한 6개 열이 그대로 있고, <code>memo_a.md</code>·<code>memo_b.md</code>가 <code>-1</code>·<code>-2</code>로 나뉘어 있습니다. 표 위의 첫 문단에 주목하세요 — 이 리허설에서는 <b>세션을 연 뒤에 스킬을 등록</b>해서 Claude가 "이 세션에서는 스킬을 불러올 수 없었다"고 알리고 규칙만으로 작성했습니다. 스킬을 먼저 등록하고 새 세션을 여세요.</figcaption></figure>
+<figure class="shot narrow"><img src="assets/shots/05-cowork-plan-summary.png" alt="계획표 응답의 마지막 부분. 날짜미상 4건 처리, memo_a/memo_b 분리, 삭제 제안 없음, 승인 대기 문장" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>같은 응답의 끝부분. "<b>날짜미상 4건</b>은 파일 수정일을 쓰지 않고 날짜미상으로 두었다 · 이름 충돌은 memo_a/memo_b 한 쌍뿐 · <b>삭제 제안 없음</b> · <b>승인하시면 실행하겠습니다</b>". 다음 단계의 네 가지 검사 항목이 이 문단에 그대로 대응합니다. 번호 표기(<code>-1/-2</code>)와 하위 폴더 이름은 기준표(<code>_01/_02</code>)와 달라도 됩니다.</figcaption></figure>
 </div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>계획표를 네 가지로 검사합니다</h3>
 <p>표를 받으면 바로 승인하지 말고 아래를 확인합니다.</p>
 <div class="tw"><table class="wide"><thead><tr><th>확인 항목</th><th>통과 기준</th><th>틀리면</th></tr></thead><tbody><tr><td>① 행 수</td><td><b>12행</b>. 스킬이 만든 보고서는 입력 수에 넣지 않습니다</td><td>빠진 파일을 찾아 다시 요청</td></tr><tr><td>② 이름 충돌</td><td><code>memo_a.md</code>와 <code>memo_b.md</code>가 <b>_01 / _02</b>로 구분됨</td><td>하나를 중복·삭제로 제안했다면 반드시 고쳐야 합니다</td></tr><tr><td>③ 날짜미상</td><td><b>4건</b>이 날짜미상으로 시작<br>(회의메모_날짜없음 · report_misc · list_unknown · read_later)</td><td>수정일이 날짜로 들어갔는지 확인</td></tr><tr><td>④ 확장자</td><td><code>.csv</code>는 <code>.csv</code>로, <code>.txt</code>는 <code>.txt</code>로 유지</td><td>확장자가 바뀌면 파일이 안 열립니다</td></tr></tbody></table></div>
@@ -236,11 +242,11 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 </section>
 <section class="chapter" id="trouble">
 <div class="secnum">07 · 막혔을 때</div>
-<h2>파일 정리에서 자주 나오는 다섯 가지</h2>
+<h2>파일 정리에서 자주 나오는 여섯 가지</h2>
 
 <details><summary>① 목록에 파일이 12개보다 많이 나옵니다</summary><div class="d-body">
 <p><b>원인</b> — 상위 폴더나 바탕화면이 연결된 것입니다.</p>
-<p><b>복구</b> — 연결을 해제하고 <code>정리전_작업사본</code> 폴더를 다시 고릅니다. 목록이 12개가 될 때까지 계획 요청을 하지 마세요.</p>
+<p><b>복구</b> — 입력창 아래 폴더 칩을 눌러 목록을 열고, 넓은 폴더를 클릭해 체크를 풉니다. 칩의 <b>+1</b>이 사라지고 <code>정리전_작업사본</code>만 남아야 합니다. 목록이 12개가 될 때까지 계획 요청을 하지 마세요.</p>
 <p><b>왜 중요한가</b> — 범위를 확인하지 않고 실행하면 엉뚱한 폴더의 파일 이름이 바뀝니다. 이 확인이 오늘 가장 중요한 안전 절차입니다.</p>
 </div></details>
 
@@ -268,6 +274,12 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 <p><b>기억할 점</b> — 스킬에 적힌 "계획만 한다"는 문장은 <b>작업 지시</b>입니다. 실제 변경을 막는 장치는 <b>좁은 연결 범위</b>와 <b>사본</b>입니다. 두 가지를 문장으로 대신할 수 없습니다.</p>
 </div></details>
 
+<details><summary>⑥ "스킬을 이 세션에서 불러올 수 없었다"고 나옵니다</summary><div class="d-body">
+<p><b>원인</b> — 세션을 먼저 열고 <b>그 뒤에</b> <code>file-sort-plan</code>을 등록한 경우입니다. 2026-09-15 리허설에서 같은 문장이 나왔습니다(04단계 계획표 그림의 첫 문단).</p>
+<p><b>복구</b> — 스킬이 등록·켜짐 상태인지 확인한 뒤 <b>새 세션</b>을 열고 같은 폴더를 연결해 다시 요청합니다.</p>
+<p><b>그래도 진행은 됩니다</b> — 리허설에서는 스킬 없이도 요청 문장의 규칙만으로 12행 계획표가 나왔고 기준표와 일치했습니다. 다만 수업 목적은 "스킬이 규칙을 대신 기억한다"를 보는 것이므로 새 세션에서 다시 하는 편이 좋습니다.</p>
+</div></details>
+
 <h3>이해 확인</h3>
 <div class="quiz"><p class="q">1. 파일 12개를 정리시켰더니 계획표가 10행으로 나왔습니다. 무엇부터 해야 할까요?</p><label><input type="radio" name="quiz16" data-ok="0" data-why="2개가 처리되지 않은 채로 남습니다. 빠진 파일은 나중에 찾기 어렵습니다."><span>10행이라도 맞는 것 같으니 실행한다.</span></label><label><input type="radio" name="quiz16" data-ok="1" data-why="입력 개수와 결과 행 수를 맞추는 것이 가장 기본적인 검증입니다. 날짜가 없는 파일이 자주 빠집니다."><span>어떤 파일이 빠졌는지 찾고, 12개 모두 한 행씩 나오도록 다시 요청한다.</span></label><label><input type="radio" name="quiz16" data-ok="0" data-why="가능은 하지만, 왜 빠졌는지 모른 채 넘어가면 다음 묶음에서 또 빠집니다."><span>빠진 2개는 직접 손으로 정리한다.</span></label><label><input type="radio" name="quiz16" data-ok="0" data-why="생성된 보고서는 입력 파일이 아닙니다. 입력 수와 생성물 수를 섞으면 검증 기준이 무너집니다."><span>스킬이 만든 보고서를 포함해 12개로 맞춘다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">2. 스킬 본문에 "파일을 삭제하지 않는다"고 적혀 있습니다. 이것으로 충분한가요?</p><label><input type="radio" name="quiz17" data-ok="0" data-why="스킬 본문은 작업 지시문입니다. 기술적으로 삭제를 차단하는 장치가 아닙니다."><span>충분하다. 스킬이 삭제를 막아 준다.</span></label><label><input type="radio" name="quiz17" data-ok="1" data-why="문장은 요청이고, 범위와 사본은 실제 조건입니다. 두 가지를 반드시 구분하세요."><span>충분하지 않다. 연결 범위를 좁히고 원본 사본을 따로 두는 것이 실제 안전 조치다.</span></label><label><input type="radio" name="quiz17" data-ok="0" data-why="확인은 필요하지만, 확인만으로 원본이 보호되지는 않습니다. 돌아올 자리가 있어야 합니다."><span>충분하다. 다만 실행 전에 확인만 하면 된다.</span></label><label><input type="radio" name="quiz17" data-ok="0" data-why="원본을 연결하면 원본도 작업 대상이 됩니다. 정반대의 선택입니다."><span>원본 폴더도 같이 연결해 두면 비교하기 편하다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">3. 이미지 파일에는 문서 안에 날짜가 없습니다. 계획표의 날짜 칸을 어떻게 해야 할까요?</p><label><input type="radio" name="quiz18" data-ok="0" data-why="수정일은 복사만 해도 바뀝니다. 문서를 만든 날과 다를 수 있어 정리 순서가 틀어집니다."><span>파일 속성의 수정일을 넣는다.</span></label><label><input type="radio" name="quiz18" data-ok="1" data-why="모르는 것을 모른다고 남기면 사람이 나중에 채울 수 있습니다. 잘못된 날짜가 들어가면 찾아내기 어렵습니다."><span>날짜미상으로 표시하고, 왜 확인되지 않는지 근거 칸에 적는다.</span></label><label><input type="radio" name="quiz18" data-ok="0" data-why="근거 없는 추정입니다. 다른 파일과 작성 시점이 같다는 보장이 없습니다."><span>같은 폴더의 다른 파일 날짜를 쓴다.</span></label><label><input type="radio" name="quiz18" data-ok="0" data-why="가장 확실하게 틀린 값입니다. 정리한 날과 문서를 만든 날은 아무 관계가 없습니다."><span>오늘 날짜를 넣는다.</span></label><p class="fb"></p></div>
 
@@ -279,7 +291,7 @@ Claude는 <b>연결 권한 밖의 폴더에는 접근하지 못하고</b>, 파�
 </nav>
 <footer class="foot">
 <h4>이 페이지의 자료 성격과 확인 범위</h4>
-<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 화면에 나오는 결과 예시는 비교용으로 작성한 것이며 Claude를 실제로 실행해 받은 출력이 아닙니다.</p>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 표로 적힌 기준 예시는 비교용으로 사람이 작성한 것입니다. <b>「실제 화면」 표시가 붙은 그림</b>만 개인 계정 리허설(2026-09-15)에서 Claude 데스크톱 앱을 실제로 찍은 것이며, 사용자 이름과 다른 대화 제목은 가렸습니다.</p>
 <p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
 <p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 실제 계정 등록·스킬 호출·Office 애드인 실행은 수업 전 리허설에서 확인합니다.</p>
 <p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
