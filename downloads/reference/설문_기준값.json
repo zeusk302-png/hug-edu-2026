@@ -1,0 +1,20 @@
+{
+  "data_status": "교육용 가상 데이터; 실제 모델 실행 결과 아님",
+  "raw_rows": 24,
+  "exact_duplicate_rows": 1,
+  "unique_ids_after_dedup": 23,
+  "missing_satisfaction": 1,
+  "invalid_satisfaction": 1,
+  "valid_satisfaction": 21,
+  "sum_satisfaction": 83,
+  "mean_satisfaction": 3.95,
+  "distribution": {
+    "1": 0,
+    "2": 2,
+    "3": 4,
+    "4": 8,
+    "5": 7
+  },
+  "high_satisfaction_4_or_5": 15,
+  "high_satisfaction_percent": 71.4
+}

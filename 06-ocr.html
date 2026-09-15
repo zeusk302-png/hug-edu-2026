@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="합성 영수증 3장을 표로 옮기고, 읽지 못한 칸과 중복 가능성을 구분해 처리합니다.">
+<title>OCR · 사진 속 숫자 | HUG 교육플랫폼</title>
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="ocr">
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="top"><div class="top-in">
+<div class="brand"><a class="home" href="index.html"><b>교육플랫폼</b></a><span class="sub">내 문서가 알아서 굴러가게 · 2회차</span><span class="dim">OCR · 사진 속 숫자</span></div>
+<div class="top-right">
+<span class="pill" id="progress" aria-live="polite">0 / 0 확인</span>
+<button type="button" id="print">인쇄</button>
+<button type="button" id="print-answers">해설까지 인쇄</button>
+</div></div></header>
+<div class="layout">
+<nav class="side" aria-label="단원과 단계">
+<div class="side-group"><p class="side-label">단원</p>
+<a href="index.html">교육플랫폼 홈</a>
+<a href="00-start.html"><span class="n">00</span>시작 · 자료 준비</a>
+<a href="01-skills.html"><span class="n">01</span>스킬 사용하고 바꾸기</a>
+<a href="02-excel.html"><span class="n">02</span>Excel · 수식과 출처</a>
+<a href="03-powerpoint.html"><span class="n">03</span>PowerPoint · 양식</a>
+<a href="04-word.html"><span class="n">04</span>Word · 검토와 변경</a>
+<a href="05-cowork.html"><span class="n">05</span>Cowork · 파일 정리</a>
+<a href="06-ocr.html" class="here"><span class="n">06</span>OCR · 사진 속 숫자</a>
+<a href="07-capstone.html"><span class="n">07</span>종합 실습</a>
+<a href="08-finish.html"><span class="n">08</span>결과 점검 · 과제</a>
+<a href="sources.html">공식 자료실</a>
+<a href="files.html">다운로드 모음</a>
+</div>
+<div class="side-group search"><p class="side-label">본문 검색</p><input id="search" type="search" placeholder="예: 근거, 분모, 원본" style="width:100%;padding:8px 10px;border:1px solid var(--line-2);border-radius:8px;font-size:14px"><p class="small" id="search-count" style="margin-top:6px"></p></div>
+<div class="side-group steps"><p class="side-label">이 단원의 단계</p>
+<a href="#result"><span class="n">01</span>완성 모습 먼저 보기</a>
+<a href="#concept"><span class="n">02</span>추출값과 계산값</a>
+<a href="#prepare"><span class="n">03</span>이미지와 표 받기</a>
+<a href="#extract"><span class="n">04</span>표로 옮기기</a>
+<a href="#verify"><span class="n">05</span>정답표와 대조하기</a>
+<a href="#reuse"><span class="n">06</span>다른 자료에 다시 쓰기</a>
+<a href="#trouble"><span class="n">07</span>막혔을 때</a>
+</div>
+<p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
+</nav>
+<main id="main">
+<header class="hero">
+<div class="eyebrow">실습 단원 06 / OCR</div>
+<h1>사진 속 글자를 표로 바꾸고,<br>원본과 비교하기.</h1>
+<p>영수증 세 장을 표로 옮깁니다. 못 읽은 칸을 0으로 채우지 않고, 인쇄된 합계와 계산한 합계를 다른 칸으로 관리합니다.</p>
+<div class="flow">완성 예시 → 두 가지 합계 → 이미지 보기 → 표 만들기 → 정답 대조 → 한 장만 재사용</div>
+<p class="meta">필요한 것: 이미지 3장 · 빈 표 · (선택) receipt-table 스킬</p>
+</header>
+<section class="chapter" id="result">
+<div class="secnum">01 · 완성 모습 먼저 보기</div>
+<h2>사진 속 글자를 표로 옮기고, 못 읽은 칸은 비워 둡니다</h2>
+
+<p class="lead">영수증 사진 세 장을 표로 옮깁니다. 어려운 것은 읽는 일이 아니라 <b>못 읽은 칸을 어떻게 처리하느냐</b>입니다.</p>
+
+<div class="three">
+  <article class="panel">
+    <span class="tag in">영수증_01</span>
+    <h3>전부 읽힙니다</h3>
+    <p>노트 6,000 · 라벨지 4,500 · 클립 2,400</p>
+    <p>인쇄된 합계 <b>12,900</b></p>
+    <p>더한 값도 <b>12,900</b> — 일치</p>
+  </article>
+  <article class="panel bad">
+    <span class="tag no">영수증_02</span>
+    <h3>일부가 번져 있습니다</h3>
+    <p>도서 A 15,000 · 포장비 1,000</p>
+    <p>도서 B 단가·금액 <b>읽기 불가</b></p>
+    <p>인쇄된 합계도 <b>읽기 불가</b> → 역산도 안 됩니다</p>
+  </article>
+  <article class="panel after">
+    <span class="tag out">영수증_03</span>
+    <h3>01과 똑같아 보입니다</h3>
+    <p>같은 가게 · 같은 날짜 · 같은 금액</p>
+    <p>그런데 전표번호가 <b>A-1001 / A-1002</b>로 다릅니다</p>
+    <p>표시만 하고 <b>지우지 않습니다</b></p>
+  </article>
+</div>
+
+<div class="note act"><b>이번 단원에서 확인할 실패 세 가지</b><br>
+① 못 읽은 금액 칸에 <b>0</b>을 넣는 것 — 누락이 숨겨집니다<br>
+② 읽은 항목만 더한 값을 <b>영수증 합계</b> 칸에 적는 것 — 인쇄된 합계와 계산한 합계는 다른 칸입니다<br>
+③ 비슷해 보이는 영수증을 임의로 빼고 합계를 내는 것 — 같은 거래인지는 이 사진만으로 알 수 없습니다</div>
+
+<p class="small">세 장 모두 코드로 그린 <b>합성 이미지</b>입니다. 실제 거래 영수증을 스캔한 것이 아니며, 이미지 안에도 그 사실이 적혀 있습니다.</p>
+
+</section>
+<section class="chapter" id="concept">
+<div class="secnum">02 · 추출값과 계산값</div>
+<h2>표의 칸을 나누는 이유</h2>
+
+<p class="lead">영수증 표에서 헷갈리는 칸이 딱 두 개 있습니다. 그 둘을 나누면 대부분의 실수가 사라집니다.</p>
+
+<div class="tw"><table class="mid"><thead><tr><th>칸</th><th>무엇인가</th><th>어디서 오나</th><th>못 구하면</th></tr></thead><tbody><tr><td><b>원문 합계</b></td><td>영수증에 <b>인쇄되어 보이는</b> 합계</td><td>사진에서 읽습니다</td><td><b>비워 둡니다.</b> 계산값을 여기 넣지 않습니다</td></tr><tr><td><b>계산 합계</b></td><td>항목 금액을 <b>더한</b> 값</td><td>내가 계산합니다</td><td>항목 하나라도 못 읽으면 <b>구할 수 없습니다</b></td></tr></tbody></table></div>
+
+<p>두 칸이 같으면 서로를 검산해 준 셈입니다. 다르면 어딘가 잘못 읽은 것입니다. <b>한 칸으로 합치면 이 검산이 불가능해집니다.</b></p>
+
+<h3>"읽기 불가"와 "0"은 다릅니다</h3>
+<div class="tw"><table class="wide"><thead><tr><th>상황</th><th>맞는 처리</th><th>틀린 처리</th><th>틀리면 생기는 일</th></tr></thead><tbody><tr><td>금액이 번져 안 보임</td><td>빈칸 + 상태 "확인 필요"</td><td>0을 입력</td><td>합계가 조용히 줄어듭니다</td></tr><tr><td>항목이 아예 없음</td><td>0 또는 해당 없음</td><td>빈칸</td><td>못 읽은 것과 구분되지 않습니다</td></tr><tr><td>합계가 안 보이는데 항목은 다 읽힘</td><td>항목을 더해 <b>계산 합계</b>에만 기입</td><td>원문 합계 칸에 기입</td><td>읽지도 않은 값을 읽었다고 기록한 것이 됩니다</td></tr><tr><td>항목 하나를 못 읽음</td><td>합계도 확인 필요</td><td>읽은 것만 더해 합계로</td><td>실제보다 작은 금액이 확정됩니다</td></tr></tbody></table></div>
+
+<div class="note info"><b>왜 이렇게까지 따지나요?</b><br>
+숫자는 한 번 표에 들어가면 <b>어디서 왔는지가 사라집니다.</b> 0이 "0원"인지 "못 읽음"인지 나중에는 구분할 수 없습니다. 그 표를 받아 쓰는 사람은 더더욱 알 수 없습니다.</div>
+
+<h3>중복처럼 보이는 문서</h3>
+<p>같은 가게, 같은 날짜, 같은 금액이면 중복 같지만 <b>정말 두 번 산 것일 수도</b> 있습니다. 이번 자료에서는 전표번호가 다릅니다.</p>
+<p>이런 경우의 처리 규칙은 하나입니다. <b>표시는 하되 임의로 제외하지 않습니다.</b> 판단은 원본 서류나 결제 기록을 볼 수 있는 사람이 합니다.</p>
+
+</section>
+<section class="chapter" id="prepare">
+<div class="secnum">03 · 이미지와 표 받기</div>
+<h2>이미지 3장과 빈 표를 받습니다</h2>
+
+<div class="dl-row"><a class="dl" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_%EC%9D%B4%EB%AF%B8%EC%A7%803%EC%9E%A5.zip" download><span>영수증_이미지3장.zip<br><span class="what">합성 영수증 PNG 3장</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_%EB%B9%88%ED%91%9C.csv" download><span>영수증_빈표.csv<br><span class="what">열만 있는 빈 표</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/skills/receipt-table.zip" download><span>receipt-table.zip<br><span class="what">추출 스킬 · 등록용</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_%EC%A0%95%EB%8B%B5%ED%91%9C.csv" download><span>영수증_정답표.csv<br><span class="what">대조용 정답 · 나중에 열기</span></span><span aria-hidden="true">↓</span></a></div>
+<p class="small">정답표는 05단계에서 씁니다. 먼저 열어 보면 실습이 되지 않으니 지금은 받아만 두세요.</p>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>이미지 세 장을 열어 눈으로 먼저 봅니다</h3>
+<p>압축을 풀고 <code>영수증_01.png</code>부터 차례로 엽니다. 확대해서 보세요.</p>
+<div class="tw"><table class="wide"><thead><tr><th>파일</th><th>보이는 것</th><th>눈여겨볼 곳</th></tr></thead><tbody><tr><td>영수증_01.png</td><td>가상문구점 · 2026-05-02 14:20 · 전표 A-1001</td><td>항목 3개와 하단 합계가 모두 선명합니다</td></tr><tr><td>영수증_02.png</td><td>가상서점 · 2026-05-04 11:05 · 전표 B-2033</td><td>두 번째 줄의 단가·금액, 그리고 <b>하단 합계</b>가 번져 있습니다</td></tr><tr><td>영수증_03.png</td><td>가상문구점 · 2026-05-02 14:20 · 전표 <b>A-1002</b></td><td>01과 모든 값이 같은데 전표번호만 다릅니다</td></tr></tbody></table></div>
+<div class="check-line"><b>정상 확인:</b> 영수증_02에서 도서 B의 단가와 금액, 그리고 합계 칸을 <b>직접 봐도 읽을 수 없습니다.</b> 여러분이 못 읽는 것을 AI가 읽어 냈다면 그 값은 의심해야 합니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>빈 표의 열을 확인합니다</h3>
+<p><code>영수증_빈표.csv</code>를 엑셀이나 메모장으로 엽니다. 열이 열 개입니다.</p>
+<pre class="plainbox">파일명, 원문 위치 설명, 날짜, 항목, 수량, 단가, 원문 합계, 계산 합계, 상태, 확인 이유</pre>
+<p>"원문 위치 설명"은 <b>그 값을 어디서 봤는지</b>를 적는 칸입니다. "하단 합계 행", "품목 표 2행"처럼 실제로 볼 수 있는 위치를 씁니다. 좌표나 페이지 번호를 지어내지 않습니다.</p>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>receipt-table 스킬을 등록합니다</h3>
+<p>모듈 01·05와 같은 방법입니다. 목록에 <code>receipt-table</code>이 보이고 켜져 있으면 준비 완료입니다.</p>
+<p class="small">스킬 없이 진행해도 됩니다. 그 경우 04단계 요청 문장에 "파일명·원문 위치 설명·날짜·항목·수량·단가·원문 합계·계산 합계·상태·확인 이유 열로 만들어 주세요"를 덧붙이세요.</p>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-see"><span>이미지 3장을 열어 번진 곳을 직접 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-cols"><span>빈 표의 열 열 개를 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="extract">
+<div class="secnum">04 · 표로 옮기기</div>
+<h2>세 장을 한 번에 넣고 표로 받습니다</h2>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>이미지 3장을 첨부하고 요청합니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>영수증 표 만들기</b></span><button type="button" data-copy="p-ocr-1">복사</button></div><pre id="p-ocr-1">receipt-table 스킬을 사용해 첨부한 영수증 이미지 3장에서 값을 표로 옮겨 주세요.
+
+- 읽을 수 없는 글자는 빈칸으로 두고 상태를 "확인 필요"로 적어 주세요. 0이나 추측값을 넣지 마세요.
+- 영수증에 인쇄된 합계(원문 합계)와 항목을 더한 값(계산 합계)을 다른 칸에 적어 주세요.
+- 값을 어디서 봤는지 "원문 위치 설명"에 적어 주세요. 좌표나 페이지 번호를 만들지 마세요.
+- 같은 문서로 보이는 이미지가 있으면 표시만 하고 제외하지 마세요.
+- 마지막에 읽은 이미지 수, 읽지 못한 값의 수를 알려 주세요.</pre></div>
+<div class="expect"><b>예상 상태:</b> 품목 9행 + 영수증별 합계 3행 = <b>12행</b>짜리 표가 나옵니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>표를 다섯 가지로 검사합니다</h3>
+<div class="tw"><table class="wide"><thead><tr><th>확인 항목</th><th>통과 기준</th><th>틀리면</th></tr></thead><tbody><tr><td>① 이미지 수</td><td>읽은 이미지 <b>3장</b></td><td>한 장이 빠졌는지 확인</td></tr><tr><td>② 영수증_01 합계</td><td>원문 합계 12,900 · 계산 합계 12,900 — 두 칸 모두 채워짐</td><td>한 칸만 있으면 어느 쪽인지 되물어 보세요</td></tr><tr><td>③ 영수증_02 도서 B</td><td>단가·금액 <b>빈칸</b> + 상태 "확인 필요"</td><td>숫자가 들어 있으면 어디서 읽었는지 되물어 보세요</td></tr><tr><td>④ 영수증_02 합계</td><td>원문 합계 <b>빈칸</b>, 계산 합계도 <b>빈칸</b></td><td>16,000이 들어 있으면 읽은 항목만 더한 것입니다</td></tr><tr><td>⑤ 영수증_03</td><td>"중복 가능성"으로 표시되되 표에 <b>남아 있음</b></td><td>빠져 있으면 임의로 제외한 것입니다</td></tr></tbody></table></div>
+<div class="note act"><b>④를 특히 보세요.</b><br>
+도서 A 15,000 + 포장비 1,000 = 16,000입니다. 하지만 도서 B를 못 읽었으므로 <b>이 영수증의 합계는 16,000이 아닙니다.</b> 16,000을 합계 칸에 적으면 실제보다 작은 금액이 확정된 것으로 남습니다.<br>
+굳이 적어야 한다면 "읽은 항목만의 합 16,000"이라고 <b>다른 칸에 따로</b> 적어야 합니다.</div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>읽어 낸 값을 이미지와 한 칸씩 맞춰 봅니다</h3>
+<p>표의 숫자를 골라 이미지의 그 자리를 다시 봅니다. 최소 다섯 칸은 직접 확인하세요.</p>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 값</th><th>이미지에서 볼 곳</th><th>맞는 값</th></tr></thead><tbody><tr><td>영수증_01 클립 금액</td><td>품목 표 3행 오른쪽</td><td>2,400</td></tr><tr><td>영수증_01 합계</td><td>하단 합계 행</td><td>12,900</td></tr><tr><td>영수증_02 도서 A 단가</td><td>품목 표 1행</td><td>15,000</td></tr><tr><td>영수증_02 전표번호</td><td>상단 머리 부분</td><td>B-2033</td></tr><tr><td>영수증_03 전표번호</td><td>상단 머리 부분</td><td><b>A-1002</b> (01은 A-1001)</td></tr></tbody></table></div>
+<div class="check-line"><b>정상 확인:</b> 다섯 칸이 모두 이미지와 같습니다. 특히 마지막 줄 — 전표번호가 다르다는 것이 03을 지우면 안 되는 근거입니다.</div>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-table"><span>12행짜리 표를 받아 다섯 가지를 검사했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-blank"><span>못 읽은 칸이 0으로 채워지지 않았는지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-dup"><span>영수증_03이 표에서 지워지지 않았는지 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="verify">
+<div class="secnum">05 · 정답표와 대조하기</div>
+<h2>기준표를 열고 어긋난 칸을 찾습니다</h2>
+
+<p class="lead">이제 정답표를 엽니다. 표현이 달라도 되지만 <b>상태 칸</b>은 같아야 합니다.</p>
+
+<div class="dl-row"><a class="dl" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_%EC%A0%95%EB%8B%B5%ED%91%9C.csv" download><span>영수증_정답표.csv<br><span class="what">12행 정답표</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%EC%98%81%EC%88%98%EC%A6%9D%ED%91%9C.md" download><span>기준예시_영수증표.md<br><span class="what">무엇을 볼지 설명</span></span><span aria-hidden="true">↓</span></a></div>
+
+<h3>숫자로 먼저 맞춰 봅니다</h3>
+<div class="tw"><table class="mid"><thead><tr><th>항목</th><th>기준값</th></tr></thead><tbody><tr><td>읽은 이미지</td><td><b>3장</b></td></tr><tr><td>표의 행(헤더 제외)</td><td><b>12행</b> — 품목 9행 + 합계 3행</td></tr><tr><td>상태가 "확인 필요"인 행</td><td><b>2행</b> — 모두 영수증_02</td></tr><tr><td>상태가 "중복 가능성"인 행</td><td><b>4행</b> — 영수증_03 전체</td></tr><tr><td>영수증_01 계산 합계</td><td><b>12,900</b></td></tr><tr><td>영수증_03 계산 합계</td><td><b>12,900</b> (01과 같음)</td></tr><tr><td>영수증_02 계산 합계</td><td><b>구할 수 없음</b> — 빈칸</td></tr></tbody></table></div>
+
+<h3>어긋났다면 무엇이 문제인지 찾습니다</h3>
+<div class="tw"><table class="wide"><thead><tr><th>내 표의 상태</th><th>무슨 일이 일어난 것인가</th><th>어떻게 고치나</th></tr></thead><tbody><tr><td>도서 B 금액에 12,000이 적혀 있음</td><td>이미지에서 읽을 수 없는 값입니다. 다른 도서 값이나 품목명으로 추측한 것입니다</td><td>"이 값을 이미지의 어디에서 읽었나요?"라고 되묻고, 답하지 못하면 빈칸으로 되돌립니다</td></tr><tr><td>영수증_02 합계에 16,000</td><td>읽은 항목만 더한 값을 영수증 합계로 쓴 것입니다</td><td>빈칸으로 바꾸고, 필요하면 "읽은 항목만의 합"이라고 따로 표시합니다</td></tr><tr><td>영수증_02 합계에 0</td><td>못 읽은 것을 0으로 채운 것입니다</td><td>빈칸 + 상태 "확인 필요"로 바꿉니다</td></tr><tr><td>영수증_03이 없음</td><td>중복으로 보고 제외한 것입니다</td><td>다시 넣고 "중복 가능성"으로 표시합니다. 전표번호가 다른 것이 근거입니다</td></tr><tr><td>정확도가 "98%"처럼 적혀 있음</td><td>측정한 적 없는 수치입니다</td><td>지웁니다. 확인한 칸 수와 확인하지 못한 칸 수로 적습니다</td></tr></tbody></table></div>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>틀린 칸만 고치게 합니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>표 다시 검토하기</b></span><button type="button" data-copy="p-ocr-2">복사</button></div><pre id="p-ocr-2">방금 만든 표를 이미지와 다시 대조해 주세요.
+이미지에서 읽을 수 없는 값이 숫자로 채워져 있는지, 계산한 값이 원문 합계 칸에 들어가 있는지 확인해 주세요.
+문제가 있는 칸만 고치고, 각 칸을 이미지의 어디에서 읽었는지 함께 알려 주세요.
+읽지 못한 칸은 빈칸으로 두고 상태를 확인 필요로 적어 주세요.</pre></div>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-compare"><span>정답표와 대조해 상태 칸이 맞는지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-fix"><span>어긋난 칸을 고치고 어디서 읽었는지 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="reuse">
+<div class="secnum">06 · 다른 자료에 다시 쓰기</div>
+<h2>영수증 한 장만 다시 넣어 봅니다</h2>
+
+<p class="lead">앞 결과가 다음 작업에 섞이는지 확인합니다. <span class="badge none">선택 확장</span></p>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>새 대화에서 영수증_02 한 장만 처리합니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>한 장만 다시 처리</b></span><button type="button" data-copy="p-ocr-3">복사</button></div><pre id="p-ocr-3">첨부한 영수증 이미지 1장만 사용해 표를 만들어 주세요.
+앞선 대화나 다른 영수증의 값은 사용하지 마세요.
+읽을 수 없는 값은 빈칸으로 두고 상태를 확인 필요로 적어 주세요.</pre></div>
+<div class="tw"><table class="mid"><thead><tr><th>나오면 안 되는 것</th><th>왜</th></tr></thead><tbody><tr><td>노트 · 라벨지 · 클립</td><td>영수증_01/03의 품목입니다. 이 영수증에 없습니다</td></tr><tr><td>12,900</td><td>영수증_01/03의 합계입니다</td></tr><tr><td>도서 B의 금액이 채워짐</td><td>이 이미지에서는 읽을 수 없습니다. 앞 대화에서 추측한 값을 가져온 것입니다</td></tr><tr><td>"읽은 이미지 3장"</td><td>이번 입력은 <b>1장</b>입니다</td></tr></tbody></table></div>
+<div class="check-line"><b>정상 확인:</b> 도서 A 15,000 · 도서 B 빈칸 · 포장비 1,000 · 합계 빈칸. 읽은 이미지 1장.</div>
+</div></div>
+
+<div class="note info"><b>같은 자료를 다시 넣었을 때 결과가 달라지면?</b><br>
+그 자체가 문제는 아닙니다. 다만 <b>어느 쪽이 맞는지</b>는 이미지로만 판단합니다. "앞에서는 12,000이라고 했는데요"는 근거가 되지 않습니다. 앞의 답도 이 이미지에서 나온 것이 아니기 때문입니다.</div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-reuse"><span>한 장만 다시 처리해 앞 결과가 섞이지 않는지 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="trouble">
+<div class="secnum">07 · 막혔을 때</div>
+<h2>사진 실습에서 자주 나오는 네 가지</h2>
+
+<details><summary>① 이미지를 못 읽는다고 합니다</summary><div class="d-body">
+<p><b>확인할 것</b> — 파일이 제대로 첨부됐는지, ZIP 안에서 바로 끌어다 놓지 않았는지 봅니다. 압축을 푼 폴더에서 PNG 파일을 첨부해야 합니다.</p>
+<p><b>복구</b> — 압축을 다시 풀고 PNG 세 장을 개별로 첨부합니다.</p>
+<p><b>중요</b> — 이미지를 읽지 못했다면 <b>읽었다고 표를 만들면 안 됩니다.</b> 표가 나왔는데 이미지를 못 읽었다고도 한다면, 그 표의 값이 어디서 왔는지 반드시 되물어 보세요.</p>
+</div></details>
+
+<details><summary>② 번진 금액을 숫자로 읽어 냈습니다</summary><div class="d-body">
+<p><b>확인할 것</b> — 여러분이 이미지를 확대해서 봅니다. 사람이 못 읽는다면 그 값은 근거가 없습니다.</p>
+<p><b>되물을 문장</b> — "이 값을 이미지의 어느 위치에서 읽었는지 알려 주세요."</p>
+<p><b>복구</b> — 위치를 대지 못하면 빈칸 + 확인 필요로 바꿉니다. 품목명이나 다른 영수증의 값으로 추측한 경우가 많습니다.</p>
+</div></details>
+
+<details><summary>③ 합계가 안 맞습니다</summary><div class="d-body">
+<p><b>먼저 구분</b> — 원문 합계와 계산 합계 중 <b>어느 쪽이</b> 안 맞는지 봅니다.</p>
+<p><b>계산 합계가 틀린 경우</b> — 항목 금액을 다시 더해 봅니다. 6,000+4,500+2,400=12,900.</p>
+<p><b>원문 합계가 틀린 경우</b> — 이미지의 하단 합계 행을 다시 봅니다. 잘못 읽었을 수 있습니다.</p>
+<p><b>둘이 다른 경우</b> — 그 자체가 보고할 내용입니다. 한쪽을 다른 쪽에 맞춰 고치지 마세요. 어느 쪽이 맞는지는 원본 서류를 볼 수 있는 사람이 판단합니다.</p>
+</div></details>
+
+<details><summary>④ "정확도 98%"처럼 확신 수치가 나옵니다</summary><div class="d-body">
+<p><b>이건 측정된 값이 아닙니다.</b> 이번 실습에서 정확도를 측정하는 절차는 없습니다.</p>
+<p><b>복구</b> — 그 표현을 지우고, 대신 <b>확인한 칸 수</b>와 <b>확인하지 못한 칸 수</b>로 적게 합니다. 셀 수 있는 숫자로 바꾸는 것이 정확합니다.</p>
+<p>예: "12행 중 10행 확인 완료, 2행은 이미지에서 읽을 수 없어 확인 필요"</p>
+</div></details>
+
+<h3>이해 확인</h3>
+<div class="quiz"><p class="q">1. 영수증_02에서 도서 A 15,000과 포장비 1,000은 읽었지만 도서 B와 하단 합계는 번져 있습니다. 합계 칸에 무엇을 적어야 할까요?</p><label><input type="radio" name="quiz19" data-ok="0" data-why="도서 B를 모르므로 실제 합계는 16,000보다 큽니다. 이 값을 합계로 적으면 실제보다 작은 금액이 확정됩니다."><span>16,000. 읽은 항목을 더한 값이다.</span></label><label><input type="radio" name="quiz19" data-ok="0" data-why="0은 &quot;0원&quot;이라는 뜻입니다. 나중에 못 읽었다는 사실이 사라집니다."><span>0. 확인할 수 없으므로 0으로 둔다.</span></label><label><input type="radio" name="quiz19" data-ok="1" data-why="항목 하나를 모르면 합계도 구할 수 없습니다. 모른다는 사실을 남겨야 사람이 원본을 찾아봅니다."><span>빈칸으로 두고 상태를 "확인 필요"로 적는다.</span></label><label><input type="radio" name="quiz19" data-ok="0" data-why="다른 문서의 값으로 이 문서의 칸을 채우는 것은 근거 없는 추정입니다."><span>다른 영수증의 도서 가격을 참고해 채운다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">2. 영수증_01과 영수증_03은 가게·날짜·품목·금액이 모두 같고 전표번호만 다릅니다.</p><label><input type="radio" name="quiz20" data-ok="0" data-why="전표번호가 다르므로 두 번의 거래일 수 있습니다. 사진만으로 결정할 수 없습니다."><span>중복이므로 하나를 지우고 합계를 낸다.</span></label><label><input type="radio" name="quiz20" data-ok="1" data-why="표시는 정보이고 삭제는 결정입니다. 결정에 필요한 근거가 이 자료에는 없습니다."><span>둘 다 표에 남기고 "중복 가능성"으로 표시한 뒤, 판단은 원본 기록을 볼 수 있는 사람에게 넘긴다.</span></label><label><input type="radio" name="quiz20" data-ok="0" data-why="번호 순서는 어느 쪽이 유효한지를 말해 주지 않습니다."><span>전표번호가 큰 쪽을 최신으로 보고 그것만 남긴다.</span></label><label><input type="radio" name="quiz20" data-ok="0" data-why="자료에 없는 값을 만든 것입니다."><span>합계를 반으로 나눠 적는다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">3. "원문 합계"와 "계산 합계"를 굳이 나누는 이유는?</p><label><input type="radio" name="quiz21" data-ok="0" data-why="칸을 나누는 이유는 분량이 아니라 검산입니다."><span>표를 길게 만들어 자세해 보이게 하려고.</span></label><label><input type="radio" name="quiz21" data-ok="1" data-why="같으면 서로 검산이 되고, 다르면 확인할 지점이 생깁니다. 한 칸으로 합치면 이 정보가 사라집니다."><span>두 값을 비교하면 잘못 읽은 곳을 찾을 수 있고, 어느 쪽을 못 구했는지도 남길 수 있어서.</span></label><label><input type="radio" name="quiz21" data-ok="0" data-why="위치 문제가 아니라 값의 출처가 다르기 때문입니다. 하나는 읽은 값, 하나는 계산한 값입니다."><span>영수증마다 합계 위치가 달라서.</span></label><label><input type="radio" name="quiz21" data-ok="0" data-why="어느 쪽이 더 정확한지는 정해져 있지 않습니다. 둘이 다르면 그 자체가 확인할 일입니다."><span>계산 합계가 더 정확해서 원문 합계는 참고용이기 때문이다.</span></label><p class="fb"></p></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-quiz"><span>세 문제를 풀고 해설을 읽었다.</span></label></div><div class="bottombar"><p class="small" id="storage-note">학습 체크는 이 브라우저에만 저장됩니다. 계정이나 다른 기기와 연결되지 않습니다.</p><button type="button" id="reset-checks">이 단원 체크 초기화</button></div>
+</section>
+<nav class="pager" aria-label="단원 이동">
+<a href="05-cowork.html"><span>이전 단원</span>← Cowork · 파일 정리</a>
+<a href="07-capstone.html" style="text-align:right"><span>다음 단원</span>종합 실습 →</a>
+</nav>
+<footer class="foot">
+<h4>이 페이지의 자료 성격과 확인 범위</h4>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 화면에 나오는 결과 예시는 비교용으로 작성한 것이며 Claude를 실제로 실행해 받은 출력이 아닙니다.</p>
+<p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
+<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 실제 계정 등록·스킬 호출·Office 애드인 실행은 수업 전 리허설에서 확인합니다.</p>
+<p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
+</footer>
+</main></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

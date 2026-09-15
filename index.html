@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="비전공자 실무자를 위한 Claude 문서 작업 실습 교재. 받고 · 시키고 · 확인하고 · 고치는 순서로 진행합니다.">
+<title>교육플랫폼 홈 | HUG 교육플랫폼</title>
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="home">
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="top"><div class="top-in">
+<div class="brand"><a class="home" href="index.html"><b>교육플랫폼</b></a><span class="sub">내 문서가 알아서 굴러가게 · 2회차</span><span class="dim">교육플랫폼 홈</span></div>
+<div class="top-right">
+<span class="pill" id="progress" aria-live="polite">0 / 0 확인</span>
+<button type="button" id="print">인쇄</button>
+<button type="button" id="print-answers">해설까지 인쇄</button>
+</div></div></header>
+<div class="layout">
+<nav class="side" aria-label="단원과 단계">
+<div class="side-group"><p class="side-label">단원</p>
+<a href="index.html" class="here">교육플랫폼 홈</a>
+<a href="00-start.html"><span class="n">00</span>시작 · 자료 준비</a>
+<a href="01-skills.html"><span class="n">01</span>스킬 사용하고 바꾸기</a>
+<a href="02-excel.html"><span class="n">02</span>Excel · 수식과 출처</a>
+<a href="03-powerpoint.html"><span class="n">03</span>PowerPoint · 양식</a>
+<a href="04-word.html"><span class="n">04</span>Word · 검토와 변경</a>
+<a href="05-cowork.html"><span class="n">05</span>Cowork · 파일 정리</a>
+<a href="06-ocr.html"><span class="n">06</span>OCR · 사진 속 숫자</a>
+<a href="07-capstone.html"><span class="n">07</span>종합 실습</a>
+<a href="08-finish.html"><span class="n">08</span>결과 점검 · 과제</a>
+<a href="sources.html">공식 자료실</a>
+<a href="files.html">다운로드 모음</a>
+</div>
+<div class="side-group steps"><p class="side-label">이 단원의 단계</p>
+<a href="#today"><span class="n">시작</span>오늘 하는 일</a>
+<a href="#prepare"><span class="n">준비</span>시작 전 확인</a>
+<a href="#howto"><span class="n">사용법</span>이 사이트 쓰는 법</a>
+<a href="#scope"><span class="n">범위</span>오늘 다루는 범위</a>
+</div>
+<p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
+</nav>
+<main id="main">
+<header class="hero">
+<div class="eyebrow">생성형 AI 활용 교육 · 2회차</div>
+<h1>내 문서가<br>알아서 굴러가게.</h1>
+<p>오늘은 회의록·표·슬라이드·문서·폴더·사진을 실제로 처리해 봅니다. 중요한 것은 빨리 만드는 방법이 아니라, 나온 결과가 맞는지 확인하는 방법입니다.</p>
+<div class="flow">받는다 → 시킨다 → 확인한다 → 고친다 → 다시 쓴다</div>
+<p class="meta">비전공자 실무자 대상 · 프로그래밍 지식이 필요하지 않습니다</p>
+</header>
+<section class="chapter" id="today">
+<div class="secnum">시작 · 오늘 하는 일</div>
+<h2>오늘은 "문서 작업을 끝까지" 해 봅니다</h2>
+
+<p class="lead">이 사이트는 읽는 자료가 아니라 <b>따라 하면서 결과물이 나오는 교재</b>입니다. 단원마다 파일을 받고, 요청을 보내고, 결과를 원본과 대조하고, 규칙을 한 번씩 바꿔 봅니다.</p>
+
+<p>1회차에서 다룬 기본 개념은 짧게만 짚고 넘어갑니다. 오늘 하는 일은 하나로 줄이면 이렇습니다.</p>
+
+<div class="railwrap"><div class="rail">
+<span class="on">자료를 받는다</span><i>→</i>
+<span class="on">무엇을 바꾸지 말지 정한다</span><i>→</i>
+<span class="on">계획·초안을 먼저 본다</span><i>→</i>
+<span class="on">결과가 나온 곳으로 직접 간다</span><i>→</i>
+<span class="on">원본과 대조한다</span><i>→</i>
+<span class="on">규칙 하나를 바꾼다</span><i>→</i>
+<span class="on">새 자료에 다시 쓴다</span>
+</div>
+<p class="small" style="margin-top:12px">이 일곱 단계가 모든 단원에서 똑같이 반복됩니다. 도구만 달라집니다.</p></div>
+
+<h3>단원 목록</h3>
+<p>순서대로 진행하는 것을 권합니다. 모듈 01의 "원본과 대조하기"가 뒤 단원 전체의 기본이 됩니다.</p>
+<div class="mods">
+<a class="mod" href="00-start.html"><span class="k">모듈 00</span><h3>시작 · 자료 준비</h3><p>오늘 만들 결과를 먼저 보고, 파일을 받고, 원본과 작업 사본을 나눕니다.</p></a>
+<a class="mod" href="01-skills.html"><span class="k">모듈 01</span><h3>스킬 사용하고 바꾸기</h3><p>회의록 5개를 정해진 형식으로 정리하고, 규칙 한 줄을 바꿔 차이를 봅니다.</p></a>
+<a class="mod" href="02-excel.html"><span class="k">모듈 02</span><h3>Excel · 수식과 출처</h3><p>입력값과 수식을 구분하고, 값 하나만 바꿔 계산이 유지되는지 확인합니다.</p></a>
+<a class="mod" href="03-powerpoint.html"><span class="k">모듈 03</span><h3>PowerPoint · 양식 지키기</h3><p>주어진 템플릿으로 3장을 만들고, 두 번째 장의 문장 하나만 줄입니다.</p></a>
+<a class="mod" href="04-word.html"><span class="k">모듈 04</span><h3>Word · 검토와 변경 내역</h3><p>검토 의견 3건 중 2건은 반영하고 1건은 근거를 들어 거절합니다.</p></a>
+<a class="mod" href="05-cowork.html"><span class="k">모듈 05</span><h3>Cowork · 파일 정리</h3><p>폴더를 연결하고, 실행 전에 계획표를 먼저 받아 확인합니다.</p></a>
+<a class="mod" href="06-ocr.html"><span class="k">모듈 06</span><h3>OCR · 사진 속 숫자</h3><p>영수증 3장을 표로 옮기고, 읽지 못한 칸을 0으로 채우지 않습니다.</p></a>
+<a class="mod" href="07-capstone.html"><span class="k">모듈 07</span><h3>종합 실습 (조별 택 1)</h3><p>회의록 · 설문 · 제출서류 중 하나를 골라 산출물 하나를 끝까지 만듭니다.</p></a>
+<a class="mod" href="08-finish.html"><span class="k">모듈 08</span><h3>결과 점검 · 과제</h3><p>무엇을 AI에 맡겼고 무엇을 내가 확인했는지 정리합니다.</p></a>
+</div>
+
+</section>
+<section class="chapter" id="prepare">
+<div class="secnum">준비 · 시작 전 확인</div>
+<h2>시작하기 전에 네 가지만 확인합니다</h2>
+
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>이 상태면 정상</th><th>아니면</th></tr></thead><tbody><tr><td>Claude 로그인</td><td>수업용 계정으로 로그인되어 있고 새 대화를 열 수 있다</td><td>로그인 화면에서 멈췄다면 손을 들어 주세요. 다른 사람 계정을 빌리지 않습니다</td></tr><tr><td>다운로드 폴더</td><td>파일을 받으면 어디에 저장되는지 안다</td><td>브라우저 설정에서 다운로드 위치를 한 번 확인해 두세요</td></tr><tr><td>압축 풀기</td><td>마우스 오른쪽 버튼 → 압축 풀기를 할 수 있다</td><td>조교에게 요청하세요. ZIP을 두 번 눌러 "미리 보기"만 한 상태로는 파일 첨부가 안 됩니다</td></tr><tr><td>Office / Cowork</td><td>모듈 02~05에서만 필요합니다. 지금은 없어도 시작할 수 있습니다</td><td>설치·연결이 안 되면 그 모듈만 강사 시연으로 보고 나머지는 계속 진행합니다</td></tr></tbody></table></div>
+
+<div class="note act"><b>오늘 지킬 세 가지 규칙.</b><br>
+<b>1. 원본을 고치지 않습니다.</b> 고칠 일이 있으면 폴더를 복사해 <code>작업사본</code>을 만들고 그 안에서 합니다.<br>
+<b>2. 업무마다 새 대화를 엽니다.</b> 앞 실습의 내용이 다음 결과에 섞이는 것을 막습니다.<br>
+<b>3. "나왔다"와 "확인했다"를 구분합니다.</b> 결과가 나온 것과 맞는지 확인한 것은 다른 일입니다.</div>
+
+<h3>오늘 쓰는 자료는 모두 가상입니다</h3>
+<p>이 교재의 회의록·설문·영수증·보고서·제출서류는 <b>가상 독서모임</b>이라는 만들어 낸 상황으로 작성했습니다. 실제 기관의 업무 자료, 사업명, 담당자 이름, 연락처, 금액은 들어 있지 않습니다.</p>
+<p>수업 중에 <b>실제 업무 파일을 올리지 마세요.</b> 오늘은 방법을 익히는 자리이고, 내 업무에 쓰는 것은 방법이 몸에 익은 다음입니다. 모듈 08에서 그 기준을 정리합니다.</p>
+
+</section>
+<section class="chapter" id="howto">
+<div class="secnum">사용법 · 이 사이트 쓰는 법</div>
+<h2>이 화면의 기능 네 가지</h2>
+
+<div class="tw"><table class="wide"><thead><tr><th>기능</th><th>어디에 있나</th><th>무엇을 하나</th></tr></thead><tbody><tr><td>학습 체크</td><td>각 단원 안의 회색 상자</td><td>"여기까지 됐는지" 표시합니다. <b>이 브라우저에만 저장</b>되고 계정·다른 기기와 연결되지 않습니다</td></tr><tr><td>프롬프트 복사</td><td>검은 상자 오른쪽 위의 <b>복사</b> 버튼</td><td>요청 문장을 클립보드로 복사합니다. 복사가 막히면 안내가 뜨니 글을 직접 선택해 복사하세요</td></tr><tr><td>본문 검색</td><td>왼쪽 메뉴 위의 검색창</td><td>이 페이지 안에서만 찾습니다. 두 글자 이상 입력하면 해당 항목만 남습니다</td></tr><tr><td>인쇄</td><td>오른쪽 위 <b>인쇄</b> / <b>해설까지 인쇄</b></td><td>"해설까지 인쇄"를 누르면 접어 둔 해설·기준 예시까지 함께 인쇄됩니다</td></tr></tbody></table></div>
+<p class="small">학습 체크는 이 브라우저에만 저장됩니다. 계정이나 다른 기기와 연결되지 않습니다.</p>
+<p class="small" id="all-progress"></p>
+
+<h3>다운로드는 어떻게 되어 있나요</h3>
+<p>파일은 단원 안에서 필요한 순간에 나옵니다. 전체 목록이 필요하면 <a href="files.html">다운로드 모음</a>에서 파일 이름과 용도를 한 번에 볼 수 있습니다.</p>
+<div class="dl-row"><a class="dl second" href="files.html" download><span>다운로드 모음 보기<br><span class="what">파일 이름 · 용도 · 어느 단원에서 쓰는지</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="sources.html" download><span>공식 자료실 보기<br><span class="what">출처 링크와 확인 상태</span></span><span aria-hidden="true">↓</span></a></div>
+
+</section>
+<section class="chapter" id="scope">
+<div class="secnum">범위 · 오늘 다루는 범위</div>
+<h2>전부를 같은 깊이로 실습하지는 않습니다</h2>
+
+<p class="lead">모든 단원의 자료를 다 만들어 두었지만, 수업 시간 안에 <b>전부를 같은 깊이로</b> 실습하지는 않습니다. 단원마다 아래 세 가지 중 하나로 진행합니다.</p>
+
+<div class="tw"><table class="wide"><thead><tr><th>구분</th><th>무엇을 하나</th><th>어느 단원</th></tr></thead><tbody><tr><td><span class="badge doc">공통 실습</span></td><td>모두가 직접 손으로 합니다. 시간을 충분히 씁니다</td><td>모듈 00 · 01 · 05 · 07 그리고 08의 점검</td></tr><tr><td><span class="badge wait">강사 시연 + 따라 하기</span></td><td>강사가 앞에서 한 번 보여 주고, 핵심 한 가지만 각자 해 봅니다</td><td>모듈 02 · 03 · 04 (Office 세 앱)</td></tr><tr><td><span class="badge none">선택 확장</span></td><td>자료는 다 있습니다. 시간이 남거나 수업 후에 혼자 해 보세요</td><td>모듈 06, 각 단원의 "선택" 표시가 붙은 부분</td></tr></tbody></table></div>
+
+<div class="note info"><b>벽시계 시간은 이 페이지에 적지 않습니다.</b><br>
+진행 속도는 반의 상황에 따라 달라집니다. 시간 배분은 강사가 운영표로 관리합니다. 여러분은 각 단원의 체크 항목이 채워졌는지만 보면 됩니다.</div>
+
+<h3>못 따라갔을 때</h3>
+<p>단원마다 <b>기준 예시 파일</b>이 있습니다. 실행이 막혔더라도 기준 예시와 원본을 대조하는 활동은 그대로 할 수 있습니다. 그 단원의 "막혔을 때" 항목을 펼쳐 보세요.</p>
+<p>중간에 뒤처졌다면 그 단원을 붙잡고 있지 말고 다음 단원으로 넘어가세요. 뒤 단원은 앞 단원의 결과물이 없어도 시작할 수 있게 만들어 두었습니다. 놓친 부분은 모듈 08에서 "미확인"으로 적어 두면 됩니다.</p>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="home-ready"><span>로그인·다운로드 폴더·압축 풀기를 확인했다.</span></label><label class="check"><input type="checkbox" data-check="home-rules"><span>오늘 지킬 세 가지 규칙을 읽었다.</span></label></div><div class="bottombar"><p class="small" id="storage-note">학습 체크는 이 브라우저에만 저장됩니다. 계정이나 다른 기기와 연결되지 않습니다.</p><button type="button" id="reset-checks">이 단원 체크 초기화</button></div>
+</section>
+<nav class="pager" aria-label="단원 이동">
+<span></span>
+<a href="00-start.html" style="text-align:right"><span>다음 단원</span>시작 · 자료 준비 →</a>
+</nav>
+<footer class="foot">
+<h4>이 페이지의 자료 성격과 확인 범위</h4>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 화면에 나오는 결과 예시는 비교용으로 작성한 것이며 Claude를 실제로 실행해 받은 출력이 아닙니다.</p>
+<p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
+<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 실제 계정 등록·스킬 호출·Office 애드인 실행은 수업 전 리허설에서 확인합니다.</p>
+<p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
+</footer>
+</main></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

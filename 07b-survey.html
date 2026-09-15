@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="설문 24행에서 중복·누락·범위 오류를 구분해 분모를 정하고 집계와 요약을 만듭니다.">
+<title>시나리오 B · 설문 CSV → 집계와 요약 | HUG 교육플랫폼</title>
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="cap-b">
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="top"><div class="top-in">
+<div class="brand"><a class="home" href="index.html"><b>교육플랫폼</b></a><span class="sub">내 문서가 알아서 굴러가게 · 2회차</span><span class="dim">시나리오 B · 설문 CSV → 집계와 요약</span></div>
+<div class="top-right">
+<span class="pill" id="progress" aria-live="polite">0 / 0 확인</span>
+<button type="button" id="print">인쇄</button>
+<button type="button" id="print-answers">해설까지 인쇄</button>
+</div></div></header>
+<div class="layout">
+<nav class="side" aria-label="단원과 단계">
+<div class="side-group"><p class="side-label">단원</p>
+<a href="index.html">교육플랫폼 홈</a>
+<a href="00-start.html"><span class="n">00</span>시작 · 자료 준비</a>
+<a href="01-skills.html"><span class="n">01</span>스킬 사용하고 바꾸기</a>
+<a href="02-excel.html"><span class="n">02</span>Excel · 수식과 출처</a>
+<a href="03-powerpoint.html"><span class="n">03</span>PowerPoint · 양식</a>
+<a href="04-word.html"><span class="n">04</span>Word · 검토와 변경</a>
+<a href="05-cowork.html"><span class="n">05</span>Cowork · 파일 정리</a>
+<a href="06-ocr.html"><span class="n">06</span>OCR · 사진 속 숫자</a>
+<a href="07-capstone.html" class="here"><span class="n">07</span>종합 실습</a>
+<a href="07a-meetings.html" style="padding-left:26px;font-size:13.5px"><span class="n">A</span>회의록 5개 → 월간 보고</a>
+<a href="07b-survey.html" class="here" style="padding-left:26px;font-size:13.5px"><span class="n">B</span>설문 CSV → 집계·요약</a>
+<a href="07c-pdf.html" style="padding-left:26px;font-size:13.5px"><span class="n">C</span>제출서류 20건 → 검토표</a>
+<a href="08-finish.html"><span class="n">08</span>결과 점검 · 과제</a>
+<a href="sources.html">공식 자료실</a>
+<a href="files.html">다운로드 모음</a>
+</div>
+<div class="side-group search"><p class="side-label">본문 검색</p><input id="search" type="search" placeholder="예: 근거, 분모, 원본" style="width:100%;padding:8px 10px;border:1px solid var(--line-2);border-radius:8px;font-size:14px"><p class="small" id="search-count" style="margin-top:6px"></p></div>
+<div class="side-group steps"><p class="side-label">이 단원의 단계</p>
+<a href="#goal"><span class="n">01</span>만들 것과 기준</a>
+<a href="#denom"><span class="n">02</span>분모가 갈리는 이유</a>
+<a href="#run"><span class="n">03</span>집계 요청하기</a>
+<a href="#fix"><span class="n">04</span>수정 요청과 대조</a>
+<a href="#reuse"><span class="n">05</span>새 설문에 다시 쓰기</a>
+<a href="#report"><span class="n">06</span>발표 준비</a>
+</div>
+<p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
+</nav>
+<main id="main">
+<header class="hero">
+<div class="eyebrow">종합 실습 · 시나리오 B</div>
+<h1>설문 24행에서<br>믿을 수 있는 숫자 뽑기.</h1>
+<p>같은 자료에서 71.4%도 62.5%도 나옵니다. 분모를 무엇으로 잡았는지 밝히고, 중복·누락·범위 오류를 각각 세어 결과를 검증합니다.</p>
+<div class="flow">기준 → 분모 정하기 → 집계 → 분모 바꿔 비교 → 새 설문 재사용 → 발표</div>
+<p class="meta">입력: 응답 24행 CSV + 데이터 사전 · 만들 것: 집계표와 요약</p>
+</header>
+<section class="chapter" id="goal">
+<div class="secnum">01 · 만들 것과 기준</div>
+<h2>설문 24행에서 "몇 퍼센트"를 뽑습니다</h2>
+
+<p class="lead">질문은 하나입니다. <b>"만족도 4~5점 비율은 몇 퍼센트인가?"</b> 답이 네 가지로 갈립니다. 갈리는 이유는 <b>분모</b>입니다.</p>
+
+<div class="dl-row"><a class="dl" href="downloads/inputs/survey.csv" download><span>survey.csv<br><span class="what">응답 24행</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/inputs/DATA_DICTIONARY.md" download><span>DATA_DICTIONARY.md<br><span class="what">무엇이 유효한 값인지</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/skills/survey-summary.zip" download><span>survey-summary.zip<br><span class="what">집계 스킬 · 등록용</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/inputs/new-survey.csv" download><span>new-survey.csv<br><span class="what">재사용용 새 설문</span></span><span aria-hidden="true">↓</span></a></div>
+
+<h3>먼저 CSV를 직접 열어 봅니다</h3>
+<p>엑셀이나 메모장으로 <code>survey.csv</code>를 여세요. 머리글을 빼고 <b>24행</b>입니다. 아래 세 줄을 눈으로 찾아보세요.</p>
+<div class="tw"><table class="wide"><thead><tr><th>찾을 것</th><th>어디에</th><th>무엇이 문제인가</th></tr></thead><tbody><tr><td><code>R21,A,,오전</code></td><td>21번째 응답</td><td>만족도 칸이 <b>비어 있습니다</b> — 누락</td></tr><tr><td><code>R22,B,6,오후</code></td><td>22번째 응답</td><td>만족도가 <b>6점</b>입니다 — 유효 범위는 1~5</td></tr><tr><td><code>R05,B,5,오후</code></td><td>2번째와 <b>맨 마지막</b> 줄</td><td>같은 행이 두 번 있습니다 — 완전 중복</td></tr></tbody></table></div>
+<div class="check-line"><b>정상 확인:</b> 세 줄을 직접 찾았습니다. 이 세 가지가 분모를 결정합니다.</div>
+
+<div class="note act"><b>기준을 먼저 정하세요.</b> 조에서 아래 세 가지를 정하고 적어 두세요.<br>
+· 완전히 같은 행이 두 번 있으면? (기준: 첫 행만 남깁니다)<br>
+· 만족도가 비어 있거나 1~5 밖이면? (기준: 평균·분포 계산에서 빼고, 건수는 따로 보고합니다)<br>
+· 평균과 비율의 분모는 무엇으로? (기준: <b>유효 만족도 응답 수</b>)</div>
+
+</section>
+<section class="chapter" id="denom">
+<div class="secnum">02 · 분모가 갈리는 이유</div>
+<h2>같은 자료, 네 가지 답</h2>
+
+<p class="lead">아래 네 숫자는 모두 이 CSV에서 나올 수 있습니다. 어느 것이 맞는지는 <b>무엇을 분모로 잡았는가</b>로 정해집니다.</p>
+
+<div class="tw"><table class="wide"><thead><tr><th>답</th><th>분모</th><th>어떻게 나온 값인가</th><th>이 수업 기준</th></tr></thead><tbody><tr><td><b>71.4%</b></td><td>21</td><td>중복 1행을 빼고, 누락 1·범위 오류 1도 뺀 유효 응답</td><td><span class="badge local">통과</span></td></tr><tr><td>65.2%</td><td>23</td><td>중복만 빼고 누락·범위 오류는 그대로 셈</td><td><span class="badge wait">오답</span></td></tr><tr><td>62.5%</td><td>24</td><td>아무것도 빼지 않은 원본 전체 행</td><td><span class="badge wait">오답</span></td></tr><tr><td>그 밖의 값</td><td>—</td><td>누락을 0점으로 바꾸거나 6점을 그대로 더한 경우</td><td><span class="badge wait">오답</span></td></tr></tbody></table></div>
+
+<div class="note info"><b>어느 분모가 "절대적으로" 맞는 것은 아닙니다.</b><br>
+중요한 것은 <b>분모를 밝히고 일관되게 쓰는 것</b>입니다. 이 수업의 데이터 사전은 유효 응답 21을 분모로 정해 두었습니다. 다른 분모를 쓰려면 그 사실을 결과에 적어야 합니다. 분모를 안 밝힌 퍼센트는 검증할 수 없습니다.</div>
+
+<h3>이 자료의 기준값</h3>
+<div class="tw"><table class="mid"><thead><tr><th>항목</th><th>값</th><th>설명</th></tr></thead><tbody><tr><td>전체 행</td><td>24</td><td>머리글 제외</td></tr><tr><td>완전 중복 행</td><td>1</td><td>R05가 그대로 한 번 더</td></tr><tr><td>중복 제거 후</td><td>23</td><td>서로 다른 응답</td></tr><tr><td>누락</td><td>1</td><td>R21의 만족도가 빈칸</td></tr><tr><td>범위 오류</td><td>1</td><td>R22의 만족도가 6</td></tr><tr><td><b>유효 만족도 응답</b></td><td><b>21</b></td><td>평균·분포·비율의 분모</td></tr><tr><td>만족도 합</td><td>83</td><td></td></tr><tr><td>평균</td><td><b>3.95</b></td><td>소수 둘째 자리, 분모 21</td></tr><tr><td>4~5점</td><td>15명 · <b>71.4%</b></td><td>소수 첫째 자리, 분모 21</td></tr></tbody></table></div>
+<p class="small">위 값은 제작할 때 CSV에서 직접 계산해 확인한 것입니다. 모델의 성능을 측정한 값이 아닙니다. 분포는 1점 0명 / 2점 2명 / 3점 4명 / 4점 8명 / 5점 7명입니다.</p>
+
+</section>
+<section class="chapter" id="run">
+<div class="secnum">03 · 집계 요청하기</div>
+<h2>기준을 요청 안에 적어서 보냅니다</h2>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>CSV와 데이터 사전을 함께 첨부합니다</h3>
+<p>두 파일을 함께 넣습니다. 사전이 없으면 무엇이 유효한 값인지 알 수 없습니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>집계 요청</b></span><button type="button" data-copy="p-b-1">복사</button></div><pre id="p-b-1">survey-summary 스킬을 사용해 첨부한 survey.csv를 집계해 주세요. DATA_DICTIONARY.md의 기준을 따라 주세요.
+
+- 전체 행 / 완전 중복 행 / 중복 제거 후 행 / 누락 / 범위 오류 / 유효 만족도 응답을 각각 세어 주세요.
+- 평균과 비율의 분모를 결과에 밝혀 주세요.
+- 누락과 범위 오류를 0점으로 바꾸지 마세요.
+- 만족도 분포를 1~5점별 건수로 알려 주세요.
+- 평균은 소수 둘째 자리, 비율은 소수 첫째 자리로 적고 건수도 함께 적어 주세요.</pre></div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>여섯 개 숫자를 맞춰 봅니다</h3>
+<p>02단계의 기준값 표와 하나씩 비교합니다. 하나라도 다르면 멈추고 어디서 갈렸는지 찾습니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>기준값</th><th>틀렸다면</th></tr></thead><tbody><tr><td>전체 행</td><td>24</td><td>CSV를 다 읽지 못했을 수 있습니다</td></tr><tr><td>완전 중복</td><td>1</td><td>R05를 못 찾았거나, 다른 행을 중복으로 봤습니다</td></tr><tr><td>누락</td><td>1</td><td>R21의 빈칸을 0으로 읽었을 수 있습니다</td></tr><tr><td>범위 오류</td><td>1</td><td>R22의 6점을 그대로 유효로 셌을 수 있습니다</td></tr><tr><td><b>유효 응답(분모)</b></td><td><b>21</b></td><td>여기가 틀리면 아래 값이 전부 틀립니다</td></tr><tr><td>평균 / 4~5점 비율</td><td>3.95 / 71.4%</td><td>분모를 먼저 확인하세요</td></tr></tbody></table></div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>분모를 밝혔는지 확인합니다</h3>
+<p>결과에 "분모 21" 또는 "유효 응답 21명 기준"이라는 말이 있어야 합니다. 그냥 "71.4%"만 있으면 반쪽짜리입니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>분모를 안 밝혔을 때</b></span><button type="button" data-copy="p-b-2">복사</button></div><pre id="p-b-2">방금 계산한 평균과 비율의 분모가 각각 몇인지, 그 분모에서 무엇을 제외했는지 알려 주세요.
+제외한 행의 응답ID도 함께 적어 주세요.</pre></div>
+<div class="check-line"><b>정상 확인:</b> 제외한 행으로 R05(중복) · R21(누락) · R22(범위 오류)가 나옵니다.</div>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="capb-count"><span>여섯 개 숫자를 기준값과 맞춰 봤다.</span></label><label class="check"><input type="checkbox" data-check="capb-denom"><span>분모와 제외한 행의 ID를 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="fix">
+<div class="secnum">04 · 수정 요청과 대조</div>
+<h2>분모를 일부러 바꿔 보고 차이를 봅니다</h2>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>분모를 바꿔 다시 계산시킵니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>분모를 바꾸면 얼마나 달라지나</b></span><button type="button" data-copy="p-b-3">복사</button></div><pre id="p-b-3">같은 자료로 분모를 바꿔 다시 계산해 주세요.
+분모를 23(중복 제거 후 전체)으로 하면 4~5점 비율이 얼마가 되는지,
+분모를 24(원본 전체 행)로 하면 얼마가 되는지 각각 알려 주세요.
+어느 쪽이 데이터 사전의 기준에 맞는지도 함께 적어 주세요.</pre></div>
+<div class="expect"><b>예상:</b> 분모 23이면 65.2%, 분모 24면 62.5%. 사전 기준은 분모 21의 71.4%입니다.</div>
+<div class="note act"><b>차이를 보세요.</b> 71.4%와 62.5%는 거의 9%p 차이입니다. 보고서에서 이 정도 차이는 결론을 바꿀 수 있습니다. 그런데 화면에는 <b>둘 다 그럴듯하게</b> 보입니다. 분모를 밝히지 않으면 아무도 구분할 수 없습니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>요약 문장의 숫자를 표와 맞춰 봅니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>요약 문장 만들기</b></span><button type="button" data-copy="p-b-4">복사</button></div><pre id="p-b-4">집계 결과를 세 문장으로 요약해 주세요.
+각 숫자마다 분모와 건수를 함께 적고, 표의 값과 다른 숫자를 쓰지 마세요.
+이 설문이 전체 참여자를 대표한다고 쓰지 마세요. 24행짜리 교육용 가상 자료입니다.</pre></div>
+<div class="check-line"><b>정상 확인:</b> 요약의 모든 숫자가 표에 있는 값입니다. "대체로 만족도가 높은 편"처럼 표에 없는 평가가 들어가면 근거를 물어보세요.</div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>기준 예시와 대조합니다</h3>
+<div class="dl-row"><a class="dl" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%EC%84%A4%EB%AC%B8%EC%9A%94%EC%95%BD.md" download><span>기준예시_설문요약.md<br><span class="what">집계·오답 유형 설명</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/reference/%EC%84%A4%EB%AC%B8_%EA%B8%B0%EC%A4%80%EA%B0%92.json" download><span>설문_기준값.json<br><span class="what">기준값 원본</span></span><span aria-hidden="true">↓</span></a></div>
+<p>기준 예시에 <b>자주 나오는 오답 네 가지</b>가 정리되어 있습니다. 여러분의 결과가 그중 하나에 해당하는지 확인해 보세요.</p>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="capb-diff"><span>분모를 바꿔 결과가 얼마나 달라지는지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="capb-summary"><span>요약 문장의 숫자가 표와 같은지 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="reuse">
+<div class="secnum">05 · 새 설문에 다시 쓰기</div>
+<h2>다른 설문에도 같은 기준이 통하나요?</h2>
+
+<p class="lead">새 설문에는 <b>이전 사전에 없던 값</b>이 들어 있습니다. 그대로 밀어붙이면 틀립니다.</p>
+
+<div class="dl-row"><a class="dl" href="downloads/inputs/new-survey.csv" download><span>new-survey.csv<br><span class="what">응답 4행 · 새 자료</span></span><span aria-hidden="true">↓</span></a></div>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>먼저 열어서 무엇이 다른지 봅니다</h3>
+<pre class="plainbox">응답ID,조,만족도,선호시간
+N01,D,2,저녁
+N02,D,3,저녁
+N03,E,4,오전
+N04,E,5,오전</pre>
+<div class="tw"><table class="mid"><thead><tr><th>항목</th><th>앞 설문</th><th>새 설문</th></tr></thead><tbody><tr><td>조</td><td>A / B / C</td><td><b>D / E</b></td></tr><tr><td>선호시간</td><td>오전 / 오후</td><td>오전 / <b>저녁</b></td></tr><tr><td>행 수</td><td>24</td><td>4</td></tr><tr><td>중복·누락·범위 오류</td><td>각각 있음</td><td><b>없음</b></td></tr></tbody></table></div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>새 대화에서 집계합니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>새 설문 집계</b></span><button type="button" data-copy="p-b-5">복사</button></div><pre id="p-b-5">첨부한 new-survey.csv만 사용해 집계해 주세요.
+앞선 대화의 설문 자료나 숫자는 사용하지 마세요.
+이 파일에 실제로 나오는 조와 선호시간 값을 그대로 써 주세요. 이전 설문의 분류로 바꾸지 마세요.
+만족도 처리 규칙(1~5 유효, 누락·범위 오류 제외, 완전 중복은 첫 행만)은 그대로 적용해 주세요.</pre></div>
+<div class="tw"><table class="mid"><thead><tr><th>확인할 것</th><th>기준값</th></tr></thead><tbody><tr><td>전체 행</td><td>4</td></tr><tr><td>유효 만족도 응답</td><td>4 (중복·누락·범위 오류 없음)</td></tr><tr><td>합계 / 평균</td><td>14 / <b>3.50</b></td></tr><tr><td>4~5점</td><td>2명 · <b>50.0%</b></td></tr><tr><td>선호시간 값</td><td>오전 · <b>저녁</b></td></tr><tr><td>조 값</td><td><b>D · E</b></td></tr></tbody></table></div>
+<div class="fail-line"><b>"오후"나 "A조"가 나왔다면:</b> 이전 설문의 분류를 가져온 것입니다. 새 자료에 없는 값입니다.</div>
+<div class="fail-line"><b>"저녁"을 "오후"로 바꿔 적었다면:</b> 사전에 없는 값이라고 임의로 치환한 것입니다. 새 값은 새 값으로 두고 확인 사항에 적어야 합니다.</div>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="capb-new"><span>새 설문을 새 대화에서 집계했다.</span></label><label class="check"><input type="checkbox" data-check="capb-nomix"><span>이전 설문의 분류가 섞이지 않았는지 확인했다.</span></label></div>
+</section>
+<section class="chapter" id="report">
+<div class="secnum">06 · 발표 준비</div>
+<h2>5분 발표에 넣을 네 문장</h2>
+
+<div class="tw"><table class="mid"><thead><tr><th>말할 것</th><th>우리 조가 적을 것</th></tr></thead><tbody><tr><td>① 정한 기준</td><td>평균과 비율의 분모를 ______으로 정했습니다.</td></tr><tr><td>② 나온 결과</td><td>평균 ____, 4~5점 비율 ____%입니다.</td></tr><tr><td>③ 직접 확인한 것</td><td>CSV에서 ______ 행을 눈으로 찾아 확인했습니다.</td></tr><tr><td>④ 확인하지 못한 것</td><td>______는 자료만으로는 확인할 수 없었습니다.</td></tr></tbody></table></div>
+<p class="small">④의 예: "R21의 만족도가 왜 비어 있는지", "R22의 6점이 입력 실수인지 다른 척도인지"는 이 CSV만으로 알 수 없습니다.</p>
+
+<h3>이해 확인</h3>
+<div class="quiz"><p class="q">1. 만족도가 비어 있는 응답 1건을 0점으로 바꿔 평균을 냈습니다. 무엇이 문제인가요?</p><label><input type="radio" name="quiz28" data-ok="0" data-why="응답하지 않은 것과 0점을 준 것은 다릅니다. 게다가 이 설문의 유효 범위는 1~5라 0점은 존재하지 않는 값입니다."><span>문제없다. 0점도 하나의 응답이다.</span></label><label><input type="radio" name="quiz28" data-ok="1" data-why="없는 응답을 값으로 만들면 결과가 한쪽으로 기울고, 누락이 있었다는 사실도 사라집니다."><span>응답하지 않은 것을 최저 평가로 바꾼 것이라 평균이 실제보다 낮아진다.</span></label><label><input type="radio" name="quiz28" data-ok="0" data-why="분모와 분자가 모두 맞아야 합니다. 없는 값을 채우면 분자가 틀어집니다."><span>분모만 맞으면 값은 상관없다.</span></label><label><input type="radio" name="quiz28" data-ok="0" data-why="계산 편의를 위해 자료를 바꾸는 것은 가장 흔한 집계 사고 원인입니다."><span>0으로 채우면 계산이 빨라지므로 권장된다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">2. 보고서에 "만족도 4~5점 71.4%"라고만 적혀 있습니다. 무엇이 빠졌나요?</p><label><input type="radio" name="quiz29" data-ok="0" data-why="이미 소수 첫째 자리로 적혀 있습니다."><span>소수점 자리 표시</span></label><label><input type="radio" name="quiz29" data-ok="1" data-why="같은 자료에서 62.5%도 65.2%도 나옵니다. 분모를 밝혀야 검증이 가능합니다."><span>분모가 무엇인지와 제외한 건수. 그것이 없으면 다른 분모의 값과 구분할 수 없다.</span></label><label><input type="radio" name="quiz29" data-ok="0" data-why="개인을 식별할 정보는 넣지 않습니다. 이 자료의 응답ID도 합성 식별자입니다."><span>응답자의 이름</span></label><label><input type="radio" name="quiz29" data-ok="0" data-why="교육용 가상 자료입니다. 기관을 붙이면 오히려 잘못된 정보가 됩니다."><span>조사 기관 이름</span></label><p class="fb"></p></div><div class="quiz"><p class="q">3. 새 설문에 "저녁"이라는 선호시간이 나옵니다. 이전 사전에는 오전/오후만 있습니다.</p><label><input type="radio" name="quiz30" data-ok="0" data-why="자료에 있는 값을 다른 값으로 바꾼 것입니다. 원본과 결과가 달라집니다."><span>사전에 없으므로 "오후"로 바꿔 적는다.</span></label><label><input type="radio" name="quiz30" data-ok="0" data-why="응답이 사라집니다. 분모가 조용히 줄어듭니다."><span>사전에 없으므로 그 행을 뺀다.</span></label><label><input type="radio" name="quiz30" data-ok="1" data-why="자료가 바뀌면 사전도 갱신해야 합니다. 그 사실을 남겨야 다음 사람이 압니다."><span>새 값 그대로 집계하고, 사전에 없던 값이라는 점을 확인 사항에 적는다.</span></label><label><input type="radio" name="quiz30" data-ok="0" data-why="선호시간은 숫자가 아니라 분류입니다. 중간값이라는 것이 없습니다."><span>저녁을 오전과 오후의 중간으로 계산한다.</span></label><p class="fb"></p></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="capb-quiz"><span>세 문제를 풀고 해설을 읽었다.</span></label><label class="check"><input type="checkbox" data-check="capb-present"><span>발표할 네 문장을 적었다.</span></label></div><div class="bottombar"><p class="small" id="storage-note">학습 체크는 이 브라우저에만 저장됩니다. 계정이나 다른 기기와 연결되지 않습니다.</p><button type="button" id="reset-checks">이 단원 체크 초기화</button></div>
+</section>
+<nav class="pager" aria-label="단원 이동">
+<a href="07-capstone.html"><span>이전 단원</span>← 종합 실습</a>
+<a href="08-finish.html" style="text-align:right"><span>다음 단원</span>결과 점검 · 과제 →</a>
+</nav>
+<footer class="foot">
+<h4>이 페이지의 자료 성격과 확인 범위</h4>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 화면에 나오는 결과 예시는 비교용으로 작성한 것이며 Claude를 실제로 실행해 받은 출력이 아닙니다.</p>
+<p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
+<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 실제 계정 등록·스킬 호출·Office 애드인 실행은 수업 전 리허설에서 확인합니다.</p>
+<p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
+</footer>
+</main></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
