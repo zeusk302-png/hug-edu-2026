@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Claude를 쓰는 자리, 데스크톱 앱 화면과 설정, 파일·폴더·커넥터·MCP·스킬·Office 추가 기능의 연결 층과 권한 경계를 실제 화면과 함께 정리한 참고 페이지.">
+<title>Claude 기능 지도 | HUG 교육플랫폼</title>
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="guide">
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="top"><div class="top-in">
+<div class="brand"><a class="home" href="index.html"><b>교육플랫폼</b></a><span class="sub">내 문서가 알아서 굴러가게 · 2회차</span><span class="dim">Claude 기능 지도</span></div>
+<div class="top-right">
+<span class="pill" id="progress" aria-live="polite">0 / 0 확인</span>
+<button type="button" id="print">인쇄</button>
+<button type="button" id="print-answers">해설까지 인쇄</button>
+</div></div></header>
+<div class="layout">
+<nav class="side" aria-label="단원과 단계">
+<div class="side-group"><p class="side-label">단원</p>
+<a href="index.html">교육플랫폼 홈</a>
+<a href="00-start.html"><span class="n">00</span>시작 · 자료 준비</a>
+<a href="01-skills.html"><span class="n">01</span>스킬 사용하고 바꾸기</a>
+<a href="02-excel.html"><span class="n">02</span>Excel · 수식과 출처</a>
+<a href="03-powerpoint.html"><span class="n">03</span>PowerPoint · 양식</a>
+<a href="04-word.html"><span class="n">04</span>Word · 검토와 변경</a>
+<a href="05-cowork.html"><span class="n">05</span>Cowork · 파일 정리</a>
+<a href="06-ocr.html"><span class="n">06</span>OCR · 사진 속 숫자</a>
+<a href="07-capstone.html"><span class="n">07</span>종합 실습</a>
+<a href="08-finish.html"><span class="n">08</span>결과 점검 · 과제</a>
+<a href="guide.html" class="here">Claude 기능 지도</a>
+<a href="sources.html">공식 자료실</a>
+<a href="files.html">다운로드 모음</a>
+</div>
+<div class="side-group search"><p class="side-label">본문 검색</p><input id="search" type="search" placeholder="예: 근거, 분모, 원본" style="width:100%;padding:8px 10px;border:1px solid var(--line-2);border-radius:8px;font-size:14px"><p class="small" id="search-count" style="margin-top:6px"></p></div>
+<div class="side-group steps"><p class="side-label">이 단원의 단계</p>
+<a href="#places"><span class="n">01</span>Claude를 쓰는 자리</a>
+<a href="#app"><span class="n">02</span>데스크톱 앱 화면</a>
+<a href="#settings"><span class="n">03</span>설정에서 볼 곳</a>
+<a href="#layers"><span class="n">04</span>"연결"의 다섯 층</a>
+<a href="#mcp"><span class="n">05</span>커넥터와 MCP</a>
+<a href="#howto"><span class="n">06</span>종류별 연결 방법</a>
+<a href="#office"><span class="n">07</span>Office 추가 기능</a>
+<a href="#cowork"><span class="n">08</span>Cowork</a>
+<a href="#boundary"><span class="n">09</span>권한 경계 한눈에</a>
+</div>
+<p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
+</nav>
+<main id="main">
+<header class="hero">
+<div class="eyebrow">참고 · CLAUDE 기능 지도</div>
+<h1>어디에서 열고,<br>무엇에 닿고, 누가 승인하는가.</h1>
+<p>오늘 쓰는 Claude의 자리(데스크톱 앱·Office·Cowork)와 연결(파일·폴더·커넥터·MCP·스킬·플러그인)을 한 장에 정리했습니다. 수업 단원이 아니라 막힐 때 펴 보는 지도입니다.</p>
+<div class="flow">자리 → 앱 화면 → 설정 → 연결의 층 → 커넥터와 MCP → 종류별 연결법 → Office 추가 기능 → Cowork → 권한 경계</div>
+<p class="meta">실제 화면: 2026-09-15·16 개인 Pro 계정 리허설 캡처 · 기능 설명: 2026-09-16 공식 문서 확인</p>
+</header>
+<section class="chapter" id="places">
+<div class="secnum">01 · Claude를 쓰는 자리</div>
+<h2>같은 Claude, 여섯 개의 자리</h2>
+
+<p class="lead">오늘 수업에서 "Claude를 연다"는 말은 자리마다 뜻이 다릅니다. 어디서 열었는지에 따라 <b>무엇을 볼 수 있고 무엇을 바꿀 수 있는지</b>가 달라집니다.</p>
+
+<div class="tw"><table class="wide"><thead><tr><th>자리</th><th>어떻게 여나</th><th>잘하는 일</th><th>오늘 수업에서</th><th>필요한 것</th></tr></thead><tbody><tr><td><b>데스크톱 앱</b></td><td>설치한 앱 실행</td><td>웹의 기능 전부 + <b>Cowork</b>(폴더·컴퓨터 작업) + 확장 프로그램(내 PC에서 도는 연결)</td><td>00~08 전 단원의 기본 자리</td><td>Windows 10 이상. 채팅은 무료 플랜도 됨, Cowork는 유료 플랜</td></tr><tr><td><b>Claude 웹</b> (claude.ai)</td><td>브라우저</td><td>채팅·파일 첨부·프로젝트·아티팩트·커넥터</td><td>앱이 안 되면 01·06·07 단원을 여기서 해도 됩니다</td><td>계정 로그인</td></tr><tr><td><b>Office 추가 기능</b><br><span class="small">Claude for Microsoft 365 — Excel·PowerPoint·Word·Outlook</span></td><td>각 앱의 <b>홈 탭 → Claude</b> 버튼</td><td><b>열려 있는 파일 안에서</b> 읽고 고치기. 셀·슬라이드·문단을 집어서 인용</td><td>02 · 03 · 04</td><td>Microsoft 365 + AppSource에서 추가 기능 설치 + Claude 로그인(Pro 이상)</td></tr><tr><td><b>Cowork</b><br><span class="small">데스크톱 앱 안의 작업 모드</span></td><td>입력창의 <b>채팅 | Cowork</b> 전환</td><td>폴더 연결, 여러 단계 작업, 파일 정리·생성, Chrome과 함께 웹 작업</td><td>05</td><td>데스크톱 앱 + 유료 플랜</td></tr><tr><td>Claude in Chrome</td><td>Chrome 확장</td><td>웹사이트를 대신 조작</td><td>오늘 쓰지 않음</td><td>확장 설치 + 권한 설정</td></tr><tr><td>모바일 앱 · Claude Code</td><td>—</td><td>이동 중 채팅 / 개발자용 터미널</td><td>오늘 쓰지 않음</td><td>—</td></tr></tbody></table></div>
+
+<div class="note info"><b>계정은 하나, 자리는 여럿.</b> 같은 계정으로 로그인하면 <b>스킬·커넥터·프로젝트</b>는 자리마다 공유됩니다. 다만 Office 추가 기능의 <b>대화 기록은 그 PC의 브라우저 저장소에만</b> 남고 서버에 동기화되지 않는다고 공식 문서에 적혀 있습니다(<a href="https://claude.com/docs/office-agents/excel" target="_blank" rel="noopener noreferrer">Claude for Excel ↗</a>).</div>
+<p class="small">확인 상태: 데스크톱 앱·Office 추가 기능 3종·Cowork는 2026-09-15·16 개인 Pro 계정에서 실제로 실행했습니다. Chrome·모바일·Claude Code는 문서 확인만 했습니다.</p>
+
+</section>
+<section class="chapter" id="app">
+<div class="secnum">02 · 데스크톱 앱 화면</div>
+<h2>데스크톱 앱, 여덟 군데만 알면 됩니다</h2>
+
+<p class="lead">아래는 2026-09-16에 찍은 실제 앱 화면입니다. 다른 대화 제목과 계정 이름은 가렸습니다. 한국어 설정 기준이며 영어 화면은 괄호 안 이름으로 보입니다.</p>
+<figure class="shot"><img src="assets/shots/guide-app-home.png" alt="데스크톱 앱 첫 화면 — 사이드바와 입력창" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>데스크톱 앱 첫 화면. 왼쪽이 사이드바, 가운데가 입력창. 입력창 아래의 <b>채팅 | Cowork</b>가 작업 모드 전환이고, 오른쪽 <b>Opus 5 · 높음</b>이 모델과 생각 깊이 선택입니다.</figcaption></figure>
+<div class="tw"><table class="wide"><thead><tr><th>어디</th><th>이름 (영어 화면)</th><th>무엇을 하나</th><th>오늘 수업에서</th></tr></thead><tbody><tr><td>사이드바 ①</td><td>새로 생성 (New chat)</td><td>새 대화를 엽니다. <b>업무마다 새 대화</b>가 오늘의 규칙입니다</td><td>모든 단원</td></tr><tr><td>사이드바 ②</td><td>프로젝트 (Projects)</td><td>자료·지침을 묶어 두고 여러 대화에서 같은 기준으로 씁니다</td><td>오늘은 쓰지 않음</td></tr><tr><td>사이드바 ③</td><td>Artifacts</td><td>대화에서 만든 문서·웹페이지·그림 모음</td><td>오늘은 쓰지 않음</td></tr><tr><td>사이드바 ④</td><td>예약됨 (Scheduled)</td><td>정해진 시간에 반복 실행하는 Cowork 작업</td><td>오늘은 쓰지 않음</td></tr><tr><td>사이드바 ⑤</td><td><b>사용자 지정 (Customize)</b></td><td><b>스킬 · 커넥터 · 플러그인</b>을 등록하고 켜고 끄는 곳</td><td>01 · 05 · 06 · 07 (스킬 등록)</td></tr><tr><td>사이드바 ⑥</td><td>채팅 및 작업</td><td>지금까지의 대화 목록. 파란 점은 진행 중인 Cowork 작업</td><td>이전 대화가 섞이지 않았는지 볼 때</td></tr><tr><td>입력창 ⑦</td><td><b>+</b> 버튼</td><td>파일 첨부 · 스킬 · 커넥터 · 플러그인 (아래 그림)</td><td>00~07</td></tr><tr><td>입력창 ⑧</td><td>채팅 | Cowork · 모델 선택 · 마이크</td><td>작업 모드 전환, 모델과 생각 깊이, 음성 입력</td><td>05에서 Cowork로 전환</td></tr><tr><td>왼쪽 아래</td><td>계정 메뉴 → <b>설정 (Ctrl+,)</b></td><td>설정·언어·도움·로그아웃</td><td>03절 참고</td></tr></tbody></table></div>
+
+<div class="shot-row"><figure class="shot"><img src="assets/shots/guide-app-chat-plus.png" alt="입력창 + 메뉴" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>입력창의 <b>+</b> 메뉴. <b>파일 또는 사진 추가(Ctrl+U)</b> · 스킬 녹화하기 · <b>스킬 ›</b> · <b>커넥터 ›</b> · 플러그인 추가. 01 단원에서 등록한 스킬은 여기 "스킬 ›"에서 켜고 끕니다.</figcaption></figure><figure class="shot"><img src="assets/shots/guide-app-account-menu.png" alt="계정 메뉴" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>왼쪽 아래 계정 메뉴. <b>설정(Ctrl+,)</b> · 언어 · 도움 받기 · 앱 및 확장 프로그램 다운로드 · 로그아웃. 이메일 주소는 가렸습니다.</figcaption></figure></div>
+
+<h3>설치·로그인·업데이트 — 공식 문서 기준</h3>
+<div class="tw"><table class="mid"><thead><tr><th>항목</th><th>공식 문서 (2026-09-16 확인)</th><th>수업에서</th></tr></thead><tbody><tr><td>내려받기</td><td><code>claude.ai/download</code> 에서 운영체제에 맞는 파일</td><td>수업 PC에 이미 설치되어 있으면 건너뜁니다</td></tr><tr><td>요구 사항</td><td>Windows 10 이상 · macOS 11 이상</td><td>—</td></tr><tr><td>플랜</td><td>채팅은 모든 플랜. <b>Cowork·Claude Code는 유료 플랜</b>(Pro·Max·Team·Enterprise)</td><td>05 단원(Cowork)은 계정 플랜을 먼저 확인</td></tr><tr><td>업데이트</td><td>Windows·macOS는 앱 안에서 자동</td><td>수업 전 강사가 버전을 맞춥니다</td></tr><tr><td>언어</td><td>계정 메뉴 → 언어</td><td>영어로 보이면 메뉴 위치가 같은지 보고 진행</td></tr></tbody></table></div>
+<p class="small"><a href="https://support.claude.com/en/articles/10065433-install-claude-desktop" target="_blank" rel="noopener noreferrer">Claude Desktop 설치 안내 ↗</a> · 조직에서 관리자가 배포하는 방식은 별도 문서이며 학생 본문에서는 다루지 않습니다.</p>
+
+</section>
+<section class="chapter" id="settings">
+<div class="secnum">03 · 설정에서 볼 곳</div>
+<h2>설정(Ctrl+,)에서 알아 둘 여섯 곳</h2>
+
+<p class="lead">설정은 <b>바꾸는 곳이 아니라 확인하는 곳</b>으로 씁니다. 수업 중에 아래 항목을 바꾸지 마세요. 어디에 무엇이 있는지만 알아 둡니다.</p>
+<figure class="shot"><img src="assets/shots/guide-app-settings.png" alt="설정 화면 — 환경설정 페이지와 왼쪽 목록" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>설정 화면. 왼쪽 목록이 세 묶음입니다 — <b>설정</b>(환경설정·계정·기능·메모리·Cowork·Chrome용 Claude) · <b>데스크톱 앱</b>(일반·확장 프로그램·개발자) · <b>사용자 지정</b>(스킬·커넥터·플러그인).</figcaption></figure>
+<div class="tw"><table class="wide"><thead><tr><th>설정 항목</th><th>무엇이 있나</th><th>왜 알아 두나</th></tr></thead><tbody><tr><td>환경설정</td><td>테마·채팅 글꼴·음성 언어·알림</td><td>화면이 다르게 보일 때 첫 번째로 볼 곳</td></tr><tr><td><b>기능</b></td><td><b>도구 액세스 모드</b>(기본: 필요할 때 도구 로드) · 커넥터 검색 · Artifacts · <b>클라우드 코드 실행 및 파일 생성</b></td><td>마지막 항목 아래에 "<b>스킬 사용에 필요합니다</b>"라고 적혀 있습니다. 01 단원에서 스킬 메뉴가 없을 때 확인할 곳</td></tr><tr><td><b>Cowork</b></td><td><b>신뢰할 수 있는 Cowork 폴더</b>(묻지 않고 쓰는 폴더) · 이 컴퓨터에서만 · 기본 브라우저 · <b>허용된 사이트</b> · Cowork 파일 저장 위치</td><td>05 단원에서 "왜 폴더 접근을 물어보나"의 답이 여기 있습니다. 신뢰 폴더에 넣으면 그때부터 묻지 않습니다</td></tr><tr><td>확장 프로그램</td><td>내 PC에서 실행되는 연결(.MCPB/.DXT). 설치된 것이 없으면 "설치된 확장 프로그램 없음"</td><td>05절의 네 번째 층. 수업에서는 설치하지 않습니다</td></tr><tr><td>개발자</td><td><b>로컬 MCP 서버</b> — 구성 편집(설정 파일)</td><td>개발자용. 화면만 알아 둡니다</td></tr><tr><td>사용자 지정</td><td>스킬 · 커넥터 · 플러그인</td><td>사이드바의 "사용자 지정"과 같은 곳</td></tr></tbody></table></div>
+
+<div class="shot-row"><figure class="shot"><img src="assets/shots/guide-app-features.png" alt="설정 → 기능 페이지" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>설정 → <b>기능</b>. "클라우드 코드 실행 및 파일 생성" 설명에 <b>스킬 사용에 필요합니다</b>가 적혀 있습니다. 도구 액세스 모드는 새 대화에서 커넥터 도구를 어떻게 불러올지 정합니다.</figcaption></figure><figure class="shot"><img src="assets/shots/guide-app-cowork-settings.png" alt="설정 → Cowork 페이지" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>설정 → <b>Cowork</b>. 신뢰할 수 있는 Cowork 폴더 · 이 컴퓨터에서만 · 허용된 사이트. 파일 저장 경로는 가렸습니다.</figcaption></figure></div>
+
+<div class="note stop"><b>수업 중 바꾸지 않는 것.</b> 도구 액세스 모드 · 신뢰할 수 있는 Cowork 폴더 · 허용된 사이트 · 확장 프로그램 설치 · 개발자 구성. 한 번 바꾸면 이후 대화에서 <b>묻지 않고</b> 실행되는 범위가 넓어집니다. 필요하면 강사가 안내합니다.</div>
+
+</section>
+<section class="chapter" id="layers">
+<div class="secnum">04 · "연결"의 다섯 층</div>
+<h2>"연결했다"는 말의 다섯 층</h2>
+
+<p class="lead">교재에서 "첨부", "폴더 연결", "커넥터", "스킬", "추가 기능"이 다 나옵니다. 전부 <b>Claude가 무엇에 닿게 하느냐</b>의 문제이고, 아래로 갈수록 <b>보는 것</b>에서 <b>바꾸는 것</b>으로 바뀝니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>층</th><th>무엇을 주나</th><th>어디까지 닿나</th><th>어디서 켜나</th><th>되돌리기</th><th>오늘 단원</th></tr></thead><tbody><tr><td>① <b>파일 첨부</b></td><td>그 파일의 내용</td><td>올린 파일만. 내 PC의 다른 파일은 보지 않음</td><td>+ → 파일 또는 사진 추가</td><td>대화를 닫으면 끝</td><td>00 · 01 · 06 · 07</td></tr><tr><td>② <b>폴더 연결</b> (Cowork)</td><td>폴더 안 파일을 <b>읽고·옮기고·이름 바꾸고·만들기</b></td><td>연결한 폴더와 그 아래 전부</td><td>Cowork 입력창의 폴더 칩 → 폴더 추가</td><td>파일이 실제로 바뀜 → <b>사본에서만</b></td><td>05</td></tr><tr><td>③ <b>커넥터</b></td><td>외부 서비스의 자료와 동작(검색·읽기·서비스에 따라 쓰기)</td><td>그 서비스에서 <b>승인한 권한 범위</b></td><td>사용자 지정 → 커넥터 → 연결(서비스 로그인 + 권한 승인)</td><td>사용자 지정 → 커넥터 → 내 항목 → 연결 해제</td><td>오늘 쓰지 않음 — 화면만 봅니다</td></tr><tr><td>④ <b>스킬 · 플러그인</b></td><td>작업 방법(지침). 플러그인은 커넥터·도구까지 묶음</td><td>스킬은 자료에 닿지 않음. 플러그인은 포함된 커넥터만큼</td><td>사용자 지정 → 스킬 / 플러그인</td><td>끄기 · 삭제</td><td>01 · 05 · 06 · 07</td></tr><tr><td>⑤ <b>Office 추가 기능</b></td><td>열려 있는 문서를 읽고 <b>고치기</b></td><td>열려 있는 파일(+ 다른 Office 앱에 열린 파일)</td><td>각 앱 홈 탭 → Claude</td><td>수정 전 <b>확인 창</b>, 실행 뒤 Ctrl+Z · 변경 내용 추적</td><td>02 · 03 · 04</td></tr></tbody></table></div>
+<div class="note act"><b>오늘의 세 규칙이 여기서 나옵니다.</b> 사본에서 작업(②·⑤) · 계획·확인 창을 먼저 읽기(②·③·⑤) · 결과가 나온 자리로 직접 가기(전부). 층을 내려갈수록 이 규칙이 더 중요해집니다.</div>
+
+</section>
+<section class="chapter" id="mcp">
+<div class="secnum">05 · 커넥터와 MCP</div>
+<h2>MCP는 규격이고, 커넥터는 그 규격으로 만든 연결입니다</h2>
+
+<p class="lead">두 말이 같이 나와서 헷갈립니다. 한 문장으로 정리하면: <b>MCP는 "연결하는 방법의 공통 규격"이고, 커넥터는 "그 규격으로 만들어 Claude에 꽂는 연결"</b>입니다.</p>
+
+<div class="tw"><table class="wide"><thead><tr><th>말</th><th>쉽게 말하면</th><th>비유</th><th>내가 만질 일이 있나</th></tr></thead><tbody><tr><td><b>MCP</b><br><span class="small">Model Context Protocol</span></td><td>AI 앱과 외부 도구·자료가 대화하는 <b>공개 규격</b>. Anthropic이 만들어 공개했고 다른 회사 제품도 씁니다</td><td>전기 콘센트 규격. 어느 회사 제품이든 같은 모양의 플러그면 꽂힙니다</td><td><b>없습니다.</b> 개발자가 이 규격으로 서버를 만듭니다</td></tr><tr><td><b>MCP 서버</b></td><td>MCP 규격으로 만든 프로그램. 인터넷에 있으면 <b>원격</b>, 내 PC에 있으면 <b>로컬</b></td><td>플러그가 달린 전자제품</td><td>없습니다. 개발자·서비스 회사가 운영</td></tr><tr><td><b>커넥터</b></td><td>Claude 화면에서 보이는 연결 항목. <b>안쪽은 MCP 서버</b>입니다</td><td>벽에 꽂힌 상태의 제품 이름표</td><td><b>있습니다.</b> 연결·해제·켜고 끄기</td></tr><tr><td>플러그인</td><td>커넥터 + 스킬 + 명령을 <b>한 묶음</b>으로 설치하는 것</td><td>멀티탭에 제품과 사용설명서까지 묶어 파는 세트</td><td>설치·삭제</td></tr></tbody></table></div>
+<p>공식 문서의 표현을 그대로 옮기면 — 커넥터는 "MCP로 구동되며", 디렉터리에 있는 커넥터와 내가 직접 추가한 커넥터는 "<b>같은 MCP 기반</b>에서 동작하고, 다른 것은 검토·검색·배포 방식"입니다. (<a href="https://claude.com/docs/connectors/overview" target="_blank" rel="noopener noreferrer">커넥터 개요 ↗</a> · <a href="https://claude.com/docs/connectors/building/directory-vs-custom" target="_blank" rel="noopener noreferrer">디렉터리 vs 커스텀 ↗</a>)</p>
+
+<h3>커넥터의 네 가지 층 — 어디서 추가하고 누가 검토했나</h3>
+<div class="tw"><table class="wide"><thead><tr><th>종류</th><th>어디서 추가</th><th>무엇이 필요</th><th>누가 검토했나</th><th>어디서 실행</th><th>오늘</th></tr></thead><tbody><tr><td>① <b>디렉터리 커넥터</b><br><span class="small">Google Drive · Gmail · Calendar · Microsoft 365 · Slack · GitHub · Notion …</span></td><td>사용자 지정 → 커넥터 → <b>탐색</b> → 카드의 + 또는 연결</td><td>그 서비스 계정 로그인과 권한 승인</td><td><b>검증됨</b>(체크 표시) 또는 <b>커뮤니티</b> 라벨</td><td>서비스 회사의 서버(원격)</td><td>화면만</td></tr><tr><td>② <b>커스텀 커넥터</b></td><td>사용자 지정 → 커넥터 → <b>추가</b> → 이름 + <b>MCP 서버 URL</b></td><td>개발자에게 받은 HTTPS 주소</td><td><b>아무도.</b> "Custom"으로 표시</td><td>그 주소의 서버(원격)</td><td>화면만 — 등록하지 않음</td></tr><tr><td>③ <b>확장 프로그램</b><br><span class="small">Desktop Extensions · .MCPB/.DXT</span></td><td>설정 → 확장 프로그램 → 찾아보기 또는 파일 드래그</td><td>데스크톱 앱</td><td>갤러리에 있는 것은 목록화됨. 직접 받은 파일은 검토 없음</td><td><b>내 PC</b>(로컬)</td><td>설치하지 않음</td></tr><tr><td>④ <b>로컬 MCP 서버</b></td><td>설정 → 개발자 → 구성 편집</td><td>개발 지식</td><td>아무도</td><td>내 PC(로컬)</td><td>개발자용 — 화면만</td></tr></tbody></table></div>
+
+<div class="shot-row"><figure class="shot"><img src="assets/shots/guide-app-connectors-explore.png" alt="커넥터 디렉터리 화면" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>사용자 지정 → 커넥터 → <b>탐색</b>. 디렉터리의 인기 커넥터 카드. 이름 옆 체크 표시가 <b>검증됨</b>입니다.</figcaption></figure><figure class="shot"><img src="assets/shots/guide-app-connectors-mine.png" alt="내 커넥터 목록 — 유형과 상태" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>사용자 지정 → 커넥터 → <b>내 항목</b>. <b>유형</b> 열이 중요합니다 — <b>웹</b>은 서비스 회사 서버에서, <b>데스크톱(포함됨)</b>은 내 PC 안에서 실행됩니다. 상태 열의 체크가 연결됨, "연결" 버튼이 아직 연결 안 됨.</figcaption></figure></div>
+<div class="shot-row"><figure class="shot"><img src="assets/shots/guide-app-custom-connector.png" alt="커스텀 커넥터 추가 창" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>커넥터 탭의 <b>추가</b>를 누르면 나오는 "커스텀 커넥터 추가" 창. 이름과 <b>MCP 서버 URL</b>을 넣습니다. 창 안의 경고 — "신뢰할 수 있는 개발자의 커넥터만 사용하세요. Anthropic은 개발자가 제공하는 도구를 통제하지 않으며…". 수업에서는 취소를 누릅니다.</figcaption></figure><figure class="shot"><img src="assets/shots/guide-app-extensions.png" alt="설정 → 확장 프로그램" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>설정 → <b>확장 프로그램</b>. "Claude가 컴퓨터의 앱, 데이터 및 도구와 직접 상호작용할 수 있도록 허용합니다." 설치된 것이 없으면 이렇게 보이고, <b>.MCPB 또는 .DXT</b> 파일을 끌어다 설치합니다.</figcaption></figure></div>
+<figure class="shot narrow"><img src="assets/shots/guide-app-developer.png" alt="설정 → 개발자 — 로컬 MCP 서버" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>설정 → <b>개발자</b>. "로컬 MCP 서버 — 작업 중인 MCP 서버를 추가하고 관리하세요." 구성 편집 버튼이 설정 파일을 엽니다. 개발자용이므로 화면만 알아 둡니다.</figcaption></figure>
+
+<h3>라벨의 뜻 — 검증됨 · 커뮤니티 · 커스텀</h3>
+<div class="tw"><table class="mid"><thead><tr><th>라벨</th><th>공식 문서의 뜻</th><th>그래서</th></tr></thead><tbody><tr><td><b>검증됨</b> ✓</td><td>Anthropic이 도구를 검토해 정책 요건을 충족한 것. <b>보안 감사나 성능 보증은 아님</b></td><td>가장 먼저 고려하되, 권한 화면은 그래도 읽습니다</td></tr><tr><td><b>커뮤니티</b></td><td>제3자가 만들었고 Anthropic이 선별만 했으며 깊이 검토하지 않음. 연결 전 안내가 뜸</td><td>만든 곳을 신뢰할 수 있을 때만</td></tr><tr><td><b>커스텀</b></td><td>내가 직접 추가한 것. Anthropic 검토 없음</td><td>기관에서는 관리자가 정한 것만</td></tr></tbody></table></div>
+<div class="note info"><b>라벨은 검토 수준이지 권한 크기가 아닙니다.</b> 공식 문서: "일단 연결되면 커뮤니티 커넥터도 <b>사용자가 준 권한만큼</b> 다른 커넥터와 같은 접근 권한을 갖습니다." 권한은 라벨이 아니라 <b>연결할 때 내가 승인한 범위</b>가 정합니다. (<a href="https://claude.com/docs/connectors/verification" target="_blank" rel="noopener noreferrer">커넥터 검증 ↗</a>)</div>
+
+</section>
+<section class="chapter" id="howto">
+<div class="secnum">06 · 종류별 연결 방법</div>
+<h2>커넥터는 전부 같은 여섯 단계로 연결합니다</h2>
+
+<p class="lead">서비스가 달라도 절차는 같습니다. 오늘 수업에서는 <b>연결하지 않고</b> 절차만 읽습니다. 업무 자료가 있는 서비스는 기관 규정과 관리자 승인이 먼저입니다.</p>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>사용자 지정 → 커넥터 → 탐색에서 서비스를 고릅니다</h3>
+<p>사이드바 <b>사용자 지정</b> → <b>커넥터</b> 탭 → <b>탐색</b>. 카드의 <b>+</b> 또는 상세 화면의 <b>연결</b>을 누릅니다. 커뮤니티 라벨이면 "깊이 검토되지 않았다"는 안내가 먼저 뜹니다.</p>
+<div class="expect"><b>예상 상태:</b> 그 서비스의 로그인 화면이 새 창이나 브라우저로 열립니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>그 서비스에 로그인합니다</h3>
+<p>Claude가 아니라 <b>그 서비스</b>(Google, Microsoft, Slack…)의 로그인 화면입니다. 비밀번호는 그 서비스에만 입력합니다. 이 방식(OAuth)은 Claude에 비밀번호를 주지 않고 <b>권한만</b> 넘깁니다.</p>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>권한 화면을 읽고 승인합니다 — 여기가 판단 지점</h3>
+<p>"읽기"만인지 "만들기·보내기·삭제"까지인지 여기서 정해집니다. 공식 문서: "Claude는 <b>부여된 권한에 따라</b> 데이터를 읽고, 만들고, 수정하고, 삭제할 수 있습니다."</p>
+<div class="fail-line"><b>범위가 넓어 보이면:</b> 승인하지 말고 창을 닫습니다. 연결은 언제든 다시 할 수 있지만, 이미 준 권한으로 실행된 일은 되돌리기 어렵습니다.</div>
+</div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>Claude로 돌아와 내 항목에서 확인합니다</h3>
+<p>사용자 지정 → 커넥터 → <b>내 항목</b>에 그 커넥터가 <b>상태 ✓</b>로 보이면 연결된 것입니다. <b>유형</b>이 웹인지 데스크톱인지도 같이 봅니다.</p>
+</div></div><div class="step"><div class="num">5</div><div class="step-body"><h3>대화에서 켜고, 필요할 때만 씁니다</h3>
+<p>입력창 <b>+</b> → <b>커넥터 ›</b> → 스위치로 켭니다. 설정 → 기능의 "도구 액세스 모드"가 기본값(필요할 때 도구 로드)이면 대화 내용에 맞는 도구만 불러옵니다. Office 패널에서도 + → Connectors로 같은 목록이 보입니다.</p>
+</div></div><div class="step"><div class="num">6</div><div class="step-body"><h3>연결 해제 — 안 쓰면 끊습니다</h3>
+<p>사용자 지정 → 커넥터 → 내 항목 → 해당 커넥터의 관리(…)에서 <b>연결 해제</b>. 그 서비스 쪽 보안 설정에서 "연결된 앱"을 지워도 됩니다. 만료되어 안 되면 같은 자리에서 <b>다시 연결</b>.</p>
+<p class="small">절차 출처: <a href="https://claude.com/docs/connectors/getting-started" target="_blank" rel="noopener noreferrer">커넥터 시작하기 ↗</a> · <a href="https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener noreferrer">커스텀 커넥터 ↗</a>. 2026-09-16 데스크톱 앱(한국어)에서 1·4·5단계의 화면을 실제로 확인했습니다. 2·3단계(서비스 로그인·권한 승인)는 수업 계정으로 실행하지 않았습니다.</p>
+</div></div>
+
+<h3>서비스별로 다른 점 — 공식 문서가 적어 둔 것</h3>
+<div class="tw"><table class="wide"><thead><tr><th>커넥터</th><th>무엇에 닿나</th><th>필요한 계정</th><th>문서에 적힌 제한·주의</th><th>업무에서 쓸 때</th></tr></thead><tbody><tr><td><b>Google Drive</b></td><td>문서 검색·읽기·올리기. 프로젝트에 넣은 문서는 자동으로 갱신</td><td>Google 계정</td><td>문서 분석·조사에 적합</td><td>공유 범위가 넓은 드라이브는 연결 전에 폴더 권한부터 정리</td></tr><tr><td><b>Gmail</b></td><td>메일 검색·요약·답장 초안</td><td>Google 계정</td><td>"이메일을 검색할 수 있지만 <b>보낼 수는 없다</b>"(시작 안내)</td><td>발송·삭제는 항상 사람이. 조직 설정에 따라 범위가 다를 수 있음</td></tr><tr><td><b>Google Calendar</b></td><td>일정 조회·조정</td><td>Google 계정</td><td>일정 맥락 찾기에 적합</td><td>일정 변경은 결과를 캘린더에서 직접 확인</td></tr><tr><td><b>Microsoft 365</b></td><td>SharePoint · OneDrive · Outlook · Teams 검색</td><td><b>직장·학교 Microsoft 계정</b></td><td>개인 계정은 안 됨. 조직 설정 필요</td><td>기관 테넌트 정책이 우선. 관리자 승인 없이 연결하지 않기</td></tr><tr><td><b>Slack</b></td><td>채널·DM 검색, 메시지 작성</td><td>Slack 워크스페이스</td><td>먼저 워크스페이스에 <b>Claude in Slack 앱</b> 설치가 필요</td><td>워크스페이스 관리자와 상의</td></tr><tr><td><b>GitHub</b></td><td>저장소·파일 읽기</td><td>GitHub 계정</td><td>코드 이해·문서화에 적합</td><td>오늘 수업과 무관</td></tr><tr><td>Notion · Canva · Figma · Asana · HubSpot …</td><td>각 서비스의 자료와 동작</td><td>각 서비스 계정</td><td><b>검증됨 / 커뮤니티</b> 라벨을 먼저 확인</td><td>만든 곳·권한 범위·자료가 어디로 가는지 확인 뒤 최소 범위로</td></tr><tr><td><b>커스텀</b>(MCP 서버 URL)</td><td>그 서버가 제공하는 도구</td><td>개발자가 준 주소</td><td>Anthropic 검토 없음. Free 플랜은 1개 제한</td><td>기관에서는 관리자가 등록한 것만</td></tr></tbody></table></div>
+<p class="small">위 표의 "닿는 것·제한"은 2026-09-16 공식 문서 기준이며, 서비스 회사가 도구를 바꾸면 달라질 수 있습니다. 실제 계정에서 각 서비스를 연결해 보지는 않았습니다.</p>
+
+<div class="note stop"><b>수업 중에는 아무 커넥터도 연결하지 않습니다.</b> 오늘 자료는 전부 파일로 받습니다. 커넥터를 잘못 연결하면 다음 대화부터 그 서비스의 자료가 답변에 섞여 들어올 수 있고, 무엇이 어디서 왔는지 확인하기 어려워집니다.</div>
+
+</section>
+<section class="chapter" id="office">
+<div class="secnum">07 · Office 추가 기능</div>
+<h2>Excel·PowerPoint·Word 안의 Claude — 같은 패널, 같은 규칙</h2>
+
+<p class="lead">02·03·04 단원의 A안이 이것입니다. 2026-09-16 리허설에서 <b>세 앱 모두 실제로 실행</b>했고, 아래 화면은 그때 찍은 것입니다. 사용자 이름과 계정 아이콘은 가렸습니다.</p>
+
+<h3>설치와 로그인 — 공식 문서 기준</h3>
+<div class="tw"><table class="mid"><thead><tr><th>항목</th><th>공식 문서 (2026-09-16 확인)</th></tr></thead><tbody><tr><td>이름</td><td><b>Claude for Microsoft 365</b> 하나로 Excel·PowerPoint·Word·Outlook에 들어갑니다</td></tr><tr><td>설치 (개인)</td><td>Microsoft AppSource의 "Claude for Microsoft 365" → <b>받기</b> → 앱을 열고 <b>홈 → 추가 기능</b>에서 활성화 → Claude 계정으로 로그인</td></tr><tr><td>설치 (조직)</td><td>관리자가 Microsoft 365 관리 센터 → 통합 앱에서 배포. 사용자는 홈 → 추가 기능에서 켭니다</td></tr><tr><td>플랜</td><td>Pro · Max · Team · Enterprise</td></tr><tr><td>되는 버전</td><td>Excel/Word/PowerPoint 웹, Windows Microsoft 365(Excel은 빌드 16.0.13127.20296 이상), Mac 16.46 이상</td></tr><tr><td>안 되는 버전</td><td>Office 2016·2019 영구 라이선스 · iPad · Android</td></tr><tr><td>제한</td><td>Excel: 데이터 표·매크로(VBA) 미지원. "최종 산출물은 사람 검토 없이 쓰지 말 것"</td></tr></tbody></table></div>
+
+<h3>패널 화면 읽기</h3>
+<figure class="shot"><img src="assets/shots/02-excel-panel-open.png" alt="Excel에 Claude 패널이 열린 화면" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>Excel에서 <b>홈 → Claude</b>를 누르면 오른쪽에 패널이 열립니다. 위쪽 칩(문서 아이콘과 숫자)은 지금 열려 있는 문서 수, 가운데는 이 앱에서 쓸 수 있는 스킬 제안, 아래가 입력창입니다.</figcaption></figure>
+<div class="tw"><table class="wide"><thead><tr><th>패널의 자리</th><th>무엇인가</th><th>수업에서</th></tr></thead><tbody><tr><td>위쪽 칩 (문서 아이콘 + 숫자)</td><td>지금 Claude가 볼 수 있는 열린 문서</td><td>숫자가 여러 개면 <b>다른 파일의 내용이 섞일 수 있음</b>. 실습 파일만 열어 둡니다</td></tr><tr><td>"F9 selected" 같은 칩</td><td>내가 선택한 셀·슬라이드·문단이 요청에 함께 들어감</td><td>요청 전에 대상 셀을 클릭해 두면 정확해집니다</td></tr><tr><td>/ 로 시작하는 스킬 제안</td><td>이 앱에서 쓸 수 있는 스킬 (Excel: /audit-xls 등, Word: /check-doc 등)</td><td>01 단원에서 등록한 내 스킬도 여기 나타납니다</td></tr><tr><td><b>+</b> 메뉴</td><td>파일 첨부 · 웹 검색 · <b>커넥터</b> · 플러그인 · 스킬</td><td>03 단원: 원본내용.md 첨부 / 04 단원: 새_회의록.md 첨부</td></tr><tr><td><b>손 모양</b> 버튼</td><td><b>권한 모드</b> — Ask before edits(수정 전 확인) / Accept all edits(모두 수락)</td><td><b>항상 손 모양(확인)</b>인지 봅니다. 아래 설명</td></tr><tr><td>시계 · Opus 5 · 마이크</td><td>이전 대화 · 모델 선택 · 음성 입력</td><td>—</td></tr></tbody></table></div>
+
+<div class="shot-row"><figure class="shot"><img src="assets/shots/03-ppt-plus-menu.png" alt="Office 패널의 + 메뉴" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>PowerPoint 패널의 <b>+</b> 메뉴 — Add files or photos · Search the web(켜짐) · Connectors · Plugins · Skills. 데스크톱 앱의 + 메뉴와 같은 구성입니다.</figcaption></figure><figure class="shot"><img src="assets/shots/04-word-connectors-menu.png" alt="Office 패널의 커넥터 하위 메뉴" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>Word 패널의 + → <b>Connectors</b>. 계정에 연결해 둔 커넥터(여기서는 Google Drive)가 스위치로 보이고, Browse connectors로 디렉터리로 갑니다. 05절의 커넥터가 Office 안에서도 그대로 쓰인다는 뜻입니다.</figcaption></figure></div>
+
+<h3>권한 모드와 확인 창 — 오늘 가장 중요한 두 화면</h3>
+<div class="shot-row"><figure class="shot"><img src="assets/shots/04-word-mode-menu.png" alt="권한 모드 메뉴" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>손 모양 버튼을 누르면 <b>Ask before edits</b> / <b>Accept all edits</b>. 리허설 중 이 값이 "Accept all edits"로 바뀌어 있었고, 그 상태에서는 <b>확인 창 없이</b> 문서 끝에 표가 추가됐습니다. 수업 중에는 반드시 <b>Ask before edits</b>로 둡니다.</figcaption></figure><figure class="shot"><img src="assets/shots/02-excel-permission.png" alt="Excel의 권한 요청 창" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span><b>Permission required</b> 창. "Claude wants to e9 값을 6.0으로 변경" — <b>무엇을 바꾸려는지</b>가 적혀 있고 Deny / Always allow / Allow once 중 고릅니다. <b>Allow once</b>가 오늘의 기본 선택이고, 시키지 않은 변경이면 <b>Deny</b>입니다.</figcaption></figure></div>
+<div class="note act"><b>확인 창은 읽는 창입니다.</b> 리허설에서 Word는 요청한 한 문장을 고친 뒤 <b>"남은 단정 표현 제거"</b>라는 두 번째 확인 창을 띄웠습니다. 시킨 적 없는 변경이므로 Deny를 눌렀고, 문서는 요청한 한 곳만 바뀐 채 남았습니다. "Always allow"를 누르면 그 뒤로는 이 창이 뜨지 않습니다.</div>
+
+<h3>2026-09-16 리허설에서 실제로 확인한 것</h3>
+<div class="tw"><table class="wide"><thead><tr><th>앱</th><th>시킨 것 (교재 문장 그대로)</th><th>실제로 된 것</th><th>확인한 방법</th><th>교재 위치</th></tr></thead><tbody><tr><td>Excel</td><td>E9만 7.5 → 6.0, 수식은 그대로</td><td>E9=6 · F9=12 · G9=66.7% · F13=144. <b>F9 수식 =D9-E9 유지</b>. 응답에 셀 링크(지표 F9 ↗) 표시</td><td>F9 클릭 → 수식 입력줄 · 파일 값 자동 검사</td><td><a href="02-excel.html#work">02 단원 04단계</a></td></tr><tr><td>Excel</td><td>표를 기준으로 연간 절감 <b>금액</b>은?</td><td>"금액은 알려드릴 수 없습니다 — 이 표에는 시간당 인건비 항목이 없습니다." F13=144시간까지만 제시</td><td>응답 읽기</td><td><a href="02-excel.html#source">02 단원 05단계</a></td></tr><tr><td>PowerPoint</td><td>템플릿 3장에 원본내용.md 채우기</td><td>3장 유지 · 레이아웃 3종 유지 · 표 4×3 · 마스터 띠와 고지 문구 유지 · 테마 글꼴 맑은 고딕 · 슬라이드마다 확인 창. <b>2장 세 번째 문장을 스스로 조금 줄여 넣음</b>(넘침 방지 이유)</td><td>여러 슬라이드 보기 · 파일 구조 자동 검사</td><td><a href="03-powerpoint.html#fill">03 단원 04단계</a></td></tr><tr><td>PowerPoint</td><td>2장 세 번째 문장만 한 줄로</td><td>확인 창에 <b>찾을 문장 → 바꿀 문장</b>이 그대로 표시됨. 승인 후 그 문장만 변경, 20pt 유지, 1·3장 불변</td><td>파일 값 자동 검사</td><td><a href="03-powerpoint.html#oneslide">03 단원 05단계</a></td></tr><tr><td>Word</td><td>§1 한 문장을 추적 켠 채로 수정</td><td>삭제 "이 확실히" + 삽입 "이 기대"로 <b>변경 내역에 기록</b>. §2 기존 내역 3건 그대로. 이어서 시키지 않은 추가 수정을 제안 → <b>Deny</b></td><td>검토 창 · 파일의 변경 내역 자동 검사</td><td><a href="04-word.html#apply">04 단원 04단계</a></td></tr><tr><td>Word</td><td>의견 3 거절, 근거 정리, 처리 결과 표 추가</td><td>의견 3 스레드에 거절 답글 · 문서 끝 "검토 의견 처리 결과" 4행 표 · <b>시키지 않은 의견 2는 "확인 필요(보류)"로 남김</b></td><td>파일의 댓글·표 자동 검사</td><td><a href="04-word.html#reject">04 단원 05단계</a></td></tr></tbody></table></div>
+<div class="note info"><b>발견 두 가지 — 교재의 확인 단계가 왜 필요한지 보여 줍니다.</b><br>
+① 변경 내용 추적이 켜진 문서에서는 <b>지워진 글자도 문서에 남아 있어</b>, Claude가 그 글자를 읽고 "아직 안 고쳐졌다"고 말할 수 있습니다. 실제 상태는 검토 창에서 봅니다.<br>
+② 원본을 "그대로" 넣으라고 해도 넘침을 이유로 문장을 손볼 수 있습니다. 응답에 그 사실이 적혀 있었지만, 적혀 있지 않을 수도 있습니다. 파일을 열어 봅니다.</div>
+
+<h3>여러 앱에 걸친 작업과 대화 기록</h3>
+<p>공식 문서에 따르면 Excel·PowerPoint·Word·Outlook의 Claude는 <b>한 대화에서 열려 있는 여러 파일</b>을 함께 다룰 수 있습니다. 그래서 위쪽 칩의 숫자가 중요합니다. 대화 기록은 <b>그 PC의 브라우저 저장소(IndexedDB)</b>에만 남고 서버에 동기화되지 않으며, 패널 설정에서 지울 수 있습니다. 입력·출력은 30일 안에 서버에서 삭제됩니다. 패널 설정의 <b>Instructions</b>에 적은 지침은 그 앱(Excel이면 Excel)에만 적용됩니다.</p>
+<p class="small"><a href="https://claude.com/docs/office-agents/excel" target="_blank" rel="noopener noreferrer">Claude for Excel ↗</a> · <a href="https://claude.com/docs/office-agents/connectors-and-skills" target="_blank" rel="noopener noreferrer">Office 추가 기능의 커넥터와 스킬 ↗</a> · 외부에서 받은 파일에는 숨은 지시문이 들어 있을 수 있다는 경고가 세 문서에 모두 있습니다. 오늘 파일은 우리가 만든 교육용 자료입니다.</p>
+
+</section>
+<section class="chapter" id="cowork">
+<div class="secnum">08 · Cowork</div>
+<h2>Cowork — 폴더에 닿는 순간 규칙이 바뀝니다</h2>
+
+<p class="lead">05 단원의 배경 설명입니다. 실습 절차는 <a href="05-cowork.html">05 단원</a>에 있고, 여기서는 "왜 그렇게 하는지"만 짚습니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>알아 둘 것</th><th>내용</th><th>근거</th></tr></thead><tbody><tr><td>무엇인가</td><td>Claude Code와 같은 구조를 터미널 없이 데스크톱 앱에서 쓰는 작업 모드. 내 PC의 파일을 직접 읽고 씀</td><td>공식 문서</td></tr><tr><td>어디까지 닿나</td><td><b>연결한 폴더와 그 아래 전부.</b> 폴더를 더하면 누적(+1)되므로 넓은 폴더는 체크를 풀어야 함</td><td>2026-09-15 리허설</td></tr><tr><td>처음 요청 때</td><td><b>폴더 접근 허용 창</b>이 뜸(읽기·수정·명령 실행 권한 안내)</td><td>2026-09-15 리허설 · <a href="05-cowork.html#prepare">05 단원 03단계 그림</a></td></tr><tr><td>묻지 않는 폴더</td><td>설정 → Cowork → <b>신뢰할 수 있는 Cowork 폴더</b>에 넣은 폴더는 먼저 묻지 않음</td><td>설정 화면(03절)</td></tr><tr><td>스킬·커넥터·플러그인</td><td>사용자 지정에서 켠 것을 <b>세션 시작 때</b> 불러옴 → 등록 뒤에는 새 대화</td><td>공식 문서 + 2026-09-15 리허설(대화 도중 등록한 스킬이 안 실림)</td></tr><tr><td>웹 작업</td><td>Claude in Chrome과 함께 사이트 조작 가능. 로그인·인증번호·발송은 사람이</td><td>공식 문서</td></tr><tr><td>예약</td><td>사이드바 "예약됨"에서 정해진 시간의 반복 작업</td><td>앱 화면</td></tr><tr><td>플랜</td><td>Cowork는 유료 플랜</td><td>설치 안내 문서</td></tr></tbody></table></div>
+<div class="note act"><b>Cowork에서 지키는 순서 — 05 단원과 같습니다.</b> 사본 폴더 하나만 연결 → 목록만 확인 → 계획표 → 한 줄 고치기 → 승인 → 탐색기에서 직접 확인. 실행 단계(승인 뒤 파일 이동)는 아직 리허설하지 않았습니다.</div>
+<p class="small"><a href="https://claude.com/docs/cowork/overview" target="_blank" rel="noopener noreferrer">Cowork 개요 ↗</a></p>
+
+</section>
+<section class="chapter" id="boundary">
+<div class="secnum">09 · 권한 경계 한눈에</div>
+<h2>기능별로 "무엇에 닿고 어디서 승인하는가"</h2>
+
+<p class="lead">이 표 한 장이 이 페이지의 결론입니다. 새로운 기능을 켜기 전에 이 네 칸을 스스로 채울 수 있으면 됩니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>기능</th><th>무엇에 닿나</th><th>승인 지점</th><th>되돌리기</th><th>오늘 범위</th><th>확인 상태</th></tr></thead><tbody><tr><td>파일 첨부</td><td>올린 파일</td><td>첨부 순간</td><td>대화 닫기</td><td>교재에서 받은 가상 자료만</td><td><span class="badge local">계정 확인</span></td></tr><tr><td>스킬</td><td>자료에 닿지 않음. 작업 방법만</td><td>등록 시 보안 검사 · 켜기 스위치</td><td>끄기·삭제</td><td>교재 ZIP 5종</td><td><span class="badge local">계정 확인</span> 등록·켜기 / 호출은 아직</td></tr><tr><td>Office 추가 기능</td><td>열려 있는 문서</td><td><b>수정 전 확인 창</b>(Ask before edits)</td><td>Ctrl+Z · 변경 내용 추적 · 사본</td><td>작업 사본만</td><td><span class="badge local">계정 확인</span> Excel·PPT·Word</td></tr><tr><td>Cowork 폴더 연결</td><td>연결 폴더 아래 전부</td><td><b>폴더 접근 허용 창</b> · 계획 승인</td><td>사본 폴더 · 원본 보존</td><td>작업사본 폴더 하나</td><td><span class="badge local">계정 확인</span> 연결·계획 / 실행은 아직</td></tr><tr><td>커넥터</td><td>외부 서비스에서 승인한 범위</td><td><b>서비스 권한 승인 화면</b></td><td>연결 해제 · 서비스 쪽 권한 회수</td><td>연결하지 않음</td><td><span class="badge doc">문서 확인</span> + 화면 확인</td></tr><tr><td>확장 프로그램 · 로컬 MCP</td><td>내 PC의 앱·파일·도구</td><td>설치 시</td><td>제거</td><td>설치하지 않음</td><td><span class="badge doc">문서 확인</span> + 화면 확인</td></tr><tr><td>Claude in Chrome</td><td>내가 연 웹사이트</td><td>권한 모드(수동 승인) · 허용된 사이트</td><td>확장 끄기</td><td>쓰지 않음</td><td><span class="badge doc">문서 확인</span></td></tr></tbody></table></div>
+<p class="small">"계정 확인"은 2026-09-15·16 개인 Pro 계정에서 실제로 실행해 본 것, "문서 확인"은 공식 문서에서 기능 설명을 확인한 것입니다. 다른 조직·다른 플랜에서는 메뉴가 없거나 관리자 설정으로 막혀 있을 수 있습니다.</p>
+
+<h3>이해 확인</h3>
+<div class="quiz"><p class="q">MCP와 커넥터의 관계로 맞는 것은?</p><label><input type="radio" name="quiz37" data-ok="1" data-why="디렉터리 커넥터든 커스텀 커넥터든 같은 MCP 기반에서 동작합니다. 다른 것은 검토·검색·배포 방식입니다."><span>MCP는 연결 방법의 공개 규격이고, 커넥터는 그 규격으로 만들어 Claude에 꽂는 연결이다.</span></label><label><input type="radio" name="quiz37" data-ok="0" data-why="별도 기술이 아니라 같은 규격 위의 연결입니다. 안전은 라벨과 권한 승인 범위로 판단합니다."><span>커넥터는 MCP보다 안전하게 만든 별도 기술이다.</span></label><label><input type="radio" name="quiz37" data-ok="0" data-why="Anthropic이 만들어 공개한 규격이며 다른 회사 제품도 씁니다."><span>MCP는 Anthropic 제품에서만 쓰는 이름이다.</span></label><label><input type="radio" name="quiz37" data-ok="0" data-why="MCP는 규격, 커넥터는 화면에서 보이는 연결 항목입니다."><span>둘은 같은 말이다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">Office 패널의 손 모양 버튼을 "Accept all edits"로 바꾸면 어떻게 되나요?</p><label><input type="radio" name="quiz38" data-ok="1" data-why="리허설에서 이 상태일 때 문서 끝에 표가 확인 창 없이 추가됐습니다. 수업 중에는 항상 Ask before edits로 둡니다."><span>확인 창 없이 문서가 바로 바뀌므로 수업 중에는 쓰지 않는다.</span></label><label><input type="radio" name="quiz38" data-ok="0" data-why="정확도와 관계없습니다. 확인 단계만 사라집니다."><span>더 정확하게 수정된다.</span></label><label><input type="radio" name="quiz38" data-ok="0" data-why="보존되지 않습니다. 사본은 사람이 만듭니다."><span>원본이 자동으로 보존된다.</span></label><label><input type="radio" name="quiz38" data-ok="0" data-why="변경 내용 추적은 Word의 검토 탭에서 따로 켭니다."><span>변경 내용 추적이 켜진다.</span></label><p class="fb"></p></div><div class="quiz"><p class="q">커넥터 목록의 "커뮤니티" 표시는 무슨 뜻인가요?</p><label><input type="radio" name="quiz39" data-ok="1" data-why="연결 전 안내가 뜹니다. 연결되면 권한은 내가 승인한 범위만큼이므로 만든 곳을 신뢰할 수 있을 때만 연결합니다."><span>제3자가 만들었고 Anthropic이 선별만 했으며 깊이 검토하지 않았다.</span></label><label><input type="radio" name="quiz39" data-ok="0" data-why="플랜과 무관한 검토 수준 표시입니다."><span>무료 사용자만 쓸 수 있는 커넥터다.</span></label><label><input type="radio" name="quiz39" data-ok="0" data-why="&quot;검증됨&quot;도 보안 감사가 아닙니다. 커뮤니티는 그보다 검토가 적습니다."><span>Anthropic이 보안 감사를 마쳤다.</span></label><label><input type="radio" name="quiz39" data-ok="0" data-why="라벨은 권한 크기를 정하지 않습니다. 권한은 승인 화면에서 정해집니다."><span>연결해도 권한이 더 적게 주어진다.</span></label><p class="fb"></p></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="guide-layers"><span>"연결"의 다섯 층 표를 읽고, 오늘 단원에서 쓰는 층(①②④⑤)을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="guide-office-mode"><span>Office 패널의 손 모양 버튼이 "Ask before edits"인지 확인하는 법을 알았다.</span></label><label class="check"><input type="checkbox" data-check="guide-no-connect"><span>수업 중에는 커넥터·확장 프로그램을 새로 연결·설치하지 않기로 했다.</span></label></div><div class="bottombar"><p class="small" id="storage-note">학습 체크는 이 브라우저에만 저장됩니다. 계정이나 다른 기기와 연결되지 않습니다.</p><button type="button" id="reset-checks">이 단원 체크 초기화</button></div>
+</section>
+<footer class="foot">
+<h4>이 페이지의 자료 성격과 확인 범위</h4>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 표로 적힌 기준 예시는 비교용으로 사람이 작성한 것입니다. <b>「실제 화면」 표시가 붙은 그림</b>만 개인 계정 리허설(2026-09-15, 2026-09-16)에서 Claude 데스크톱 앱과 Excel·PowerPoint·Word의 Claude 추가 기능을 실제로 찍은 것이며, 사용자 이름·계정 아이콘·다른 대화 제목은 가렸습니다.</p>
+<p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
+<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 스킬 등록, Cowork 폴더 연결·계획, Excel·PowerPoint·Word 추가 기능의 실행은 개인 계정 리허설에서 확인했고, 회의록 스킬 호출·OCR·Cowork 실행 단계는 아직 리허설 전입니다.</p>
+<p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
+</footer>
+</main></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

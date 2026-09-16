@@ -29,6 +29,7 @@
 <a href="06-ocr.html"><span class="n">06</span>OCR · 사진 속 숫자</a>
 <a href="07-capstone.html"><span class="n">07</span>종합 실습</a>
 <a href="08-finish.html"><span class="n">08</span>결과 점검 · 과제</a>
+<a href="guide.html">Claude 기능 지도</a>
 <a href="sources.html">공식 자료실</a>
 <a href="files.html">다운로드 모음</a>
 </div>
@@ -128,9 +129,10 @@
 </div></div>
 
 <div class="note plain"><b>Claude for Excel 패널이 안 열려도 실습할 수 있습니다.</b><br>
-· <b>A안</b> — Excel 안에서 Claude 패널을 열 수 있으면 파일을 연 채로 요청합니다.<br>
+· <b>A안</b> — Excel 안에서 Claude 패널을 열 수 있으면 작업본을 연 채로 요청합니다. <b>홈 탭 → Claude</b> 버튼입니다.<br>
 · <b>B안</b> — 패널이 없으면 Claude 대화에 <code>기대효과지표_작업본.xlsx</code>를 <b>첨부</b>하고 수정된 파일을 받아 내려받습니다.<br>
 아래 04단계의 요청 문장은 두 방법에 모두 그대로 씁니다. 실제 메뉴 위치와 화면은 계정·버전에 따라 다르므로, 수업 환경에서 확인한 화면을 강사가 안내합니다.</div>
+<figure class="shot"><img src="assets/shots/02-excel-panel-open.png" alt="Excel에 Claude 패널이 열린 작업본 화면 (2026-09-16)" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>작업본을 열고 <b>홈 → Claude</b>를 누른 직후. 오른쪽 패널의 위쪽 칩(문서 아이콘 + 숫자)이 지금 Claude가 보는 문서 수입니다 — 실습 파일만 열어 두세요. 아래 입력창 왼쪽의 <b>손 모양</b>이 "수정 전에 묻기" 상태입니다. 패널 각 부분의 뜻은 <a href="guide.html#office">기능 지도 07절</a>.</figcaption></figure>
 
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="excel-open"><span>실습본을 열고 시트 세 개를 확인했다.</span></label><label class="check"><input type="checkbox" data-check="excel-change-log"><span>변경내역 시트를 읽고 인용 규칙이 바뀐 것을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="excel-copy"><span>작업 사본을 따로 만들었다.</span></label></div>
 </section>
@@ -144,16 +146,20 @@
 <p>요청을 보내기 전에 지금 상태를 알아 둡니다. 아래 칸을 하나씩 클릭하고 수식 입력줄을 보세요.</p>
 <div class="tw"><table class="mid"><thead><tr><th>칸</th><th>지금 보이는 값</th><th>수식 입력줄에 있어야 하는 것</th></tr></thead><tbody><tr><td><code>E9</code></td><td>7.5</td><td><code>7.5</code> — 입력값이라 수식이 없습니다</td></tr><tr><td><code>F9</code></td><td>10.5</td><td><code>=D9-E9</code></td></tr><tr><td><code>G9</code></td><td>58.3%</td><td><code>=IFERROR((D9-E9)/D9,"")</code></td></tr><tr><td><code>F13</code></td><td>126</td><td><code>=F9*12</code></td></tr></tbody></table></div>
 <div class="check-line"><b>정상 확인:</b> F9·G9·F13 세 칸 모두 <code>=</code>로 시작합니다. 이 상태를 기억해 두고 작업 뒤에 다시 봅니다.</div>
+<figure class="shot"><img src="assets/shots/02-excel-f9-before.png" alt="작업 전 — F9 선택, 수식 입력줄에 =D9-E9" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>F9를 클릭한 상태. 이름 상자에 <b>F9</b>, 수식 입력줄에 <b>=D9-E9</b>, 칸에는 10.5가 보입니다. 이것이 "작업 전"의 기준 화면입니다.</figcaption></figure>
 </div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>값 한 칸만 바꾸라고 요청합니다</h3>
 <div class="prompt"><div class="prompt-head"><span><b>입력값 한 칸만 바꾸기</b></span><button type="button" data-copy="p-excel-1">복사</button></div><pre id="p-excel-1">이 표에서 E9(작성 담당 투입 시간의 개선 후 값)만 7.5에서 6.0으로 바꿔 주세요.
 다른 셀의 값과 수식은 그대로 두세요. F열, G열, F13의 수식을 계산된 숫자로 바꾸지 마세요.
 바꾼 뒤 F9, G9, F13이 각각 얼마가 되는지와 그 값이 어느 수식에서 나왔는지 알려 주세요.</pre></div>
 <div class="expect"><b>예상 상태:</b> E9가 6.0이 되고, F9는 12, G9는 66.7%, F13은 144로 바뀝니다. 답변에 각 값이 어느 수식에서 나왔는지 함께 나옵니다.</div>
+<div class="shot-row"><figure class="shot"><img src="assets/shots/02-excel-request-typed.png" alt="요청 문장을 입력한 패널" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>요청 문장을 붙여 넣은 상태. 입력창 위에 <b>F9 selected</b> 칩이 붙어 있습니다 — 1번에서 클릭해 둔 셀이 요청에 함께 들어간다는 뜻입니다.</figcaption></figure><figure class="shot"><img src="assets/shots/02-excel-permission.png" alt="수정 전 권한 요청 창" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>보낸 뒤 약 40초. 값을 바꾸기 전에 <b>Permission required</b> 창이 뜹니다. "Claude wants to e9 값을 6.0으로 변경" — 내가 시킨 것과 같은지 읽고 <b>Allow once</b>를 누릅니다. 다른 칸을 바꾸겠다고 하면 <b>Deny</b>.</figcaption></figure></div>
+<div class="check-line"><b>여기가 첫 번째 확인 지점입니다.</b> 확인 창의 문장이 "E9만"인지 봅니다. <b>Always allow</b>를 누르면 이 창이 다시 뜨지 않으므로 수업 중에는 누르지 않습니다.</div>
 <div class="fail-line"><b>"표 전체를 다시 만들었습니다"라고 하면:</b> 수식이 날아갔을 가능성이 큽니다. 되돌리고(Ctrl+Z 또는 작업 사본을 다시 복사) 위 문장을 그대로 다시 보내세요.</div>
 </div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>파일에서 직접 확인합니다 — 여기가 검증입니다</h3>
 <p>답변 내용을 믿고 넘어가지 않습니다. 파일을 열고 네 칸을 클릭해 보세요.</p>
 <div class="tw"><table class="wide"><thead><tr><th>칸</th><th>보여야 할 값</th><th>수식 입력줄</th><th>이러면 실패</th></tr></thead><tbody><tr><td><code>E9</code></td><td><b>6</b> 또는 6.0</td><td><code>6</code></td><td>다른 값이면 엉뚱한 칸을 바꾼 것</td></tr><tr><td><code>F9</code></td><td><b>12</b></td><td><code>=D9-E9</code></td><td>수식 없이 <code>12</code>만 있으면 수식이 덮인 것</td></tr><tr><td><code>G9</code></td><td><b>66.7%</b></td><td><code>=IFERROR((D9-E9)/D9,"")</code></td><td><code>0.667</code>이나 <code>66.7</code>이 직접 적혀 있으면 실패</td></tr><tr><td><code>F13</code></td><td><b>144</b></td><td><code>=F9*12</code></td><td>126 그대로면 연결이 끊긴 것</td></tr></tbody></table></div>
 <div class="check-line"><b>정상 확인:</b> 값 네 개가 맞고, 수식 세 개가 그대로 <code>=</code>로 시작합니다.</div>
+<figure class="shot"><img src="assets/shots/02-excel-result.png" alt="결과 — E9 변경 후 수식이 유지된 표와 셀 링크가 붙은 답변" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>2026-09-16 리허설 결과. 표에서 E9=6, F9=12, G9=66.7%, F13=144이고 수식 입력줄은 여전히 <b>=D9-E9</b>입니다. 오른쪽 답변의 <b>지표 F9 ↗</b> 같은 셀 링크를 누르면 그 칸으로 이동합니다. 마지막 줄 "확인차 다시 읽은 범위: D9:G9, F13 — 세 칸 모두 수식이 유지된 상태입니다"는 Claude의 말이고, 위 표의 확인은 <b>내가</b> 한 것입니다. 둘은 다릅니다.</figcaption></figure>
 </div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>나머지 줄이 안 건드려졌는지 봅니다</h3>
 <p>바꾸라고 하지 않은 곳이 바뀌는 경우가 있습니다. 아래 다섯 줄을 확인하세요.</p>
 <div class="tw"><table class="mid"><thead><tr><th>지표</th><th>개선 전</th><th>개선 후</th><th>절감량</th><th>절감률</th></tr></thead><tbody><tr><td>1 회의록 작성 소요</td><td>3.5</td><td>1.2</td><td>2.3</td><td>65.7%</td></tr><tr><td>2 회의록 공유 누락</td><td>4</td><td>0.5</td><td>3.5</td><td>87.5%</td></tr><tr><td>3 문서 재작성 요청</td><td>6</td><td>1</td><td>5</td><td>83.3%</td></tr><tr><td>5 양식 준수율</td><td>62</td><td>95</td><td>33</td><td>53.2%</td></tr><tr><td>6 기록 반려</td><td>2</td><td>0.5</td><td>1.5</td><td>75.0%</td></tr></tbody></table></div>
@@ -180,6 +186,7 @@
 <p>이번엔 답이 나오면 안 되는 질문을 해 봅니다.</p>
 <div class="prompt"><div class="prompt-head"><span><b>표에 없는 것을 물었을 때</b></span><button type="button" data-copy="p-excel-3">복사</button></div><pre id="p-excel-3">이 표를 기준으로 연간 절감 금액이 얼마인지 알려 주세요.</pre></div>
 <div class="check-line"><b>정상 확인:</b> "이 표에는 금액·단가 정보가 없어 계산할 수 없습니다. 시간당 단가가 필요합니다" 같은 답이 나와야 합니다.</div>
+<figure class="shot narrow"><img src="assets/shots/02-excel-no-data.png" alt="표에 없는 금액을 물었을 때의 답변" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>2026-09-16 리허설의 실제 답변. "금액은 알려드릴 수 없습니다 — 이 표에는 시간당 인건비 항목이 없습니다." 시트의 인용 규칙 문장을 근거로 들고, 표에 있는 것(F13 = 144시간)까지만 제시했습니다. 표현은 달라도 됩니다. 같아야 하는 것은 <b>금액을 만들어 내지 않았다</b>는 점입니다.</figcaption></figure>
 <div class="fail-line"><b>금액이 숫자로 나왔다면:</b> 어딘가에서 단가를 만들어 낸 것입니다. 어느 셀에서 가져왔는지 되물어 보세요. 대답하지 못하면 그 값은 쓰면 안 됩니다.</div>
 </div></div>
 
@@ -274,9 +281,9 @@
 </nav>
 <footer class="foot">
 <h4>이 페이지의 자료 성격과 확인 범위</h4>
-<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 표로 적힌 기준 예시는 비교용으로 사람이 작성한 것입니다. <b>「실제 화면」 표시가 붙은 그림</b>만 개인 계정 리허설(2026-09-15)에서 Claude 데스크톱 앱을 실제로 찍은 것이며, 사용자 이름과 다른 대화 제목은 가렸습니다.</p>
+<p>본문의 실습 자료·스킬·기준 예시·문서는 모두 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관의 업무 자료, 담당자 이름, 연락처, 계정 정보는 들어 있지 않습니다. 표로 적힌 기준 예시는 비교용으로 사람이 작성한 것입니다. <b>「실제 화면」 표시가 붙은 그림</b>만 개인 계정 리허설(2026-09-15, 2026-09-16)에서 Claude 데스크톱 앱과 Excel·PowerPoint·Word의 Claude 추가 기능을 실제로 찍은 것이며, 사용자 이름·계정 아이콘·다른 대화 제목은 가렸습니다.</p>
 <p>기능 설명은 2026-09-15 기준으로 공식 문서를 확인해 적었습니다. 다만 <b>공식 문서에 기능이 있다는 것</b>과 <b>내 계정에서 실제로 성공했다는 것</b>은 다릅니다. 메뉴 이름과 화면 구성은 계정·언어 설정·버전에 따라 다를 수 있으므로, 화면이 다르면 강사에게 알려 주세요. 다른 사람의 계정이나 관리자 암호를 받아 대신 진행하지 않습니다.</p>
-<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 실제 계정 등록·스킬 호출·Office 애드인 실행은 수업 전 리허설에서 확인합니다.</p>
+<p>파일 존재·ZIP 구조·표의 기준값은 제작할 때 자동 검사로 확인했습니다. 스킬 등록, Cowork 폴더 연결·계획, Excel·PowerPoint·Word 추가 기능의 실행은 개인 계정 리허설에서 확인했고, 회의록 스킬 호출·OCR·Cowork 실행 단계는 아직 리허설 전입니다.</p>
 <p><a href="sources.html">공식 자료실 · 출처와 확인 상태 보기</a><a href="files.html">다운로드 모음</a></p>
 </footer>
 </main></div>
