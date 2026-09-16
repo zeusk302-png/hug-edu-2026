@@ -42,8 +42,9 @@
 <a href="#run"><span class="n">05</span>실행하고 원본과 대조하기</a>
 <a href="#inside"><span class="n">06</span>규칙 하나 바꾸기</a>
 <a href="#reuse"><span class="n">07</span>새 자료에 다시 쓰기</a>
-<a href="#trouble"><span class="n">08</span>막혔을 때</a>
-<a href="#quiz"><span class="n">09</span>이해 확인</a>
+<a href="#manager"><span class="n">08</span>보고 대상 바꾸기</a>
+<a href="#trouble"><span class="n">09</span>막혔을 때</a>
+<a href="#quiz"><span class="n">10</span>이해 확인</a>
 </div>
 <p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
 </nav>
@@ -51,8 +52,8 @@
 <header class="hero">
 <div class="eyebrow">실습 단원 01 / SKILLS</div>
 <h1>스킬을 써 보고,<br>내 방식으로 바꾸기.</h1>
-<p>회의록 다섯 개를 정해진 형식으로 정리합니다. 결과를 원본과 대조해 틀린 곳을 찾고, 규칙 한 줄을 바꿔 차이를 확인한 뒤, 처음 보는 회의록에도 다시 적용합니다.</p>
-<div class="flow">완성 예시 → 개념 → 준비 → 등록·실행 → 원본 대조 → 규칙 수정 → 재사용</div>
+<p>회의록 다섯 개를 정해진 형식으로 정리합니다. 결과를 원본과 대조해 틀린 곳을 찾고, 스킬 파일의 규칙 한 줄을 직접 고쳐 차이를 확인한 뒤, 처음 보는 회의록에도 다시 적용합니다. 마지막에는 보고받는 사람에 맞춰 양식의 순서와 표까지 바꿉니다.</p>
+<div class="flow">완성 예시 → 개념 → 준비 → 등록·실행 → 원본 대조 → 규칙 직접 수정 → 재사용 → 보고 대상 바꾸기</div>
 <p class="meta">필요한 것: Claude 계정 로그인 · 파일 두 개 · 새 대화 하나</p>
 </header>
 <section class="chapter" id="result">
@@ -88,7 +89,7 @@
 <p>이번 실습의 목표는 <b>빨리 정리하는 것</b>이 아니라 <b>확정된 것과 확정되지 않은 것이 구분된 채로 정리되는 것</b>입니다. 그 구분 규칙을 매번 말로 설명하지 않으려고 스킬을 씁니다.</p>
 
 <div class="note info"><b>이 단원이 끝나면 여러분은 이렇게 할 수 있습니다.</b><br>
-스킬 하나를 내 계정에 등록하고 · 회의록 5개에 적용하고 · 결과를 원본과 대조해 틀린 곳을 찾고 · 규칙 한 줄을 바꿔 다른 결과를 만들고 · 처음 보는 회의록에 다시 적용합니다.</p></div>
+스킬 하나를 내 계정에 등록하고 · 회의록 5개에 적용하고 · 결과를 원본과 대조해 틀린 곳을 찾고 · <b>스킬 파일을 직접 고쳐</b> 다른 결과를 만들고 · 처음 보는 회의록에 다시 적용하고 · <b>보고받는 사람에 맞춰 양식의 순서와 열을 바꿉니다.</b></p></div>
 
 </section>
 <section class="chapter" id="concept">
@@ -124,7 +125,7 @@
 <div class="dl-row"><a class="dl" href="downloads/skills/meeting-brief.zip" download><span>① meeting-brief.zip<br><span class="what">등록용 스킬 · 압축을 풀지 않습니다</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/inputs/meeting-notes-5.zip" download><span>② meeting-notes-5.zip<br><span class="what">회의록 5개 · 압축을 풉니다</span></span><span aria-hidden="true">↓</span></a></div>
 
 <div class="step"><div class="num">1</div><div class="step-body"><h3>① 등록용 ZIP은 그대로 둡니다</h3>
-<p><code>meeting-brief.zip</code>은 <b>압축을 풀지 마세요.</b> 스킬 등록 화면에서 이 ZIP 파일 자체를 선택합니다.</p>
+<p><code>meeting-brief.zip</code>은 <b>등록할 때 압축을 풀지 마세요.</b> 스킬 등록 화면에서 이 ZIP 파일 자체를 선택합니다. (06단계에서 규칙을 <b>직접 고칠 때</b>는 이 ZIP을 복사한 편집용 사본을 풀어서 고치고 다시 압축합니다. 등록과 편집은 다른 행동입니다.) <a href="guide.html#layers">첨부·등록·연결의 차이 → 기능 지도 04절</a></p>
 <div class="expect"><b>이 상태가 맞습니다:</b> 다운로드 폴더에 <code>meeting-brief.zip</code> 파일 하나가 있고, 같은 이름의 폴더는 없습니다.</div>
 <p class="small">브라우저가 자동으로 압축을 풀어 버렸다면(폴더만 있고 ZIP이 없다면) 다시 내려받아 주세요. 폴더를 다시 압축해서 올리면 폴더 구조가 한 겹 더 생겨 등록이 실패할 수 있습니다.</p>
 </div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>② 회의록 ZIP만 압축을 풉니다</h3>
@@ -132,7 +133,7 @@
 <div class="expect"><b>이 상태가 맞습니다:</b> 01_시작회의.md · 02_문안검토.md · 03_일정메모_A.md · 04_일정메모_B.md · 05_상태확인.md <b>정확히 5개</b></div>
 <p><code>.md</code>는 글과 제목을 담는 텍스트 형식입니다. 메모장으로 열립니다. 이번 수업에서 편집할 필요는 없고, 그대로 첨부만 합니다. 다만 <b>실습 중간에 원본을 한 번은 직접 열어 볼 것</b>이므로 어느 폴더에 풀었는지 기억해 두세요.</p>
 </div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>원본과 작업 사본을 구분합니다</h3>
-<p>이번 단원은 파일을 고치지 않으므로 사본을 따로 만들 필요는 없습니다. 다만 습관을 여기서 들여 둡니다.</p>
+<p>회의록은 이 단원에서 고치지 않습니다. 다만 <b>06단계에서 스킬 파일을 직접 고치므로</b>, 그때 등록용 ZIP은 그대로 두고 <b>편집용 사본</b>을 따로 만듭니다. 습관은 여기서 들여 둡니다.</p>
 <div class="check-line"><b>규칙:</b> 내려받은 폴더는 <b>원본</b>입니다. 나중에 내용을 고칠 일이 생기면 폴더를 복사해서 <code>작업사본</code>이라는 이름으로 만든 뒤 그 안에서 고칩니다.</div>
 <p class="small">5단원(Cowork)에서 이 습관이 실제로 필요해집니다. 그때 다시 설명합니다.</p>
 </div></div><div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="skills-file-1"><span>meeting-brief.zip을 압축을 풀지 않은 상태로 받아 두었다.</span></label><label class="check"><input type="checkbox" data-check="skills-file-2"><span>회의록 5개를 풀었고, 파일이 정확히 5개인 것을 세어 보았다.</span></label></div>
@@ -272,33 +273,62 @@ description: 교육용 회의록을 정해진 보고 형식으로 정리할 때 
 <p class="small">"범위와 주의사항"의 문장들은 <b>작업 지시</b>입니다. 파일 접근을 막는 기술적 잠금장치가 아닙니다. 실제 권한과 원본 보관은 사람이 따로 확인해야 합니다. 5단원에서 다시 다룹니다.</p>
 </div></details>
 
-<h3>"요약 3문장"을 "요약 1문장"으로 바꿔 봅니다</h3>
-<p>직접 편집해도 되지만, 이번에는 <b>미리 만들어 둔 변경판</b>을 받아서 씁니다. 바뀐 곳은 딱 두 군데입니다.</p>
+<h3>"요약 3문장"을 "요약 1문장"으로 — 여러분이 직접 고칩니다</h3>
+<p>바꿀 곳은 SKILL.md의 <b>작성 규칙 첫 줄</b> 한 군데와, 구분을 위한 <b>이름</b>입니다. 참고 양식(report-format.md)에는 문장 수 규칙이 없으므로("문장 수는 SKILL.md의 작성 규칙을 따른다") 그 파일은 건드리지 않습니다. 같은 규칙을 두 파일에 나눠 적으면 나중에 충돌합니다.</p>
 
-<div class="tw"><table class="mid"><thead><tr><th>비교 항목</th><th>meeting-brief</th><th>meeting-brief-short</th></tr></thead><tbody><tr><td><code>name</code></td><td>meeting-brief</td><td><b>meeting-brief-short</b></td></tr><tr><td>작성 규칙 첫 줄</td><td>핵심 요약은 정확히 <b>3문장</b>으로 작성한다</td><td>핵심 요약은 정확히 <b>1문장</b>으로 작성한다</td></tr><tr><td>나머지 규칙</td><td>근거 표시 · 충돌 유지 · 추측 금지 · 재사용 규칙</td><td><b>모두 같음</b></td></tr><tr><td>참고 양식</td><td>references/report-format.md</td><td><b>같음</b></td></tr></tbody></table></div>
-<div class="note info"><b>왜 이름까지 바꿨을까요?</b><br>
-같은 이름으로 두 버전을 두면 어느 쪽이 쓰였는지 구분할 수 없습니다. 규칙을 바꾸면 이름도 바꿔서 결과를 비교할 수 있게 만듭니다.</div>
+<div class="tw"><table class="mid"><thead><tr><th>대응</th><th>내용</th></tr></thead><tbody><tr><td>변경할 업무 요구</td><td>핵심 요약을 한 문장으로 받고 싶다</td></tr><tr><td>수정 전 규칙</td><td>SKILL.md · ## 작성 규칙 · 첫 줄 "핵심 요약은 정확히 3문장으로 작성한다."</td></tr><tr><td>실제 수정할 파일과 위치</td><td><code>meeting-brief-s1/SKILL.md</code> — 맨 위 <code>name:</code> 줄과 작성 규칙 첫 줄. 두 군데뿐</td></tr><tr><td>학생이 작성할 부분</td><td><code>name: meeting-brief-s1</code> · "핵심 요약은 정확히 <b>1문장</b>으로 작성한다."</td></tr><tr><td>수정 후 결과에서 달라져야 하는 부분</td><td>1번 핵심 요약만 1문장. 2~4번 표·근거·읽은 자료 수는 그대로</td></tr><tr><td>변경 효과를 확인하는 방법</td><td>같은 회의록 5개로 다시 실행해 아래 비교표로 대조</td></tr></tbody></table></div>
 
-<div class="dl-row"><a class="dl" href="downloads/skills/meeting-brief-short.zip" download><span>meeting-brief-short.zip<br><span class="what">1문장 변경판 · 등록용</span></span><span aria-hidden="true">↓</span></a></div>
+<div class="step"><div class="num">1</div><div class="step-body"><h3>편집용 사본을 만들고 압축을 풉니다</h3>
+<p>다운로드 폴더의 <code>meeting-brief.zip</code>은 그대로 둡니다(등록용 원본). 복사본을 하나 만들어 <code>HUG_실습/스킬편집/</code> 폴더에 넣고, 거기서 마우스 오른쪽 → <b>압축 풀기</b>를 합니다.</p>
+<pre class="raw">HUG_실습/
+├─ meeting-brief.zip          ← 등록용 원본. 손대지 않음
+└─ 스킬편집/
+   └─ meeting-brief/          ← 압축을 푼 편집용 사본
+      ├─ SKILL.md
+      └─ references/
+         └─ report-format.md</pre>
+<div class="expect"><b>이 상태가 맞습니다:</b> 스킬편집 폴더 안에 <code>meeting-brief</code> 폴더 하나, 그 안에 <code>SKILL.md</code>와 <code>references</code> 폴더. 탐색기 → 보기 → <b>파일 확장명</b>을 켜 두면 <code>.md</code>가 보입니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>폴더 이름을 바꿉니다 — 이름이 곧 스킬 이름입니다</h3>
+<p><code>meeting-brief</code> 폴더 이름을 <code>meeting-brief-s1</code>로 바꿉니다. 공식 규칙: <b>폴더 이름은 SKILL.md의 <code>name</code>과 같아야 하고</b>, 이름은 영문 소문자·숫자·하이픈만 씁니다(<a href="sources.html">자료실 · Skills 만들기</a>). s1은 "요약 1문장"이라는 뜻으로 우리가 붙인 표시입니다.</p>
+<div class="fail-line"><b>왜 이름을 바꾸나요?</b> 같은 이름으로 두 버전을 두면 목록에서 어느 쪽이 쓰였는지 구분할 수 없습니다. 규칙을 바꾸면 이름도 바꿔서 결과를 비교할 수 있게 만듭니다. 기존 스킬을 "덮어쓰기"하는 메뉴는 공식 문서에 없습니다 — 새 이름으로 등록하고, 쓸 것만 켭니다.</div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>SKILL.md를 메모장으로 열어 두 줄을 고칩니다</h3>
+<p><code>SKILL.md</code>를 마우스 오른쪽 → 연결 프로그램 → <b>메모장</b>으로 엽니다. (두 번 눌렀을 때 다른 프로그램이 열리면 그것으로 편집해도 되지만, 서식이 붙는 워드류는 피합니다.)</p>
+<div class="tw"><table class="mid"><thead><tr><th>줄</th><th>바꾸기 전</th><th>바꾼 뒤</th></tr></thead><tbody><tr><td>2번째 줄</td><td><code>name: meeting-brief</code></td><td><code>name: <b>meeting-brief-s1</b></code></td></tr><tr><td>## 작성 규칙 첫 줄</td><td>핵심 요약은 정확히 <b>3문장</b>으로 작성한다.</td><td>핵심 요약은 정확히 <b>1문장</b>으로 작성한다.</td></tr></tbody></table></div>
+<p>나머지는 그대로 둡니다. <code>description</code>도 그대로 둬도 됩니다(한 문장 요약이라는 말을 덧붙여도 좋습니다). <b>Ctrl+S</b>로 저장합니다.</p>
+<div class="fail-line"><b>메모장이 <code>SKILL.md.txt</code>로 저장했다면:</b> "다른 이름으로 저장"에서 파일 형식을 <b>모든 파일</b>로, 인코딩을 <b>UTF-8</b>로 두고 이름을 <code>SKILL.md</code>로 저장한 뒤, 남아 있는 <code>SKILL.md.txt</code>는 지웁니다. 폴더에 <code>SKILL.md</code>가 <b>하나만</b> 있어야 합니다. 확장명이 안 보이면 탐색기 → 보기 → 파일 확장명을 켭니다.</div>
+<div class="expect"><b>이 상태가 맞습니다:</b> <code>meeting-brief-s1/SKILL.md</code>를 다시 열면 2번째 줄이 <code>name: meeting-brief-s1</code>, 작성 규칙 첫 줄이 "1문장"입니다. <code>references/report-format.md</code>는 손대지 않았습니다.</div>
+</div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>폴더를 다시 ZIP으로 만듭니다 — 구조가 한 겹이어야 합니다</h3>
+<p><code>meeting-brief-s1</code> <b>폴더</b>(폴더 안의 파일들이 아니라 폴더 자체)를 선택하고 마우스 오른쪽 → 보내기 → <b>압축(ZIP) 폴더</b>. <code>meeting-brief-s1.zip</code>이 생깁니다.</p>
+<pre class="raw">meeting-brief-s1.zip
+└─ meeting-brief-s1/          ← ZIP 바로 아래에 폴더 한 겹
+   ├─ SKILL.md
+   └─ references/report-format.md
 
-<div class="step"><div class="num">1</div><div class="step-body"><h3>변경판을 등록하고, 기존 스킬은 끕니다</h3>
-<p>04단계와 같은 방법으로 <code>meeting-brief-short.zip</code>을 등록합니다. 그다음 <b><code>meeting-brief</code>는 끄고 <code>meeting-brief-short</code>만 켭니다.</b></p>
-<div class="expect"><b>예상 상태:</b> 목록에 두 스킬이 모두 있고, 켜진 것은 하나뿐입니다.</div>
+(잘못된 구조) meeting-brief-s1.zip
+├─ SKILL.md                   ← 파일이 ZIP 바로 아래
+└─ references/</pre>
+<div class="check-line"><b>정상 확인:</b> ZIP을 두 번 눌러 열어 보면(미리 보기) 맨 위에 폴더 <code>meeting-brief-s1</code> 하나만 보입니다. 파일이 바로 보이면 폴더 안의 파일들을 골라 압축한 것이므로 다시 만듭니다.</div>
+</div></div><div class="step"><div class="num">5</div><div class="step-body"><h3>새 이름으로 등록하고, 쓸 것만 켭니다</h3>
+<p>04단계와 같은 방법으로 <code>meeting-brief-s1.zip</code>을 등록합니다. 미리보기의 이름이 <b>meeting-brief-s1</b>로 보이면 편집이 반영된 것입니다. 등록 뒤 <b><code>meeting-brief</code>는 끄고 <code>meeting-brief-s1</code>만 켭니다.</b></p>
+<div class="expect"><b>예상 상태:</b> 목록에 두 스킬이 모두 있고, 켜진 것은 하나뿐입니다. "사용할 버전 선택"은 바로 이 <b>켜기 스위치</b>로 합니다. 별도의 버전 메뉴는 없습니다.</div>
+<div class="fail-line"><b>"올바른 스킬이 아닙니다":</b> ① ZIP 구조가 한 겹인지(4번) ② 폴더 이름과 <code>name:</code>이 같은지(2·3번) ③ 파일 이름이 <code>SKILL.md</code>인지(<code>.txt</code>가 붙지 않았는지) 순서로 봅니다.</div>
 <div class="fail-line"><b>둘 다 켜 두면:</b> 어느 규칙이 적용됐는지 구분할 수 없어 비교 실습이 무의미해집니다.</div>
-</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>같은 회의록 5개로 다시 실행합니다</h3>
-<p>입력을 바꾸지 않는 것이 중요합니다. <b>바뀐 것은 규칙 하나뿐</b>이어야 차이를 볼 수 있습니다.</p>
-<div class="prompt"><div class="prompt-head"><span><b>변경판으로 다시 실행할 때</b></span><button type="button" data-copy="p-short">복사</button></div><pre id="p-short">meeting-brief-short 스킬을 사용해 같은 회의록 5개를 다시 정리해 주세요.
-앞에서 만든 보고서를 참고하지 말고 원본 회의록만 보고 작성해 주세요.</pre></div>
+</div></div><div class="step"><div class="num">6</div><div class="step-body"><h3>같은 회의록 5개로 다시 실행합니다</h3>
+<p>입력을 바꾸지 않는 것이 중요합니다. <b>바뀐 것은 규칙 하나뿐</b>이어야 차이를 볼 수 있습니다. 새 대화에서 회의록 5개를 첨부합니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>내가 고친 스킬로 다시 실행할 때</b></span><button type="button" data-copy="p-short">복사</button></div><pre id="p-short">meeting-brief-s1 스킬을 사용해 첨부한 회의록 5개를 정리해 주세요.
+앞선 대화의 보고서를 참고하지 말고 원본 회의록만 보고 작성해 주세요.</pre></div>
 </div></div>
 
 <h3>두 결과를 나란히 놓고 봅니다</h3>
 <div class="tw"><table class="wide"><thead><tr><th>비교할 곳</th><th>달라져야 하는가</th><th>확인 방법</th></tr></thead><tbody><tr><td>핵심 요약</td><td><b>달라집니다</b> — 3문장 → 1문장</td><td>문장 끝의 마침표를 세어 봅니다</td></tr><tr><td>확정 사항 표</td><td>같아야 합니다 — 3행</td><td>제목 확정 / 소제목 확정 / 초안 작성 완료</td></tr><tr><td>할 일 표</td><td>같아야 합니다 — 3행</td><td>초안 검토 / 장소 확인 / 사진 조사</td></tr><tr><td>확인이 필요한 사항</td><td>같아야 합니다 — 4행</td><td>발송일 / 장소 / 사진 / 인원·예산</td></tr><tr><td>근거 표시</td><td>같아야 합니다</td><td>같은 파일·항목이 붙어 있는지</td></tr><tr><td>읽은 자료 수</td><td>같아야 합니다 — 5개</td><td>맨 아래</td></tr></tbody></table></div>
 <div class="note act"><b>여기서 무엇을 배웠나요?</b><br>
-규칙을 한 줄 바꿨더니 <b>그 줄이 담당하는 부분만</b> 달라졌습니다. 표와 근거는 그대로입니다. 이것이 "작업 방법을 파일로 관리한다"는 말의 실제 의미입니다. 매번 말로 설명하면 어디가 왜 달라졌는지 추적할 수 없습니다.</div>
+규칙을 한 줄 바꿨더니 <b>그 줄이 담당하는 부분만</b> 달라졌습니다. 표와 근거는 그대로입니다. 이것이 "작업 방법을 파일로 관리한다"는 말의 실제 의미입니다. 그리고 그 파일을 고친 사람은 <b>여러분</b>입니다.</div>
+<p class="small">"스킬을 썼다"는 답변 문장만으로 호출을 확정하지 않습니다. 작업 내역에 스킬을 읽는 표시가 있는지, 결과 형식이 양식과 같은지를 함께 봅니다(05단계의 접힌 항목). 확인하지 못했으면 "호출 확인 안 됨"으로 남깁니다.</p>
 
-<div class="dl-row"><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%ED%9A%8C%EC%9D%98%EB%A1%9D5%EA%B0%9C_1%EB%AC%B8%EC%9E%A5.md" download><span>기준예시_회의록5개_1문장.md<br><span class="what">1문장판 결과 비교용</span></span><span aria-hidden="true">↓</span></a></div>
+<div class="dl-row"><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%ED%9A%8C%EC%9D%98%EB%A1%9D5%EA%B0%9C_1%EB%AC%B8%EC%9E%A5.md" download><span>기준예시_회의록5개_1문장.md<br><span class="what">1문장판 결과 비교용</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/skills/meeting-brief-short.zip" download><span>meeting-brief-short.zip<br><span class="what">따라잡기용 · 같은 변경을 미리 해 둔 ZIP</span></span><span aria-hidden="true">↓</span></a></div>
+<p class="small"><b>따라잡기용 ZIP은 편집이 막혔을 때만 씁니다.</b> 이름이 <code>meeting-brief-short</code>이고 내용은 여러분이 고친 것과 같습니다(1문장 + 이름). 정상 경로는 직접 고치는 것입니다. 이 ZIP으로 합류했다면 아래 비교표의 스킬 이름만 바꿔 읽으세요.</p>
 
-<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="skills-short-install"><span>meeting-brief-short를 등록하고, 기존 스킬은 껐다.</span></label><label class="check"><input type="checkbox" data-check="skills-diff"><span>같은 입력으로 다시 실행해 요약 문장 수만 달라진 것을 확인했다.</span></label></div>
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="skills-edit-copy"><span>편집용 사본을 풀고 폴더 이름을 meeting-brief-s1로 바꿨다.</span></label><label class="check"><input type="checkbox" data-check="skills-edit-save"><span>SKILL.md의 name과 작성 규칙 첫 줄을 고쳐 저장했고, .txt가 붙지 않은 것을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="skills-edit-zip"><span>폴더째 ZIP으로 만들어 새 이름으로 등록하고, 기존 스킬은 껐다.</span></label><label class="check"><input type="checkbox" data-check="skills-diff"><span>같은 입력으로 다시 실행해 요약 문장 수만 달라진 것을 확인했다.</span></label></div>
 </section>
 <section class="chapter" id="reuse">
 <div class="secnum">07 · 새 자료에 다시 쓰기</div>
@@ -312,9 +342,9 @@ description: 교육용 회의록을 정해진 보고 형식으로 정리할 때 
 
 <div class="step"><div class="num">1</div><div class="step-body"><h3>반드시 새 대화에서 실행합니다</h3>
 <p>앞 대화를 이어서 쓰면 이전 내용이 섞일 가능성이 커집니다. 새 대화를 열고 <code>새_회의록.md</code> 한 개만 첨부하세요.</p>
-<div class="prompt"><div class="prompt-head"><span><b>새 자료에 적용할 때</b></span><button type="button" data-copy="p-reuse">복사</button></div><pre id="p-reuse">첨부한 새_회의록.md 한 개만 사용해 정리해 주세요.
+<div class="prompt"><div class="prompt-head"><span><b>새 자료에 적용할 때</b></span><button type="button" data-copy="p-reuse">복사</button></div><pre id="p-reuse">meeting-brief-s1 스킬을 사용해 첨부한 새_회의록.md 한 개만 정리해 주세요.
 앞선 대화나 다른 회의록의 내용은 사용하지 마세요. 이 파일에 없는 일정·담당·숫자는 만들지 마세요.</pre></div>
-<div class="expect"><b>예상 상태:</b> 확정 사항 1행(제목), 할 일 1행(자료 목록 작성), 확인이 필요한 사항 1행(배포 방법), 읽은 자료 1개.</div>
+<div class="expect"><b>예상 상태:</b> 핵심 요약 1문장(내가 고친 규칙), 확정 사항 1행(제목), 할 일 1행(자료 목록 작성), 확인이 필요한 사항 1행(배포 방법), 읽은 자료 1개. 여기서 <b>내가 고친 규칙(1문장)이 새 입력에서도 유지되는지</b>가 첫 번째 확인입니다.</div>
 </div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>이전 내용이 섞이지 않았는지 확인합니다</h3>
 <p>아래 단어가 결과에 나오면 이전 실습이 섞여 들어온 것입니다. 하나씩 찾아보세요.</p>
 <div class="tw"><table class="mid"><thead><tr><th>나오면 안 되는 것</th><th>왜 안 되나</th></tr></thead><tbody><tr><td>"함께 읽는 오후"</td><td>앞 실습의 <b>안내문</b> 제목입니다. 이 회의록의 제목은 "이번 주 읽을 거리"입니다</td></tr><tr><td>3주차 화요일 / 수요일</td><td>앞 실습의 발송 예정일입니다. 이 회의록에 없습니다</td></tr><tr><td>장소 후보, 사진 사용 여부</td><td>앞 실습의 확인 사항입니다. 이 회의록에 없습니다</td></tr><tr><td>읽은 자료 5개</td><td>이번 입력은 <b>1개</b>입니다</td></tr></tbody></table></div>
@@ -324,12 +354,65 @@ description: 교육용 회의록을 정해진 보고 형식으로 정리할 때 
 <div class="dl-row"><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%EC%83%88%ED%9A%8C%EC%9D%98%EB%A1%9D.md" download><span>기준예시_새회의록.md<br><span class="what">새 자료 결과 비교용</span></span><span aria-hidden="true">↓</span></a></div>
 
 <div class="note info"><b>왜 이 확인이 중요한가요?</b><br>
-AI 도구는 같은 대화 안의 앞 내용을 함께 봅니다. 편할 때도 있지만, 다른 업무를 처리할 때는 <b>앞 자료가 슬쩍 섞여 들어오는</b> 원인이 됩니다. 업무마다 새 대화를 여는 습관이 가장 간단한 예방책입니다.</div>
+AI 도구는 같은 대화 안의 앞 내용을 함께 봅니다. 편할 때도 있지만, 다른 업무를 처리할 때는 <b>앞 자료가 슬쩍 섞여 들어오는</b> 원인이 됩니다. 업무마다 새 대화를 여는 것이 첫 번째 예방책입니다. 다만 <b>새 대화가 모든 것을 지우지는 않습니다.</b> 메모리·대화 검색이 켜진 계정에서는 새 대화도 이전 대화를 참고할 수 있습니다(공식 문서, 2026-09-17 확인). 그래서 요청 문장에 <b>"이 파일만 사용, 앞선 대화 내용은 쓰지 말 것"</b>을 적고, 위 표로 섞임을 직접 확인합니다. 기준이 여러 개면 07C처럼 파일로 적어 함께 넘깁니다. <a href="guide.html#layers">기능 지도 04절</a></div>
 
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="skills-reuse"><span>새 대화에서 새_회의록.md 하나만으로 실행했다.</span></label><label class="check"><input type="checkbox" data-check="skills-nomix"><span>이전 실습의 제목·날짜가 섞이지 않았는지 표를 보고 확인했다.</span></label></div>
 </section>
+<section class="chapter" id="manager">
+<div class="secnum">08 · 보고 대상 바꾸기</div>
+<h2>실무 담당자용 보고를 운영 책임자용으로 바꿉니다</h2>
+
+<p class="lead">문장 수를 바꾸는 것은 연습이었습니다. 이번에는 <b>보고받는 사람이 달라지면 보고서의 순서와 표의 열이 왜 달라지는지</b>를 직접 파일에 반영합니다. 이번 수정은 SKILL.md가 아니라 <b>참고 양식(report-format.md)</b>에 있습니다.</p>
+
+<h3>업무 의뢰</h3>
+<div class="note plain">"지금 보고서는 실무 담당자가 진행 상황을 훑어보기에 맞춰져 있습니다. 운영 책임자에게 올릴 보고로 바꿔 주세요. 책임자는 <b>무엇을 결정해 줘야 하는지</b>를 맨 먼저 보고 싶어 합니다. 결정할 내용 / 현재 막힌 이유 / 확인할 역할 / 원문 근거를 나눠 주세요. 원문에 없는 역할이나 결정 사항은 만들지 마세요."</div>
+
+<h3>왜 순서와 열이 달라지나</h3>
+<div class="tw"><table class="wide"><thead><tr><th>보고받는 사람</th><th>먼저 알고 싶은 것</th><th>그래서 맨 앞에 오는 항목</th><th>표에 꼭 있어야 하는 열</th></tr></thead><tbody><tr><td>실무 담당자 (지금 양식)</td><td>무엇이 끝났고 무엇을 해야 하나</td><td>핵심 요약 → 확정 사항 → 할 일</td><td>해야 할 일 · 담당 역할 · 기한</td></tr><tr><td><b>운영 책임자 (바꿀 양식)</b></td><td><b>내가 결정해 줘야 하는 것이 무엇인가</b></td><td><b>결정이 필요한 사항</b> → 핵심 요약 → 확정 사항 → 할 일</td><td><b>결정할 내용 · 현재 막힌 이유 · 확인할 역할 · 원문 근거</b></td></tr></tbody></table></div>
+<p>같은 회의록 5개, 같은 사실인데 <b>읽는 사람의 첫 질문이 다르기 때문에</b> 순서와 열이 달라집니다. 이 판단을 파일에 적어 두면 다음 회의록에도 같은 방식으로 나옵니다.</p>
+
+<h3>무엇을 어디에 고치나</h3>
+<div class="tw"><table class="mid"><thead><tr><th>대응</th><th>내용</th></tr></thead><tbody><tr><td>변경할 업무 요구</td><td>결정이 필요한 일을 맨 앞에, 네 열로</td></tr><tr><td>수정 전 규칙</td><td><code>references/report-format.md</code> — 항목 순서 1 핵심 요약 → 2 확정 사항 → 3 할 일 → 4 확인이 필요한 사항. 4번 표의 열은 확인할 내용 / 현재 자료의 기록 / 확인이 필요한 이유 / 근거</td></tr><tr><td>실제 수정할 파일과 위치</td><td>① <code>meeting-brief-manager/references/report-format.md</code>의 항목 순서와 표 머리글 ② <code>SKILL.md</code>의 <code>name:</code> 줄(이름 구분) — 작성 규칙은 그대로</td></tr><tr><td>학생이 작성할 부분</td><td>1번 항목을 "결정이 필요한 사항"으로 올리고 표를 <b>결정할 내용 / 현재 막힌 이유 / 확인할 역할 / 원문 근거</b> 네 열로. 나머지 항목은 번호만 밀립니다</td></tr><tr><td>수정 후 결과에서 달라져야 하는 부분</td><td>보고서의 첫 표가 결정 사항 표. "확인할 역할" 열에는 <b>원문에 있는 역할</b>(검토역할·진행역할…)만, 없으면 "확인 필요"</td></tr><tr><td>변경 효과를 확인하는 방법</td><td>같은 회의록 5개로 실행해 첫 표가 바뀌었는지, 뒤 표 3개가 그대로인지, 원문에 없는 역할·결정이 생기지 않았는지 대조</td></tr></tbody></table></div>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>편집용 사본을 하나 더 만듭니다</h3>
+<p>06단계와 같은 방법입니다. <code>스킬편집/</code> 안에 <code>meeting-brief.zip</code>을 다시 풀고 폴더 이름을 <code>meeting-brief-manager</code>로 바꿉니다. (s1 폴더를 복사해도 되지만, 그러면 1문장 규칙까지 따라옵니다. 이번 과제는 3문장 그대로 두는 것이 비교에 유리합니다.)</p>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>SKILL.md는 이름만 바꿉니다</h3>
+<p>메모장으로 <code>SKILL.md</code>를 열어 <code>name: meeting-brief-manager</code>로 고치고 저장합니다. <code>description</code>에 "운영 책임자용 — 결정이 필요한 사항을 먼저"를 덧붙이면 목록에서 구분하기 좋습니다. <b>작성 규칙은 손대지 않습니다.</b> 순서와 열은 양식 파일이 담당합니다.</p>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>report-format.md의 순서와 표를 고칩니다 — 여기가 이번 과제</h3>
+<p><code>references/report-format.md</code>를 메모장으로 엽니다. 지금은 "## 1. 핵심 요약 → ## 2. 확정 사항 → ## 3. 할 일 → ## 4. 확인이 필요한 사항" 순서입니다. 아래처럼 바꿉니다. 표는 <code>|</code>로 칸을 나누는 형식이며, 머리글 줄과 <code>|---|</code> 줄의 칸 수가 같아야 합니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>report-format.md에 넣을 새 1번 항목 — 붙여 넣고 나머지 항목 번호를 밀어 줍니다</b></span><button type="button" data-copy="p-fmt-manager">복사</button></div><pre id="p-fmt-manager">## 1. 결정이 필요한 사항
+| 결정할 내용 | 현재 막힌 이유 | 확인할 역할 | 원문 근거 |
+|---|---|---|---|
+운영 책임자가 결정해야 하는 것만 넣는다. 충돌·미확정·누락 사항이 여기 온다.
+"확인할 역할"은 원문에 적힌 역할(예: 검토역할, 진행역할)만 쓰고, 없으면 `확인 필요`로 둔다.
+자료에 없는 해결책·날짜·역할을 결정 사항처럼 쓰지 않는다.</pre></div>
+<p>그다음 기존 "## 4. 확인이 필요한 사항" 항목은 <b>지웁니다</b>(1번으로 옮겨 갔으므로). 핵심 요약은 2번, 확정 사항은 3번, 할 일은 4번으로 번호를 고칩니다. "읽은 자료"와 끝 문장은 그대로 둡니다.</p>
+<div class="expect"><b>이 상태가 맞습니다:</b> 파일을 위에서 읽으면 1 결정이 필요한 사항(4열) → 2 핵심 요약 → 3 확정 사항 → 4 할 일 → 읽은 자료 순서입니다. SKILL.md의 "작업 순서 2번(report-format.md를 읽어 출력 순서와 표의 열을 확인한다)"이 이 파일을 가리키므로, <b>SKILL.md에 순서를 다시 적을 필요가 없습니다.</b> 두 곳에 적으면 나중에 한쪽만 고쳐 충돌합니다.</div>
+</div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>ZIP으로 만들어 등록하고, 이것만 켭니다</h3>
+<p><code>meeting-brief-manager</code> 폴더째 ZIP → 등록 → 미리보기 이름이 <b>meeting-brief-manager</b>인지 확인 → 다른 회의록 스킬(<code>meeting-brief</code>, <code>meeting-brief-s1</code>)은 끕니다.</p>
+</div></div><div class="step"><div class="num">5</div><div class="step-body"><h3>같은 회의록 5개로 실행하고 세 가지를 대조합니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>운영 책임자용으로 실행할 때</b></span><button type="button" data-copy="p-manager">복사</button></div><pre id="p-manager">meeting-brief-manager 스킬을 사용해 첨부한 회의록 5개를 운영 책임자에게 올릴 보고로 정리해 주세요.
+스킬의 양식 순서를 그대로 따르고, 원문에 없는 역할·결정·날짜는 만들지 마세요.
+앞선 대화의 보고서는 참고하지 마세요.</pre></div>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>통과 기준</th><th>틀리면</th></tr></thead><tbody><tr><td>첫 표</td><td><b>결정이 필요한 사항</b>이 맨 앞. 열은 결정할 내용 / 현재 막힌 이유 / 확인할 역할 / 원문 근거</td><td>옛 순서로 나오면 양식 파일이 반영되지 않은 것 — ZIP 안의 report-format.md를 다시 확인</td></tr><tr><td>확인할 역할 열</td><td>검토역할·진행역할처럼 <b>원문에 있는 역할</b>, 또는 "확인 필요"</td><td>"팀장", "담당자 A" 같은 원문에 없는 역할이 있으면 실패. 원문 파일을 열어 없음을 확인하고 고치게 함</td></tr><tr><td>뒤 표 3개</td><td>확정 사항 3행 · 할 일 3행 · 근거 표시 · 읽은 자료 5개 — <b>06단계 결과와 같음</b></td><td>뒤 표까지 바뀌었다면 양식을 지나치게 고친 것</td></tr></tbody></table></div>
+<p class="small">"현재 막힌 이유" 열은 원문의 사실만 씁니다. 예: 발송일 → "두 메모의 날짜가 다르고 최종 승인 기록이 없음(C1·D1·E3)". 해결책을 제안하면 결정 사항을 만든 것입니다.</p>
+<div class="dl-row"><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%ED%9A%8C%EC%9D%98%EB%A1%9D5%EA%B0%9C_%EC%9A%B4%EC%98%81%EC%B1%85%EC%9E%84%EC%9E%90%EC%9A%A9.md" download><span>기준예시_회의록5개_운영책임자용.md<br><span class="what">운영 책임자용 결과 비교용</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/skills/meeting-brief-manager-ref.zip" download><span>meeting-brief-manager-ref.zip<br><span class="what">따라잡기용 · 같은 변경을 미리 해 둔 ZIP</span></span><span aria-hidden="true">↓</span></a></div>
+</div></div><div class="step"><div class="num">6</div><div class="step-body"><h3>새 회의록에도 적용해 수정 의도가 유지되는지 봅니다</h3>
+<p>새 대화에서 <code>새_회의록.md</code> 하나만 첨부합니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>새 회의록에 운영 책임자용 적용</b></span><button type="button" data-copy="p-manager-new">복사</button></div><pre id="p-manager-new">meeting-brief-manager 스킬을 사용해 첨부한 새_회의록.md 한 개만 정리해 주세요.
+앞선 대화나 다른 회의록의 내용은 사용하지 마세요. 이 파일에 없는 일정·담당·역할은 만들지 마세요.</pre></div>
+<div class="expect"><b>예상 상태:</b> 첫 표에 <b>배포 방법</b> 한 행 — 결정할 내용: 배포 방법 / 현재 막힌 이유: 아직 결정하지 않음(T4) / 확인할 역할: 확인 필요 / 원문 근거: 새_회의록.md · T4. 뒤로 핵심 요약, 확정 사항 1행(제목 "이번 주 읽을 거리"), 할 일 1행(자료 목록 작성, 2주차 금요일). 읽은 자료 1개.</div>
+<div class="fail-line"><b>확인할 역할에 이름이나 직함이 생겼다면:</b> 원문 T1~T4에 역할이 적혀 있는지 열어 봅니다. 없으면 만들어 낸 것입니다. 그 칸만 "확인 필요"로 고치게 합니다.</div>
+<div class="fail-line"><b>첫 표가 옛 순서(핵심 요약부터)로 나왔다면:</b> ① 켜진 스킬이 manager뿐인지 ② 요청에 스킬 이름을 적었는지 ③ 새 대화인지(세션 시작 때 스킬이 실립니다) 순서로 봅니다.</div>
+<div class="dl-row"><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%EC%83%88%ED%9A%8C%EC%9D%98%EB%A1%9D_%EC%9A%B4%EC%98%81%EC%B1%85%EC%9E%84%EC%9E%90%EC%9A%A9.md" download><span>기준예시_새회의록_운영책임자용.md<br><span class="what">새 자료 · 운영 책임자용 비교용</span></span><span aria-hidden="true">↓</span></a></div>
+<div class="note act"><b>이 단원에서 여러분이 만든 것.</b> <code>meeting-brief-s1</code>(규칙 한 줄)과 <code>meeting-brief-manager</code>(양식 순서·열) — 둘 다 <b>여러분이 고친 파일</b>로 남아 있습니다. 같은 입력의 전후 차이와 새 입력에서의 결과를 설명할 수 있으면 이 단원의 목표를 채운 것입니다. 백지에서 새 스킬을 만드는 것은 <a href="08-finish.html#homework">08 단원 과제 B</a>로 이어집니다.</div>
+
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="skills-mgr-edit"><span>report-format.md의 항목 순서와 표 열을 직접 고쳐 저장했다.</span></label><label class="check"><input type="checkbox" data-check="skills-mgr-run"><span>같은 회의록 5개로 실행해 첫 표가 결정 사항 표로 바뀌고 뒤 표는 그대로인지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="skills-mgr-roles"><span>"확인할 역할"에 원문에 없는 역할이 없는지 원본을 열어 확인했다.</span></label><label class="check"><input type="checkbox" data-check="skills-mgr-new"><span>새_회의록.md에 적용해 수정 의도(결정 사항 우선·네 열)가 유지되는지 확인했다.</span></label></div>
+</section>
 <section class="chapter" id="trouble">
-<div class="secnum">08 · 막혔을 때</div>
+<div class="secnum">09 · 막혔을 때</div>
 <h2>이런 일이 생기면 이렇게 합니다</h2>
 
 <p class="lead">수업 중 가장 자주 나오는 다섯 가지입니다. 증상을 먼저 찾고, 적힌 순서대로 해 보세요. 그래도 안 되면 손을 드세요.</p>
@@ -375,7 +458,7 @@ AI 도구는 같은 대화 안의 앞 내용을 함께 봅니다. 편할 때도 
 
 </section>
 <section class="chapter" id="quiz">
-<div class="secnum">09 · 이해 확인</div>
+<div class="secnum">10 · 이해 확인</div>
 <h2>세 문제로 확인하고 마칩니다</h2>
 
 <p class="lead">답을 고르면 바로 해설이 나옵니다. 틀린 선택지가 왜 틀렸는지도 함께 읽어 주세요.</p>

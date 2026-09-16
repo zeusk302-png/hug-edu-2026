@@ -214,6 +214,8 @@ pre.plainbox{background:var(--soft);border:1px solid var(--line);border-radius:1
 .badge.local{background:var(--ok-soft);color:var(--ok)}
 .badge.wait{background:var(--warn-soft);color:var(--warn)}
 .badge.none{background:#eceff3;color:#5d6b80}
+.badge.screen{background:var(--cyan-soft);color:var(--cyan-ink)}
+.badge.edu{background:#dcefe6;color:#12513b;border:1px solid #9fcdb5}
 
 /* ---------- 이전/다음 ---------- */
 .pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:22px}

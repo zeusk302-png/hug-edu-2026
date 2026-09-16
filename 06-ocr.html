@@ -40,8 +40,9 @@
 <a href="#prepare"><span class="n">03</span>이미지와 표 받기</a>
 <a href="#extract"><span class="n">04</span>표로 옮기기</a>
 <a href="#verify"><span class="n">05</span>정답표와 대조하기</a>
-<a href="#reuse"><span class="n">06</span>다른 자료에 다시 쓰기</a>
-<a href="#trouble"><span class="n">07</span>막혔을 때</a>
+<a href="#save"><span class="n">06</span>파일로 저장하고 열 바꾸기</a>
+<a href="#reuse"><span class="n">07</span>다른 자료에 다시 쓰기</a>
+<a href="#trouble"><span class="n">08</span>막혔을 때</a>
 </div>
 <p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
 </nav>
@@ -50,8 +51,8 @@
 <div class="eyebrow">실습 단원 06 / OCR</div>
 <h1>사진 속 글자를 표로 바꾸고,<br>원본과 비교하기.</h1>
 <p>영수증 세 장을 표로 옮깁니다. 못 읽은 칸을 0으로 채우지 않고, 인쇄된 합계와 계산한 합계를 다른 칸으로 관리합니다.</p>
-<div class="flow">완성 예시 → 두 가지 합계 → 이미지 보기 → 표 만들기 → 정답 대조 → 한 장만 재사용</div>
-<p class="meta">필요한 것: 이미지 3장 · 빈 표 · (선택) receipt-table 스킬</p>
+<div class="flow">완성 예시 → 두 가지 합계 → 이미지 보기 → 표 만들기 → 정답 대조 → 파일 저장·열 변경·새 형식 → 한 장만 재사용</div>
+<p class="meta">필요한 것: 이미지 3장(+형식이 다른 1장) · 빈 표 · (선택) receipt-table 스킬 · 만들 것: 영수증표 xlsx</p>
 </header>
 <section class="chapter" id="result">
 <div class="secnum">01 · 완성 모습 먼저 보기</div>
@@ -122,7 +123,7 @@
 <div class="step"><div class="num">1</div><div class="step-body"><h3>이미지 세 장을 열어 눈으로 먼저 봅니다</h3>
 <p>압축을 풀고 <code>영수증_01.png</code>부터 차례로 엽니다. 확대해서 보세요.</p>
 <div class="tw"><table class="wide"><thead><tr><th>파일</th><th>보이는 것</th><th>눈여겨볼 곳</th></tr></thead><tbody><tr><td>영수증_01.png</td><td>가상문구점 · 2026-05-02 14:20 · 전표 A-1001</td><td>항목 3개와 하단 합계가 모두 선명합니다</td></tr><tr><td>영수증_02.png</td><td>가상서점 · 2026-05-04 11:05 · 전표 B-2033</td><td>두 번째 줄의 단가·금액, 그리고 <b>하단 합계</b>가 번져 있습니다</td></tr><tr><td>영수증_03.png</td><td>가상문구점 · 2026-05-02 14:20 · 전표 <b>A-1002</b></td><td>01과 모든 값이 같은데 전표번호만 다릅니다</td></tr></tbody></table></div>
-<div class="check-line"><b>정상 확인:</b> 영수증_02에서 도서 B의 단가와 금액, 그리고 합계 칸을 <b>직접 봐도 읽을 수 없습니다.</b> 여러분이 못 읽는 것을 AI가 읽어 냈다면 그 값은 의심해야 합니다.</div>
+<div class="check-line"><b>정상 확인:</b> 영수증_02에서 도서 B의 단가와 금액, 그리고 합계 칸을 <b>직접 봐도 읽을 수 없습니다.</b> 확대해서도 읽을 수 없는 칸에 값이 들어 있다면, 그 값은 <b>이미지에서 확인할 수 없는 값</b>입니다. 어디서 읽었는지 되묻고, 위치를 대지 못하면 빈칸으로 둡니다.</div>
 </div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>빈 표의 열을 확인합니다</h3>
 <p><code>영수증_빈표.csv</code>를 엑셀이나 메모장으로 엽니다. 열이 열 개입니다.</p>
 <pre class="plainbox">파일명, 원문 위치 설명, 날짜, 항목, 수량, 단가, 원문 합계, 계산 합계, 상태, 확인 이유</pre>
@@ -183,8 +184,45 @@
 
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-compare"><span>정답표와 대조해 상태 칸이 맞는지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-fix"><span>어긋난 칸을 고치고 어디서 읽었는지 확인했다.</span></label></div>
 </section>
+<section class="chapter" id="save">
+<div class="secnum">06 · 파일로 저장하고 열 바꾸기</div>
+<h2>표를 파일로 받고, 열 구성을 바꾸고, 형식이 다른 영수증에 다시 씁니다</h2>
+
+<p class="lead">05단계까지의 표는 채팅 화면에 있습니다. 회계 담당에게 넘기려면 <b>파일</b>이어야 하고, 담당이 "부가세 칸이 필요하다"고 하면 <b>열 구성</b>을 바꿔야 하며, 다음 영수증은 <b>형식이 다를</b> 수 있습니다. 세 가지를 차례로 합니다.</p>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>표를 xlsx(또는 csv) 파일로 받습니다</h3>
+<p>05단계에서 고친 표를 그대로 파일로 만들게 합니다. 같은 대화에서 이어서 요청합니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>표를 파일로 저장</b></span><button type="button" data-copy="p-ocr-save">복사</button></div><pre id="p-ocr-save">방금 검토한 표를 그대로 xlsx 파일로 만들어 첨부해 주세요.
+- 열 열 개와 12행을 그대로 두고, 값을 바꾸지 마세요.
+- 읽지 못한 칸은 빈칸으로 두세요. 0이나 "-"를 넣지 마세요.
+- 수량·단가·금액은 숫자로 넣어 주세요(따옴표나 쉼표가 붙은 글자가 아니라).
+- 계산 합계는 값이 아니라 수식(품목 행은 수량×단가, 합계 행은 품목 행의 합)으로 넣고, 영수증_02의 합계 행은 수식 없이 비워 두세요.
+- xlsx를 만들 수 없으면 csv로 주세요.</pre></div>
+<div class="expect"><b>예상 상태:</b> xlsx 파일이 첨부로 옵니다. Excel에서 열면 12행, H열(계산 합계) 셀을 클릭했을 때 <code>=E2*F2</code>, <code>=SUM(H2:H4)</code> 같은 수식이 보입니다.</div>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>통과 기준</th><th>틀리면</th></tr></thead><tbody><tr><td>행·열</td><td>12행 × 10열. 순서가 05단계와 같음</td><td>행이 줄었으면 어느 영수증이 빠졌는지 확인</td></tr><tr><td>빈칸</td><td>영수증_02 도서 B의 단가·금액, 합계 행의 두 합계가 <b>빈칸</b></td><td>0이나 "-"가 있으면 "빈칸으로 두세요"를 다시 요청. 0은 나중에 합계에 섞입니다</td></tr><tr><td>숫자 형식</td><td>셀이 오른쪽 정렬(숫자). 셀을 클릭하면 12900처럼 보임</td><td>왼쪽 정렬이면 글자입니다 — 합계 수식이 0이 됩니다</td></tr><tr><td>계산 합계</td><td>H열이 수식. 영수증_02 합계 행만 비어 있음</td><td>값이면 "수식으로"를 다시 요청. 02 합계에 수식이 있으면 16,000이 확정됩니다(04단계 ④)</td></tr></tbody></table></div>
+<div class="dl-row"><a class="dl second" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_%EC%A0%95%EB%8B%B5%ED%91%9C.xlsx" download><span>영수증_정답표.xlsx<br><span class="what">정답표를 xlsx로 · 계산 합계는 수식 · 사람이 만든 비교용</span></span><span aria-hidden="true">↓</span></a></div>
+<p class="small">기준 파일은 사람이 만든 것입니다. 셀을 클릭해 수식과 빈칸 처리를 여러분 파일과 비교하세요. csv로 받았다면 수식은 없고 값만 있는 것이 정상입니다 — 그 경우 Excel에서 열어 계산 합계 열을 수식으로 바꾸는 것은 여러분이 합니다.</p>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>열 구성을 바꿉니다 — 담당이 "부가세 칸"을 요구합니다</h3>
+<p>지금 표에는 부가세 칸이 없습니다. 3장에는 부가세가 인쇄되어 있지 않으니 <b>빈 열이 추가되는 것이 정상</b>입니다. 열을 바꿀 때 값이 따라 움직이지 않는지 보는 것이 이 단계의 목적입니다.</p>
+<div class="prompt"><div class="prompt-head"><span><b>열 구성만 바꾸기</b></span><button type="button" data-copy="p-ocr-cols">복사</button></div><pre id="p-ocr-cols">표의 열 구성만 바꿔 주세요. "원문 합계" 앞에 "부가세" 열을 추가하고, "상태"와 "확인 이유" 열을 맨 앞(파일명 다음)으로 옮겨 주세요.
+- 값은 하나도 바꾸지 마세요. 세 이미지에는 부가세가 인쇄되어 있지 않으니 부가세 열은 모두 빈칸입니다.
+- 바뀐 뒤 열 이름을 순서대로 알려 주세요.</pre></div>
+<div class="check-line"><b>정상 확인:</b> 열이 11개가 되고 순서가 <code>파일명 · 상태 · 확인 이유 · 원문 위치 설명 · 날짜 · 항목 · 수량 · 단가 · 부가세 · 원문 합계 · 계산 합계</code>입니다. 부가세 열은 12행 모두 빈칸이고, 영수증_02의 빈칸도 그대로입니다.</div>
+<div class="fail-line"><b>부가세 열에 값이 들어 있다면:</b> 이미지에 없는 값입니다. 어디서 읽었는지 되묻고 빈칸으로 되돌립니다. <b>열을 옮기면서 값이 한 칸씩 밀렸다면:</b> 파일로 다시 받아 05단계 기준값(12,900 · 빈칸 · A-1002)으로 확인합니다.</div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>형식이 다른 영수증 한 장 — 같은 스킬이 통하는지 봅니다</h3>
+<div class="dl-row"><a class="dl" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_04.png" download><span>영수증_04.png<br><span class="what">가로형 간이영수증 · 수량×단가 한 칸 · 공급가액/부가세/합계</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/ocr/%EC%98%81%EC%88%98%EC%A6%9D_04_%EC%A0%95%EB%8B%B5%ED%91%9C.csv" download><span>영수증_04_정답표.csv<br><span class="what">10열 기준 정답 + 부가세 열 추가 시 정답</span></span><span aria-hidden="true">↓</span></a></div>
+<p>먼저 이미지를 열어 <b>무엇이 다른지</b> 봅니다. 번진 곳은 없습니다. 대신 <b>구조</b>가 다릅니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>3장과 다른 점</th><th>표로 옮길 때 생기는 문제</th><th>맞는 처리</th></tr></thead><tbody><tr><td>"50매 × 200"처럼 수량과 단가가 <b>한 칸</b></td><td>수량·단가 열이 따로 있음</td><td>두 열로 나눠 적고, 확인 이유에 "한 칸에서 나눔"</td></tr><tr><td>날짜가 <code>2026. 05. 06</code></td><td>날짜 열 형식</td><td><code>2026-05-06</code>으로 통일하되 원문 표기는 확인 이유에</td></tr><tr><td>전표번호 대신 <code>No. 0417</code></td><td>중복 판정 기준</td><td>번호로 쓰되 형식이 다름을 표시</td></tr><tr><td><b>공급가액 20,000 · 부가세 2,000 · 합계 22,000</b> 세 줄</td><td>항목 합(20,000) ≠ 원문 합계(22,000)</td><td><b>오류가 아닙니다.</b> 열에 부가세가 없으면 합계 행을 "확인 필요"로 두고 이유를 적거나, 2번처럼 부가세 열을 넣어 22,000 = 20,000 + 2,000으로 맞춥니다</td></tr></tbody></table></div>
+<p><b>새 대화</b>에서 <code>영수증_04.png</code> 한 장만 첨부해 04단계 1번 문장(p-ocr-1)을 그대로 보냅니다. "3장" 대신 "1장"으로만 바꿉니다.</p>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>통과 기준(부가세 열 없을 때)</th><th>부가세 열을 넣었을 때</th></tr></thead><tbody><tr><td>행 수</td><td>품목 2행 + 합계 1행 = <b>3행</b></td><td>3행</td></tr><tr><td>수량·단가</td><td>50 · 200 / 2 · 5,000 (한 칸에서 나눔)</td><td>같음</td></tr><tr><td>원문 합계 / 계산 합계</td><td>22,000 / <b>20,000</b></td><td>22,000 / 22,000</td></tr><tr><td>합계 행 상태</td><td><b>확인 필요</b> — "원문 합계는 부가세 포함, 항목 합은 공급가액"</td><td>정상 — 부가세 2,000</td></tr><tr><td>나오면 안 되는 것</td><td>노트·도서 A·12,900 (앞 영수증 값) · 계산 합계를 22,000으로 맞추려고 부가세를 항목에 끼워 넣기</td><td></td></tr></tbody></table></div>
+<div class="note act"><b>"차이가 있으니 틀렸다"가 아니라 "차이의 이유가 적혀 있는가"를 봅니다.</b> 20,000과 22,000이 다른 것은 형식 차이이고, 그 이유를 확인 이유 칸에 적었으면 통과입니다. 이유 없이 22,000으로 맞춰져 있으면 어디서 2,000이 왔는지 되묻습니다.</div>
+<p class="small">receipt-table 스킬은 열 구성과 "못 읽으면 빈칸" 규칙을 기억합니다. 부가세 처리처럼 <b>새 형식에서 생긴 판단</b>은 스킬에 없습니다. 이 판단이 반복되면 01 단원 06단계처럼 스킬의 report-format에 부가세 열을 넣어 새 이름으로 등록합니다 — 05 단원 06단계의 규칙 파일과 같은 이치입니다.</p>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-save"><span>표를 xlsx로 받아 12행·빈칸·숫자 형식·계산 합계 수식을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-recol"><span>열 구성을 바꿔도 값이 움직이지 않는 것을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="ocr-new-format"><span>형식이 다른 영수증_04에서 합계 차이의 이유(부가세)를 확인 이유에 남겼다.</span></label></div>
+</section>
 <section class="chapter" id="reuse">
-<div class="secnum">06 · 다른 자료에 다시 쓰기</div>
+<div class="secnum">07 · 다른 자료에 다시 쓰기</div>
 <h2>영수증 한 장만 다시 넣어 봅니다</h2>
 
 <p class="lead">앞 결과가 다음 작업에 섞이는지 확인합니다. <span class="badge none">선택 확장</span></p>
@@ -203,7 +241,7 @@
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="ocr-reuse"><span>한 장만 다시 처리해 앞 결과가 섞이지 않는지 확인했다.</span></label></div>
 </section>
 <section class="chapter" id="trouble">
-<div class="secnum">07 · 막혔을 때</div>
+<div class="secnum">08 · 막혔을 때</div>
 <h2>사진 실습에서 자주 나오는 네 가지</h2>
 
 <details><summary>① 이미지를 못 읽는다고 합니다</summary><div class="d-body">
@@ -213,7 +251,7 @@
 </div></details>
 
 <details><summary>② 번진 금액을 숫자로 읽어 냈습니다</summary><div class="d-body">
-<p><b>확인할 것</b> — 여러분이 이미지를 확대해서 봅니다. 사람이 못 읽는다면 그 값은 근거가 없습니다.</p>
+<p><b>확인할 것</b> — 여러분이 이미지를 확대해서 봅니다. 확대해서도 읽을 수 없다면 그 값은 <b>이미지로 확인할 수 없는 값</b>이며, 표에 확정값으로 남길 근거가 없습니다.</p>
 <p><b>되물을 문장</b> — "이 값을 이미지의 어느 위치에서 읽었는지 알려 주세요."</p>
 <p><b>복구</b> — 위치를 대지 못하면 빈칸 + 확인 필요로 바꿉니다. 품목명이나 다른 영수증의 값으로 추측한 경우가 많습니다.</p>
 </div></details>

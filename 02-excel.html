@@ -41,8 +41,9 @@
 <a href="#work"><span class="n">04</span>값 하나만 바꾸기</a>
 <a href="#source"><span class="n">05</span>출처까지 따라가기</a>
 <a href="#rule"><span class="n">06</span>규칙 하나 바꾸기</a>
-<a href="#reuse"><span class="n">07</span>새 자료에 다시 쓰기</a>
-<a href="#trouble"><span class="n">08</span>막혔을 때</a>
+<a href="#chart"><span class="n">07</span>집계표와 차트 만들기</a>
+<a href="#reuse"><span class="n">08</span>새 자료에 다시 쓰기</a>
+<a href="#trouble"><span class="n">09</span>막혔을 때</a>
 </div>
 <p class="side-note">실습 자료와 스킬은 이번 교육을 위해 만든 <b>교육용 가상 자료</b>입니다. 실제 기관 자료·개인정보는 들어 있지 않습니다.</p>
 </nav>
@@ -51,7 +52,7 @@
 <div class="eyebrow">실습 단원 02 / EXCEL</div>
 <h1>숫자는 바꾸고,<br>계산식은 지키기.</h1>
 <p>표에서 입력값과 수식을 구분하고, 값 한 칸만 바꿔 다른 칸이 제대로 따라오는지 확인합니다. 숫자를 문장으로 옮길 때 출처가 떨어져 나가지 않게 하는 연습까지 합니다.</p>
-<div class="flow">완성 예시 → 다섯 가지 구분 → 사본 만들기 → 값 변경 → 셀 확인 → 인용 규칙 비교 → 새 표</div>
+<div class="flow">완성 예시 → 다섯 가지 구분 → 사본 만들기 → 값 변경 → 셀 확인 → 인용 규칙 비교 → 집계표와 차트 → 새 표</div>
 <p class="meta">필요한 것: Excel로 열 수 있는 환경 · 실습본 파일 · 사본 하나</p>
 </header>
 <section class="chapter" id="result">
@@ -159,6 +160,7 @@
 <p>답변 내용을 믿고 넘어가지 않습니다. 파일을 열고 네 칸을 클릭해 보세요.</p>
 <div class="tw"><table class="wide"><thead><tr><th>칸</th><th>보여야 할 값</th><th>수식 입력줄</th><th>이러면 실패</th></tr></thead><tbody><tr><td><code>E9</code></td><td><b>6</b> 또는 6.0</td><td><code>6</code></td><td>다른 값이면 엉뚱한 칸을 바꾼 것</td></tr><tr><td><code>F9</code></td><td><b>12</b></td><td><code>=D9-E9</code></td><td>수식 없이 <code>12</code>만 있으면 수식이 덮인 것</td></tr><tr><td><code>G9</code></td><td><b>66.7%</b></td><td><code>=IFERROR((D9-E9)/D9,"")</code></td><td><code>0.667</code>이나 <code>66.7</code>이 직접 적혀 있으면 실패</td></tr><tr><td><code>F13</code></td><td><b>144</b></td><td><code>=F9*12</code></td><td>126 그대로면 연결이 끊긴 것</td></tr></tbody></table></div>
 <div class="check-line"><b>정상 확인:</b> 값 네 개가 맞고, 수식 세 개가 그대로 <code>=</code>로 시작합니다.</div>
+<div class="note plain"><b>파일 상태를 적어 둡니다.</b> 이 단계를 마친 작업본은 <b>E9=6.0 · F9=12 · F13=144</b>입니다. 내려받은 실습본 원본은 그대로 <b>E9=7.5 · F9=10.5 · F13=126</b>입니다. 04 단원 Word 초안의 "10.5시간/월"은 <b>원본 상태</b>를 근거로 한 독립 실습이므로 12로 바꾸지 않습니다. 07단계 집계와 03·04 단원의 제작 경로에서는 <b>어느 파일·어느 상태</b>를 근거로 썼는지 한 줄 적습니다.</div>
 <figure class="shot"><img src="assets/shots/02-excel-result.png" alt="결과 — E9 변경 후 수식이 유지된 표와 셀 링크가 붙은 답변" loading="lazy"><figcaption><span class="cap-tag">실제 화면</span>2026-09-16 리허설 결과. 표에서 E9=6, F9=12, G9=66.7%, F13=144이고 수식 입력줄은 여전히 <b>=D9-E9</b>입니다. 오른쪽 답변의 <b>지표 F9 ↗</b> 같은 셀 링크를 누르면 그 칸으로 이동합니다. 마지막 줄 "확인차 다시 읽은 범위: D9:G9, F13 — 세 칸 모두 수식이 유지된 상태입니다"는 Claude의 말이고, 위 표의 확인은 <b>내가</b> 한 것입니다. 둘은 다릅니다.</figcaption></figure>
 </div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>나머지 줄이 안 건드려졌는지 봅니다</h3>
 <p>바꾸라고 하지 않은 곳이 바뀌는 경우가 있습니다. 아래 다섯 줄을 확인하세요.</p>
@@ -216,8 +218,54 @@
 
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="excel-rule"><span>같은 표에 두 가지 인용 규칙을 적용해 결과 차이를 봤다.</span></label></div>
 </section>
+<section class="chapter" id="chart">
+<div class="secnum">07 · 집계표와 차트 만들기</div>
+<h2>"어느 지표가 가장 많이 나아졌나?" — 표에서 답을 꺼내 한 장으로</h2>
+
+<p class="lead">지금까지는 표의 <b>한 칸</b>을 다뤘습니다. 이번에는 표 전체로 업무 질문에 답합니다. 운영 책임자가 물었습니다 — <b>"여섯 지표 중 무엇이 가장 많이 개선됐나요? 한 장으로 보여 주세요."</b> 집계표 → 차트 → 요약 문장 → 조건 변경 순서로 만듭니다.</p>
+
+<h3>먼저 열과 단위를 봅니다 — 무엇을 비교할 수 있나</h3>
+<div class="tw"><table class="wide"><thead><tr><th>열</th><th>값</th><th>여섯 지표를 서로 비교할 수 있나</th><th>왜</th></tr></thead><tbody><tr><td>F열 절감량</td><td>2.3 · 3.5 · 5 · 10.5 · 33 · 1.5</td><td><b>없습니다</b></td><td>단위가 일 / 건·월 / 시간·월 / % 로 다릅니다. 더하거나 한 차트에 놓으면 의미가 없습니다</td></tr><tr><td>G열 절감률</td><td>65.7% · 87.5% · 83.3% · 58.3% · 53.2% · 75.0%</td><td><b>있습니다</b></td><td>모두 "개선 전 대비 몇 %"입니다. 단위가 같습니다</td></tr><tr><td>5번 양식 준수율</td><td>62 → 95 (%)</td><td>주의</td><td><b>올라가야 좋은 지표</b>라 절감률이 "증가분 ÷ 개선 전"입니다(H10·J10 메모). 다른 다섯과 방향이 다르다는 표시를 남깁니다</td></tr></tbody></table></div>
+<div class="note act"><b>여기서 첫 판단.</b> "절감량 합계 차트"나 "절감량 막대 차트"를 요구하면 그럴듯한 그림이 나오지만 단위가 섞인 <b>무의미한 비교</b>입니다. 이번 집계 기준은 <b>절감률만 비교, 상승 지표는 표시</b>로 정합니다. 이 판단을 요청 문장에 그대로 적습니다.</div>
+
+<div class="step"><div class="num">1</div><div class="step-body"><h3>필요한 자료를 점검합니다</h3>
+<p>지표 시트 G6:G11 여섯 칸이 모두 채워져 있는지 봅니다(빈칸이 있으면 순위를 매길 수 없습니다). 04단계를 마쳤다면 작업본은 <b>E9=6.0</b> 상태입니다. 이번 집계는 <b>실습본 원본 상태(E9=7.5)</b>를 기준으로 시작합니다 — 아래 기준본과 같은 조건으로 대조하기 위해서입니다. 작업본에서 E9를 7.5로 되돌리거나(Ctrl+Z 또는 직접 입력), 실습본을 다시 복사해 <code>기대효과지표_집계본.xlsx</code>로 시작하세요.</p>
+<div class="expect"><b>이 상태가 맞습니다:</b> 지표 시트 E9=7.5, F9=10.5, F13=126. 어느 파일·어느 상태를 쓰는지 아래 요약 문장에도 적습니다.</div>
+</div></div><div class="step"><div class="num">2</div><div class="step-body"><h3>집계표를 새 시트에 만들게 합니다 — 값 복사가 아니라 참조 수식으로</h3>
+<div class="prompt"><div class="prompt-head"><span><b>집계표 만들기</b></span><button type="button" data-copy="p-excel-agg">복사</button></div><pre id="p-excel-agg">이 통합 문서에 "집계"라는 새 시트를 만들어 주세요.
+열: No / 지표 / 단위 / 절감률 / 순위 / 방향.
+- 값을 복사해 넣지 말고 지표 시트의 셀을 참조하는 수식으로 채워 주세요 (예: =지표!G6).
+- 절감률(G열)만 비교합니다. 절감량(F열)은 단위가 달라 합계나 비교를 만들지 마세요.
+- 순위는 절감률 내림차순 RANK 수식으로, 방향 열에는 개선 후가 개선 전보다 큰 지표를 "상승 지표(증가분 기준)"로 표시해 주세요.
+- 지표 시트의 값과 수식은 건드리지 마세요.</pre></div>
+<div class="expect"><b>예상 상태:</b> 수정 전 <b>Permission required</b> 창(새 시트 만들기)이 뜨고, 승인하면 집계 시트에 6행이 생깁니다. 셀을 클릭하면 수식 입력줄에 <code>=지표!G6</code>, <code>=RANK(D6,$D$6:$D$11,0)</code> 같은 수식이 보여야 합니다.</div>
+<div class="tw"><table class="wide"><thead><tr><th>확인할 것</th><th>통과 기준</th><th>틀리면</th></tr></thead><tbody><tr><td>D열(절감률)</td><td>수식 입력줄이 <code>=지표!G…</code></td><td>숫자만 있으면 값을 복사한 것 — 원본이 바뀌어도 따라오지 않습니다</td></tr><tr><td>E열(순위)</td><td>87.5%가 1위, 53.2%가 6위. 6개 순위가 모두 다름</td><td>순위가 겹치거나 비어 있으면 RANK 범위를 다시 확인</td></tr><tr><td>F열(방향)</td><td>5번만 "상승 지표(증가분 기준)"</td><td>다른 행에도 붙었거나 5번에 없으면 수식을 다시 확인</td></tr><tr><td>지표 시트</td><td>G6:G11 값과 수식이 그대로</td><td>집계를 만들면서 원본을 고쳤다면 되돌립니다</td></tr></tbody></table></div>
+</div></div><div class="step"><div class="num">3</div><div class="step-body"><h3>차트는 여러분이 직접 넣습니다 — 원본 범위를 손으로 고릅니다</h3>
+<p>집계 시트에서 <b>B5:B11</b>(지표 이름)과 <b>D5:D11</b>(절감률)을 함께 선택(Ctrl로 두 범위)하고 <b>삽입 → 차트 → 가로 막대형(묶은 가로 막대)</b>을 넣습니다. 제목을 "지표별 절감률 (개선 전 대비, %)"로 바꾸고 축이 %로 보이는지 확인합니다. 차트는 사람이 넣는 것이 빠르고, 무엇보다 <b>원본 범위를 내 눈으로 고르는 과정</b>이 이 단계의 목적입니다.</p>
+<div class="tw"><table class="mid"><thead><tr><th>차트에서 확인할 것</th><th>통과 기준</th></tr></thead><tbody><tr><td>제목</td><td>무엇의 비율인지 적혀 있음 — "지표별 절감률 (개선 전 대비, %)"</td></tr><tr><td>축과 단위</td><td>값 축이 0~100% 또는 0~1(백분율 표시). "일·건·시간"이 섞여 있지 않음</td></tr><tr><td>집계 대상</td><td>여섯 지표. 연간 환산(13행)이나 합계 행이 들어가지 않음</td></tr><tr><td>원본 범위</td><td>차트를 클릭했을 때 파란 테두리가 <b>집계 시트 B6:B11·D6:D11</b>을 감쌈. 지표 시트의 F열(절감량)이 아님</td></tr><tr><td>막대 순서</td><td>순위대로 보이게 하려면 집계표를 D열 기준으로 정렬하거나, 차트 축의 "항목을 거꾸로" 옵션을 씁니다 — 어느 쪽이든 값은 바뀌지 않아야 함</td></tr></tbody></table></div>
+<p class="small">패널(Claude for Excel)이 차트까지 만들어 줄 수도 있습니다. 그래도 위 다섯 가지는 사람이 확인합니다. 원본 범위가 절감량(F열)을 가리키면 그럴듯하지만 틀린 차트입니다. 웹 채팅에 파일을 첨부하는 B안에서는 차트가 든 xlsx를 받아 같은 다섯 가지를 확인합니다.</p>
+</div></div><div class="step"><div class="num">4</div><div class="step-body"><h3>요약 문장 세 개를 받고, 숫자마다 셀을 붙입니다</h3>
+<div class="prompt"><div class="prompt-head"><span><b>요약 문장 만들기</b></span><button type="button" data-copy="p-excel-sum">복사</button></div><pre id="p-excel-sum">집계 시트를 근거로 운영 책임자용 요약을 세 문장으로 써 주세요.
+- 각 숫자 옆에 어느 시트의 어느 셀에서 왔는지 적어 주세요.
+- 절감률만 비교하고, 절감량은 단위가 달라 비교하지 않는다는 점을 한 문장에 넣어 주세요.
+- 5번 양식 준수율은 상승 지표라 증가분 기준이라는 점을 밝혀 주세요.
+- 표에 없는 원인 분석이나 평가("성공적", "우수")는 쓰지 마세요.</pre></div>
+<div class="check-line"><b>정상 확인:</b> "회의록 공유 누락 87.5%(집계!D7)가 가장 크고, 양식 준수율 53.2%(집계!D10)가 가장 작다(상승 지표)"처럼 숫자·셀·방향이 함께 있습니다. "전반적으로 크게 개선"처럼 표에 없는 평가가 있으면 근거를 물어 지웁니다.</div>
+</div></div><div class="step"><div class="num">5</div><div class="step-body"><h3>조건을 바꿔 보고, 왜 달라졌는지 봅니다</h3>
+<p>지표 시트 <b>E9를 7.5 → 6.0</b>으로 바꿉니다(04단계와 같은 요청을 다시 보내거나 직접 입력). 그리고 집계 시트와 차트를 봅니다.</p>
+<div class="tw"><table class="mid"><thead><tr><th>바꾼 것</th><th>달라져야 하는 것</th><th>달라지면 안 되는 것</th></tr></thead><tbody><tr><td>지표!E9 = 6.0</td><td>집계 D9 58.3% → <b>66.7%</b> · 순위 5 → <b>4</b>(65.7%인 1번과 자리 바꿈) · 차트의 그 막대</td><td>다른 다섯 지표의 절감률·순위 · 차트의 원본 범위</td></tr></tbody></table></div>
+<div class="note info"><b>왜 자동으로 따라오나요?</b> 집계표가 <b>참조 수식</b>이고 차트가 <b>집계표 범위</b>를 가리키기 때문입니다. 2번에서 값을 복사해 넣었다면 여기서 아무것도 바뀌지 않습니다 — 그것이 "값 복사"와 "참조"의 차이이고, 보고서에 붙는 표가 어느 날 조용히 틀리는 이유입니다.</div>
+<p class="small">두 번째 조건(선택): "상승 지표(5번)는 순위에서 빼고 감소 지표 다섯 개만 순위를 매겨 주세요"라고 요청해 순위 열이 어떻게 바뀌는지 봅니다. 어느 조건을 쓰든 <b>요약 문장에 조건을 적어야</b> 다른 사람이 같은 숫자를 다시 만들 수 있습니다.</p>
+</div></div><div class="step"><div class="num">6</div><div class="step-body"><h3>기준본과 대조하고 파일로 저장합니다</h3>
+<div class="dl-row"><a class="dl second" href="downloads/excel/%EA%B8%B0%EB%8C%80%ED%9A%A8%EA%B3%BC%EC%A7%80%ED%91%9C_%EC%A7%91%EA%B3%84%EC%B0%A8%ED%8A%B8_%EA%B8%B0%EC%A4%80%EB%B3%B8.xlsx" download><span>기대효과지표_집계차트_기준본.xlsx<br><span class="what">집계 시트 + 차트 · 실습본 원본 상태(E9=7.5) 기준</span></span><span aria-hidden="true">↓</span></a><a class="dl second" href="downloads/reference/%EA%B8%B0%EC%A4%80%EC%98%88%EC%8B%9C_%EC%A7%91%EA%B3%84%EC%B0%A8%ED%8A%B8.md" download><span>기준예시_집계차트.md<br><span class="what">순위표 · 요약 문장 예 · 조건 변경 결과</span></span><span aria-hidden="true">↓</span></a></div>
+<p>기준본은 <b>이 실습을 위해 사람이 만든 파일</b>이며 Claude 출력이 아닙니다. 집계 시트의 셀을 클릭해 참조 수식과 차트의 원본 범위(H5 근처 차트 클릭)를 여러분 파일과 비교하세요. 순위는 원본 상태에서 2번 1위 · 3번 2위 · 6번 3위 · 1번 4위 · 4번 5위 · 5번 6위입니다.</p>
+<p>여러분 파일은 <code>기대효과지표_집계본.xlsx</code>로 저장하고, 집계 시트 아래에 한 줄을 적어 둡니다: <b>입력 상태(E9=7.5 또는 6.0) · 비교 기준(절감률만) · 상승 지표 처리</b>. 이 파일이 03 단원 브리핑과 04 단원 보고서의 근거가 됩니다.</p>
+</div></div>
+
+<div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="excel-agg-basis"><span>절감량은 단위가 달라 비교하지 않고 절감률만 비교한다는 기준을 정했다.</span></label><label class="check"><input type="checkbox" data-check="excel-agg-sheet"><span>집계 시트가 참조 수식과 RANK로 채워졌는지 셀을 클릭해 확인했다.</span></label><label class="check"><input type="checkbox" data-check="excel-agg-chart"><span>차트를 직접 넣고 원본 범위가 집계 시트의 절감률인지 확인했다.</span></label><label class="check"><input type="checkbox" data-check="excel-agg-change"><span>E9를 바꿔 집계·차트가 함께 갱신되고 순위가 5→4로 바뀌는 것을 확인했다.</span></label><label class="check"><input type="checkbox" data-check="excel-agg-save"><span>입력 상태와 비교 기준을 적어 집계본 파일로 저장했다.</span></label></div>
+</section>
 <section class="chapter" id="reuse">
-<div class="secnum">07 · 새 자료에 다시 쓰기</div>
+<div class="secnum">08 · 새 자료에 다시 쓰기</div>
 <h2>다른 표에도 같은 방법이 통하나요?</h2>
 
 <p class="lead">지표 구성이 다른 표로 바꿔 봅니다. 이 표에는 <b>절감률이 비어 있는 줄</b>이 하나 있습니다.</p>
@@ -242,7 +290,7 @@
 <div class="checks"><h4>여기까지 됐는지 확인</h4><label class="check"><input type="checkbox" data-check="excel-new"><span>새 표를 새 대화에서 처리했다.</span></label><label class="check"><input type="checkbox" data-check="excel-blank"><span>빈칸이 0%로 채워지지 않았는지 확인했다.</span></label></div>
 </section>
 <section class="chapter" id="trouble">
-<div class="secnum">08 · 막혔을 때</div>
+<div class="secnum">09 · 막혔을 때</div>
 <h2>표 실습에서 자주 나오는 네 가지</h2>
 
 <details><summary>① Excel에서 Claude 패널이 안 보입니다</summary><div class="d-body">
